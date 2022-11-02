@@ -1,0 +1,7 @@
+{
+	"chest": {
+		"container_name": "chest",
+        "cols": 3,
+		"rows": 1
+    },
+}

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/control intro.wav-ee1d3c15de052ff6936f1e736c9a1744.sample"
+
+[deps]
+
+source_file="res://assets/music/welcome to ohio/control intro.wav"
+dest_files=[ "res://.import/control intro.wav-ee1d3c15de052ff6936f1e736c9a1744.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

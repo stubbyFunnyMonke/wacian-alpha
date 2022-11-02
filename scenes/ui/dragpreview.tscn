@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/ui/dragpreview.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=2]
+
+[node name="DragPreview" type="Control"]
+margin_right = 18.0
+margin_bottom = 18.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+mouse_filter = 2
+
+[node name="ItemQuantity" type="Label" parent="."]
+margin_left = 13.663
+margin_top = 10.876
+margin_right = 31.663
+margin_bottom = 45.876
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

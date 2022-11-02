@@ -1,0 +1,58 @@
+{
+    "pot": {
+		"furniture_name": "pot",
+        "spritesheet": "testprops.png",
+		"maintile": 1,
+		"tiles": [1],
+		"rotatable": false,
+		"actionable": false
+    },
+	"chest": {
+		"furniture_name": "chest",
+        "spritesheet": "testprops.png",
+		"maintile": 2,
+		"tiles": [2, 12],
+		"rotatable": false,
+		"actionable": true
+    },
+	"plant": {
+		"furniture_name": "plant",
+        "spritesheet": "interior free.png",
+		"maintile": 3,
+		"tiles": [3],
+		"rotatable": false,
+		"actionable": false
+    },
+	"smalltable": {
+		"furniture_name": "smalltable",
+        "spritesheet": "interior free.png",
+		"maintile": 4,
+		"tiles": [4],
+		"rotatable": false,
+		"actionable": false
+    },
+	"woodchair": {
+		"furniture_name": "woodchair",
+        "spritesheet": "interior free.png",
+		"maintile": 5,
+		"tiles": [5, 6, 7, 8],
+		"rotatable": true,
+		"actionable": false
+    },
+	"bigtable": {
+		"furniture_name": "bigtable",
+        "spritesheet": "interior free.png",
+		"maintile": 9,
+		"tiles": [9],
+		"rotatable": false,
+		"actionable": false
+    },
+	"tv": {
+		"furniture_name": "tv",
+        "spritesheet": "interior free.png",
+		"maintile": 10,
+		"tiles": [10],
+		"rotatable": false,
+		"actionable": false
+    },
+}

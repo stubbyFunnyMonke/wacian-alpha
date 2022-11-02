@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/shaders/HPPostProcessing.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+dof_blur_far_distance = 0.01
+dof_blur_far_amount = 1.0
+dof_blur_far_quality = 2
+dof_blur_near_enabled = true
+dof_blur_near_amount = 0.0
+glow_bloom = 0.15
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+
+[node name="HPPostProcessing" type="WorldEnvironment"]
+environment = SubResource( 1 )
+script = ExtResource( 1 )

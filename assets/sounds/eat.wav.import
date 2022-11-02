@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/eat.wav-54a6735d2bb043d82c94609f46abefbe.sample"
+
+[deps]
+
+source_file="res://assets/sounds/eat.wav"
+dest_files=[ "res://.import/eat.wav-54a6735d2bb043d82c94609f46abefbe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

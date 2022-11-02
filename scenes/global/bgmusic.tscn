@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/global/bgmusic.gd" type="Script" id=2]
+
+[node name="BGMusic" type="Node"]
+script = ExtResource( 2 )
+
+[node name="loop" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = "music"
+
+[node name="intro" type="AudioStreamPlayer" parent="."]
+bus = "music transitions"
+
+[node name="end" type="AudioStreamPlayer" parent="."]
+bus = "music transitions"
+
+[node name="Tween" type="Tween" parent="."]

@@ -1,0 +1,531 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/themes/progressbar.tres" type="Theme" id=1]
+[ext_resource path="res://assets/images/ui/hpicon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/ui/healthbar.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/ui/hungericon.png" type="Texture" id=4]
+[ext_resource path="res://scripts/ui/hungerbar.gd" type="Script" id=5]
+[ext_resource path="res://assets/images/ui/staminaicon.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/ui/thirsticon.png" type="Texture" id=7]
+[ext_resource path="res://scripts/ui/thirstbar.gd" type="Script" id=8]
+[ext_resource path="res://scripts/ui/staminabar.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.376471, 0, 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/fg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:rect_pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("icon:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "low"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/fg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.376471, 0, 1 ), Color( 0.419608, 0.156863, 0, 1 ), Color( 1, 0.376471, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/fg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("icon:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ), Vector2( -20.8926, -8.23627 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.894118, 0, 1 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("icon:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../hungerbar:custom_styles/fg:bg_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.443137, 0.807843, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../staminabar:custom_styles/fg:bg_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.894118, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "low"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../staminabar:custom_styles/fg:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.376471, 0, 1 ), Color( 0.419608, 0.156863, 0, 1 ), Color( 1, 0.376471, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ), Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../staminabar:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.984314, 0, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.443137, 0.807843, 0, 1 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("icon:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../hungerbar:custom_styles/fg:bg_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.443137, 0.807843, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "low"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../hungerbar:custom_styles/fg:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.376471, 0, 1 ), Color( 0.419608, 0.156863, 0, 1 ), Color( 1, 0.376471, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ), Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../hungerbar:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.443137, 0.807843, 0, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0.505882, 1, 1 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/fg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.376471, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:rect_pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("icon:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../thirstbar:custom_styles/fg:bg_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.505882, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "low"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../thirstbar:custom_styles/fg:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.376471, 0, 1 ), Color( 0.419608, 0.156863, 0, 1 ), Color( 1, 0.376471, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20.8926, -8.23627 ), Vector2( -20.8926, -8.23627 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../thirstbar:custom_styles/fg:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.505882, 1, 1 ), Color( 0, 0.505882, 1, 1 ) ]
+}
+
+[node name="StatusBars" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="healthbar" type="ProgressBar" parent="."]
+margin_left = 56.979
+margin_top = 462.64
+margin_right = 256.979
+margin_bottom = 478.64
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 1 )
+value = 50.0
+script = ExtResource( 3 )
+
+[node name="icon" type="TextureRect" parent="healthbar"]
+margin_left = -20.8926
+margin_top = -8.23627
+margin_right = 11.1074
+margin_bottom = 23.7637
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="healthbar"]
+anims/RESET = SubResource( 2 )
+anims/low = SubResource( 3 )
+anims/normal = SubResource( 4 )
+
+[node name="staminabar" type="ProgressBar" parent="."]
+margin_left = 56.979
+margin_top = 492.386
+margin_right = 256.979
+margin_bottom = 508.386
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 6 )
+value = 50.0
+script = ExtResource( 9 )
+
+[node name="icon" type="TextureRect" parent="staminabar"]
+margin_left = -20.8926
+margin_top = -8.23627
+margin_right = 11.1074
+margin_bottom = 23.7637
+texture = ExtResource( 6 )
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="staminabar"]
+root_node = NodePath("../../healthbar")
+anims/RESET = SubResource( 14 )
+anims/low = SubResource( 15 )
+anims/normal = SubResource( 16 )
+
+[node name="hungerbar" type="ProgressBar" parent="."]
+margin_left = 56.979
+margin_top = 521.603
+margin_right = 256.979
+margin_bottom = 537.603
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 5 )
+value = 50.0
+script = ExtResource( 5 )
+
+[node name="icon" type="TextureRect" parent="hungerbar"]
+margin_left = -20.8926
+margin_top = -8.23627
+margin_right = 11.1074
+margin_bottom = 23.7637
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hungerbar"]
+root_node = NodePath("../../healthbar")
+anims/RESET = SubResource( 7 )
+anims/low = SubResource( 8 )
+anims/normal = SubResource( 9 )
+
+[node name="thirstbar" type="ProgressBar" parent="."]
+margin_left = 56.979
+margin_top = 551.63
+margin_right = 256.979
+margin_bottom = 567.63
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 10 )
+value = 50.0
+script = ExtResource( 8 )
+
+[node name="icon" type="TextureRect" parent="thirstbar"]
+margin_left = -20.8926
+margin_top = -8.23627
+margin_right = 11.1074
+margin_bottom = 23.7637
+texture = ExtResource( 7 )
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="thirstbar"]
+root_node = NodePath("../../healthbar")
+anims/RESET = SubResource( 11 )
+anims/low = SubResource( 12 )
+anims/normal = SubResource( 13 )
