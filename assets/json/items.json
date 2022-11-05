@@ -4,11 +4,6 @@
         "icon": "sword.png",
         "stackable": false
     },
-    "armor": {
-        "name": "Armor",
-        "icon": "armor.png",
-        "stackable": false
-    },
     "apple": {
         "name": "Apple",
         "icon": "apple.png",
@@ -20,5 +15,44 @@
         "icon": "potion.png",
         "stackable": true,
         "quantity": 1
-    }
+    },
+	"bottle": {
+        "name": "Bottle",
+        "icon": "bottle.png",
+        "stackable": true,
+        "quantity": 1
+    },
+	"waterbottle": {
+        "name": "Bottle of Water",
+        "icon": "waterbottle.png",
+        "stackable": true,
+        "quantity": 1
+    },
+	"scrap": {
+		"name": "Scrap",
+        "icon": "scrap.png",
+        "stackable": true,
+        "quantity": 1
+	},
+	"nail": {
+		"name": "Nails",
+        "icon": "nail.png",
+        "stackable": true,
+        "quantity": 1
+	},
+	"hammer": {
+        "name": "Hammer",
+        "icon": "hammer.png",
+        "stackable": false
+    },
+	"sledgehammer": {
+        "name": "Sledgehammer",
+        "icon": "sledgehammer.png",
+        "stackable": false
+    },
+	"fireextinguisher": {
+        "name": "Fire Extinguisher",
+        "icon": "fireextinguisher.png",
+        "stackable": false
+    },
 }
