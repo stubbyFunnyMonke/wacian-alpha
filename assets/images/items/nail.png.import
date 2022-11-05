@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor.png-b735412427ae22958e3913b3cb60a625.stex"
+path="res://.import/nail.png-17f21dccc8ba92e4f4daa1fef7ccc1cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/armor.png"
-dest_files=[ "res://.import/armor.png-b735412427ae22958e3913b3cb60a625.stex" ]
+source_file="res://assets/images/items/nail.png"
+dest_files=[ "res://.import/nail.png-17f21dccc8ba92e4f4daa1fef7ccc1cb.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
