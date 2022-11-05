@@ -3,9 +3,7 @@ extends Node
 var soundNode
 
 func use(playerNode):
-	var drink = playerstats.player_drink(10)
-	
-	playerstats.changeHp(50)
+	var drink = playerstats.player_drink(20)
 	
 	if drink == true:
 		inventory.set_item_quantity(inventory.selected, -1)
