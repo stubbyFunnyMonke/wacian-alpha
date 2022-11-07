@@ -36,7 +36,8 @@ func newFloor(itemsnode, playgroundnode, backgroundnode):
 	
 	currentBackgroundNode = backgroundnode
 	for cell in currentBackgroundNode.get_used_cells():
-		init_tile_durability(cell)
+		if backgroundnode.get_cellv(cell) != 9:
+			init_tile_durability(cell)
 
 func saveItems():
 	#save items and their positions
