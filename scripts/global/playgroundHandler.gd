@@ -13,6 +13,11 @@ var tilemapdata
 
 var tile11data = {}
 
+var tileDurabilityData = {}
+var currentBackgroundNode
+
+#on ready/on new floor, check for new unchecked tiles
+
 func _ready():
 	furnituredata = globalItemHandler.read_from_JSON("res://assets/json/furnituredata.json")
 	for key in furnituredata.keys():
@@ -24,10 +29,14 @@ func _ready():
 	
 	changefloor.connect("on_changed_floor", self, "_on_changed_floor")
 
-func newFloor(itemsnode, playgroundnode):
+func newFloor(itemsnode, playgroundnode, backgroundnode):
 	currentItemsNode = itemsnode
 	currentPlaygroundNode = playgroundnode
 	containerhandler.initializeContainers()
+	
+	currentBackgroundNode = backgroundnode
+	for cell in currentBackgroundNode.get_used_cells():
+		init_tile_durability(cell)
 
 func saveItems():
 	#save items and their positions
@@ -87,3 +96,19 @@ func _on_changed_floor(floorname):
 					get_tree().get_current_scene().get_node("YSort/Playground").set_cellv(cellinst.position, cellinst.cellid)
 	
 	currentFloor = changefloor.currentfloor
+
+### tile durability stuff
+
+func init_tile_durability(tile_pos):
+	if !str(currentFloor) in tileDurabilityData:
+		tileDurabilityData[str(currentFloor)] = {}
+	if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+		print("checked")
+	else:
+		var newData = {
+			"maxDurability": 100,
+			"currentDurability": 100
+		}
+		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
+
+
