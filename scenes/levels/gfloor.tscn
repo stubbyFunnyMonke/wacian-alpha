@@ -54,9 +54,9 @@ tile_data = PoolIntArray( -458756, 3, 0, -458753, 2, 0, -524288, 2, 0, -524287, 
 
 [node name="DragPreview" parent="UI" instance=ExtResource( 6 )]
 
+[node name="tileDurabilityContainer" parent="UI" instance=ExtResource( 15 )]
+
 [node name="Tooltip" parent="UI" instance=ExtResource( 2 )]
 visible = false
-
-[node name="tileDurabilityContainer" parent="UI" instance=ExtResource( 15 )]
 
 [node name="HPPostProcessing" parent="." instance=ExtResource( 14 )]

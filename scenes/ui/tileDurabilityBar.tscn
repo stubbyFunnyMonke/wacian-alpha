@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/ui/tileDurabilityBar.gd" type="Script" id=1]
 
@@ -9,6 +9,12 @@ bg_color = Color( 0.215686, 1, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 0.490196 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.945098, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="tileDurabilityContainer" type="ColorRect"]
 margin_right = 40.0
@@ -25,3 +31,12 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 value = 50.0
+
+[node name="absorptionBar" type="ProgressBar" parent="tileDurabilityBar"]
+margin_right = 100.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_fonts/font = SubResource( 1 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+value = 14.0

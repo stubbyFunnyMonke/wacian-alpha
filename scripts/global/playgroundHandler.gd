@@ -108,7 +108,7 @@ func init_tile_durability(tile_pos):
 	else:
 		var newData = {
 			"maxDurability": 100,
-			"currentDurability": 100
+			"currentDurability": 150
 		}
 		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
 
