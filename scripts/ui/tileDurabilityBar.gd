@@ -21,9 +21,8 @@ func _process(_delta):
 			if inventory.get_selected().key == "hammer" && currentFloorData && str(selectedTile) in currentFloorData:
 				var tileData = currentFloorData[str(selectedTile)]
 				if tileData: 
-					if tileData.currentDurability > tileData.maxDurability:
-						var absorptionValue = tileData.currentDurability - tileData.maxDurability 
-						absorptionBar.value = (float(absorptionValue) / float(tileData.maxDurability)) * 100
+					var absorptionValue = tileData.currentDurability - tileData.maxDurability 
+					absorptionBar.value = (float(absorptionValue) / float(tileData.maxDurability)) * 100
 					durabilityBar.value = (float(tileData.currentDurability) / float(tileData.maxDurability)) * 100
 				
 				getPlaceIndicator.set_cellv(selectedTile, 0)

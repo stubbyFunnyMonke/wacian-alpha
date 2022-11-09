@@ -112,4 +112,14 @@ func init_tile_durability(tile_pos):
 		}
 		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
 
+func deteriorate_tile(tile_pos, dmg):
+	if str(currentFloor) in tileDurabilityData:
+		if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+			tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability - dmg
+			#TODO: sfx +  dmg visualization
+		else:
+			init_tile_durability(tile_pos)
+			deteriorate_tile(tile_pos, dmg)
+
+
 
