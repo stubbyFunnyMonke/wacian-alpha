@@ -62,9 +62,10 @@ func add_item(item, amount):
 	return doneAdding 
 
 func set_selected(new_selected):
-	var last_selected = selected
-	selected = new_selected
-	broadcast_signal([selected, last_selected])
+	if new_selected + 1 <= cols:
+		var last_selected = selected
+		selected = new_selected
+		broadcast_signal([selected, last_selected])
 
 func get_selected():
 	return items[selected]

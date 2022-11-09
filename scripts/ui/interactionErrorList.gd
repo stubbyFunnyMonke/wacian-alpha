@@ -2,6 +2,8 @@ extends GridContainer
 
 export (PackedScene) var interactionError
 
+onready var errSound = $AudioStreamPlayer
+
 func error_msg(txt):
 	var newErr = interactionError.instance()
 	newErr.text = txt
@@ -10,6 +12,8 @@ func error_msg(txt):
 	
 	if timer:
 		timer.connect("timeout", self, "_on_timer_end", [newErr])
+	
+	errSound.play()
 	
 	add_child(newErr)
 

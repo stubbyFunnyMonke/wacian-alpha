@@ -1,5 +1,7 @@
 extends Node
 
+var soundNode
+
 func use(playerNode):
 	#murder the furniture
 	
@@ -51,7 +53,15 @@ func use(playerNode):
 								playgroundHandler.currentPlaygroundNode.set_cellv(checkvector, -1)
 					break
 		
-		for n in range((randi() % 2) + 1):
+		soundNode = AudioStreamPlayer2D.new()
+		soundNode.stream = load("res://assets/sounds/destroy%s.wav" % str((randi() % 2) + 1))
+		playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+		soundNode.position = playerNode.position
+		soundNode.bus = "sfx"
+		soundNode.play()
+		soundNode.connect("finished", self, "sound1Finished")
+		
+		for _n in range((randi() % 2) + 1):
 			var dropPos = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
 			dropPos = Vector2(dropPos.x + randi() % 32, dropPos.y + randi() % 32)
 			
@@ -73,4 +83,33 @@ func use(playerNode):
 				dropitem2_2.setItem(globalItemHandler.get_item_by_key("nail"))
 				dropitem2_2.setPos(dropPos2)
 				global.get_scene_node().get_node("YSort/Items").add_child(dropitem2_2)
+		
+		var cameraNode = playerNode.get_node("Camera2D")
+		cameraNode.shake(0.2, 15, 8)
 
+func equipped(selectedTile, currentFloorData, getPlaceIndicator, absorptionBar, durabilityBar):
+	var playerNode = global.get_scene_node().get_node("YSort/Player")
+	
+	var success = false
+	if "key" in inventory.get_selected():
+		if inventory.get_selected().key == "sledgehammer" && currentFloorData && str(selectedTile) in currentFloorData:
+			
+			if playerNode.position.distance_to(playgroundHandler.currentPlaygroundNode.map_to_world(selectedTile)) < 32 * playerstats.furnitureRange:
+				getPlaceIndicator.set_cellv(selectedTile, 0)
+			else:
+				getPlaceIndicator.set_cellv(selectedTile, 1)
+			
+			var hammerIcon = load("res://assets/images/cursors/sledgehammercursor.png") #change this to sledgehammer
+			Input.set_custom_mouse_cursor(hammerIcon)
+			
+			success = true
+		else:
+			success = false
+	else:
+		success = false
+	return false
+
+func sound1Finished():
+	if soundNode:
+		soundNode.queue_free()
+		soundNode = null

@@ -36,7 +36,7 @@ func newFloor(itemsnode, playgroundnode, backgroundnode):
 	
 	currentBackgroundNode = backgroundnode
 	for cell in currentBackgroundNode.get_used_cells():
-		if backgroundnode.get_cellv(cell) != 9:
+		if backgroundnode.get_cellv(cell) != 9 && backgroundnode.get_cellv(cell) != 12:
 			init_tile_durability(cell)
 
 func saveItems():
@@ -106,7 +106,7 @@ func init_tile_durability(tile_pos):
 	if not str(tile_pos) in tileDurabilityData[str(currentFloor)]:
 		var newData = {
 			"maxDurability": 100,
-			"currentDurability": 40
+			"currentDurability": randi() % 150
 		}
 		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
 
