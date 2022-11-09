@@ -14,6 +14,19 @@ func use(playerNode):
 			#store container data and clear empty spaces
 			var cellData = playgroundHandler.getFurnitureData(tile_cell_at_mouse_pos)
 			var containerData = containerhandler.get_container_data(cellData)
+			if containerData:
+				var currentfloor = changefloor.floors[playgroundHandler.currentFloor]
+				for item in containerhandler.containers[currentfloor][str(tile_pos)]:
+					if (randi() % 3) + 1 > 1 && item.size() > 0: # has a random chance to just get deleted
+						var dropPos2 = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
+						dropPos2 = Vector2(dropPos2.x + randi() % 32, dropPos2.y + randi() % 32)
+						
+						var dropitem2 = preload("res://scenes/entities/droppeditem.tscn")
+						
+						var dropitem2_2 = dropitem2.instance()
+						dropitem2_2.setItem(item)
+						dropitem2_2.setPos(dropPos2)
+						global.get_scene_node().get_node("YSort/Items").add_child(dropitem2_2)
 			
 			containerhandler.clearEmpty()
 			
@@ -52,6 +65,7 @@ func use(playerNode):
 			var rng = (randi() % 4) + 1
 			if rng <= 2:
 				var dropPos2 = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
+				dropPos2 = Vector2(dropPos2.x + randi() % 32, dropPos2.y + randi() % 32)
 				
 				var dropitem2 = preload("res://scenes/entities/droppeditem.tscn")
 				
