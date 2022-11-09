@@ -103,23 +103,26 @@ func _on_changed_floor(floorname):
 func init_tile_durability(tile_pos):
 	if !str(currentFloor) in tileDurabilityData:
 		tileDurabilityData[str(currentFloor)] = {}
-	if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
-		print("checked")
-	else:
+	if not str(tile_pos) in tileDurabilityData[str(currentFloor)]:
 		var newData = {
 			"maxDurability": 100,
-			"currentDurability": 150
+			"currentDurability": 40
 		}
 		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
 
 func deteriorate_tile(tile_pos, dmg):
 	if str(currentFloor) in tileDurabilityData:
 		if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
-			tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability - dmg
-			#TODO: sfx +  dmg visualization
-		else:
-			init_tile_durability(tile_pos)
-			deteriorate_tile(tile_pos, dmg)
+			if !(tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability <= 0):
+				tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability - dmg
+				#TODO: sfx + vfx +  dmg visualization
+
+func repair_tile(tile_pos, heal):
+	if str(currentFloor) in tileDurabilityData:
+		if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+			if !(tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability >= tileDurabilityData[str(currentFloor)][str(tile_pos)].maxDurability):
+				tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability + heal
+				#TODO: sfx + vfx + hp visualization
 
 
 

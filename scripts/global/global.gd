@@ -10,7 +10,5 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func get_scene_node():
+	return get_tree().get_current_scene()
