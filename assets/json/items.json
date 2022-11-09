@@ -43,12 +43,14 @@
 	"hammer": {
         "name": "Hammer",
         "icon": "hammer.png",
-        "stackable": false
+        "stackable": false,
+	"customcursor": true
     },
 	"sledgehammer": {
         "name": "Sledgehammer",
         "icon": "sledgehammer.png",
-        "stackable": false
+        "stackable": false,
+	"customcursor": true
     },
 	"fireextinguisher": {
         "name": "Fire Extinguisher",

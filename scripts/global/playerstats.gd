@@ -15,13 +15,14 @@ const defaultSpeed = 16
 const defaultStamina = 100
 const defaultHunger = 50
 const defaultThirst = 50
+const furnitureRange = 3
 
 #current values
-var currentHp = 40
+var currentHp = 100
 var currentSpeed = 16
-var currentStamina = 20
-var currentHunger = 5
-var currentThirst = 5
+var currentStamina = 100
+var currentHunger = 50
+var currentThirst = 50
 
 #multiplier system??
 var speedMultipliers = {}

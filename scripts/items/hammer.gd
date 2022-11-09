@@ -16,10 +16,11 @@ func use(playerNode):
 		var selectedTile = playgroundHandler.currentBackgroundNode.world_to_map(mouse_pos)
 		var currentFloorData = playgroundHandler.tileDurabilityData[str(playgroundHandler.currentFloor)]
 		
-		playgroundHandler.repair_tile(selectedTile, 50)
+		if currentFloorData[str(selectedTile)].currentDurability < currentFloorData[str(selectedTile)].maxDurability:
+			inventory.set_item_quantity(scrapIndex, -1)
+			inventory.set_item_quantity(nailIndex, -1)
 		
-		inventory.set_item_quantity(scrapIndex, -1)
-		inventory.set_item_quantity(nailIndex, -1)
+		playgroundHandler.repair_tile(selectedTile, 50)
 	else:
 		var sceneNode = global.get_scene_node()
 		var interactionErrorList = sceneNode.get_node("UI/interactionErrorList")

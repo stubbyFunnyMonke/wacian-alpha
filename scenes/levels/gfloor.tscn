@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/tilemaps/SandboxArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/tooltip.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://scenes/shaders/HPPostProcessing.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/ui/tileDurabilityBar.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/ui/interactionErrorList.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/ui/sledgehammerHandler.tscn" type="PackedScene" id=17]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
@@ -56,6 +57,8 @@ tile_data = PoolIntArray( -458756, 3, 0, -458753, 2, 0, -524288, 2, 0, -524287, 
 [node name="DragPreview" parent="UI" instance=ExtResource( 6 )]
 
 [node name="tileDurabilityContainer" parent="UI" instance=ExtResource( 15 )]
+
+[node name="sledgehammerHandler" parent="UI" instance=ExtResource( 17 )]
 
 [node name="Tooltip" parent="UI" instance=ExtResource( 2 )]
 visible = false

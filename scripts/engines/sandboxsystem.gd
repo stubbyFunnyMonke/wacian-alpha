@@ -7,6 +7,8 @@ onready var placeIndicator = get_node("/root/Node2D/PlaceIndicator")
 
 onready var containermenu = get_node("/root/Node2D/UI/ContainerMenu")
 
+onready var playerNode = get_node("/root/Node2D/YSort/Player")
+
 onready var place = $place
 
 func _ready():
@@ -52,7 +54,7 @@ func _physics_process(_delta):
 		for x in range(tilesize[0]):
 			for y in range(tilesize[1]):
 				var checkvector = Vector2(tile_pos.x + x, tile_pos.y + y)
-				if get_cellv(checkvector) == -1 && sandboxMap.get_cellv(checkvector) == 1:
+				if get_cellv(checkvector) == -1 && sandboxMap.get_cellv(checkvector) == 1 && playerNode.position.distance_to(map_to_world(tile_pos)) < 32 * playerstats.furnitureRange:
 					placeIndicator.set_cellv(checkvector, 0)
 				else:
 					placeIndicator.set_cellv(checkvector, 1)
@@ -71,7 +73,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if tile_cell_at_mouse_pos != -1:
 			#check if the tile has some furniture
 			
-			if playgroundHandler.storedItem == -1 && valid_cell_at_mouse_pos == 1:
+			if playgroundHandler.storedItem == -1 && valid_cell_at_mouse_pos == 1 && playerNode.position.distance_to(map_to_world(tile_pos)) < 32 * playerstats.furnitureRange:
 				#check if the player has stored furniture in inventory and prevents if it they do
 				
 				#time for some crazy data stuff
@@ -113,7 +115,7 @@ func _unhandled_input(event: InputEvent) -> void:
 							break
 		else:
 			#the tile has no furniture, put down if have something in inventory
-			if playgroundHandler.storedItem != -1 && valid_cell_at_mouse_pos == 1:
+			if playgroundHandler.storedItem != -1 && valid_cell_at_mouse_pos == 1 && playerNode.position.distance_to(map_to_world(tile_pos)) < 32 * playerstats.furnitureRange:
 				
 				#check if adjacent blocks are taken/can be put on
 				var stringStored = str(playgroundHandler.storedItem)
