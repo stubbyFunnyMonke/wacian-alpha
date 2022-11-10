@@ -12,9 +12,9 @@ func update_tile(tile_pos):
 		var maxDur = tileInfo.maxDurability
 		
 		if currentDur < maxDur/4:
-			set_cellv(tile_pos, 2)
-		elif currentDur < maxDur/2:
 			set_cellv(tile_pos, 3)
+		elif currentDur < maxDur/2:
+			set_cellv(tile_pos, 4)
 		elif currentDur < 3*maxDur/4:
 			set_cellv(tile_pos, 1)
 		elif currentDur < maxDur - 5:

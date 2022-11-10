@@ -1,0 +1,112 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scripts/ui/dragpreview.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ui/hotbar.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/interactionErrorList.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ui/tileDurabilityBar.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui/tooltip.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ui/WaveIndicator.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ui/vignette.gd" type="Script" id=7]
+[ext_resource path="res://scenes/ui/itemslot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/ui/vignette.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/ui/WaveIndicator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/ui/interactionError.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ui/ContainerMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/ui/hotbar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/ui/tileDurabilityBar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/ui/dragpreview.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/ui/tooltip.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/ui/statusbars.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/ui/interactionErrorList.tscn" type="PackedScene" id=18]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment()
+{
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/color = Color( 0, 0, 0, 1 )
+shader_param/multiplier = 0.0
+shader_param/softness = 1.5
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Vignette" type="ColorRect" parent="." instance=ExtResource( 9 )]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 7 )
+
+[node name="WaveIndicator" type="Control" parent="." instance=ExtResource( 10 )]
+anchor_right = 1.0
+mouse_filter = 2
+script = ExtResource( 6 )
+
+[node name="StatusBars" type="Control" parent="." instance=ExtResource( 17 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ContainerMenu" type="ColorRect" parent="." instance=ExtResource( 12 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.490196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotbar" type="GridContainer" parent="." instance=ExtResource( 13 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ItemSlot = ExtResource( 8 )
+
+[node name="DragPreview" type="Control" parent="." instance=ExtResource( 15 )]
+margin_right = 18.0
+margin_bottom = 18.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tileDurabilityContainer" type="ColorRect" parent="." instance=ExtResource( 14 )]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+script = ExtResource( 4 )
+
+[node name="Tooltip" type="ColorRect" parent="." instance=ExtResource( 16 )]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 5 )
+
+[node name="interactionErrorList" type="GridContainer" parent="." instance=ExtResource( 18 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 300.0
+mouse_filter = 2
+script = ExtResource( 3 )
+interactionError = ExtResource( 11 )

@@ -9,6 +9,8 @@ func use(playerNode):
 	var tile_pos = playgroundHandler.currentPlaygroundNode.world_to_map(mouse_pos)
 	var tile_cell_at_mouse_pos = playgroundHandler.currentPlaygroundNode.get_cellv(tile_pos)
 	
+	var maintile = tile_cell_at_mouse_pos
+	
 	if tile_cell_at_mouse_pos != -1 && playerNode.position.distance_to(playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)) < 32 * playerstats.furnitureRange:
 		if tile_cell_at_mouse_pos != 11:
 			#tile is NOT an id 11 tile
@@ -47,6 +49,8 @@ func use(playerNode):
 					var stringStored = str(playgroundHandler.currentPlaygroundNode.get_cellv(getVector))
 					var tilesize = playgroundHandler.tilemapdata[stringStored].tilesize
 					
+					maintile = playgroundHandler.currentPlaygroundNode.get_cellv(getVector)
+					
 					for x in range(tilesize[0]):
 							for y in range(tilesize[1]):
 								var checkvector = Vector2(getVector.x + x, getVector.y + y)
@@ -61,28 +65,18 @@ func use(playerNode):
 		soundNode.play()
 		soundNode.connect("finished", self, "sound1Finished")
 		
-		for _n in range((randi() % 2) + 1):
-			var dropPos = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
-			dropPos = Vector2(dropPos.x + randi() % 32, dropPos.y + randi() % 32)
-			
-			var dropitem = preload("res://scenes/entities/droppeditem.tscn")
-			
-			var dropitem1 = dropitem.instance()
-			dropitem1.setItem(globalItemHandler.get_item_by_key("scrap"))
-			dropitem1.setPos(dropPos)
-			global.get_scene_node().get_node("YSort/Items").add_child(dropitem1)
-			
-			var rng = (randi() % 4) + 1
-			if rng <= 2:
-				var dropPos2 = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
-				dropPos2 = Vector2(dropPos2.x + randi() % 32, dropPos2.y + randi() % 32)
+		for drop in playgroundHandler.getFurnitureData(maintile).smashedDrops:
+			var smashedFurnitureData = playgroundHandler.getFurnitureData(maintile).smashedDrops
+			for _n in range(randi() % int(smashedFurnitureData[drop].max - smashedFurnitureData[drop].min) + int(smashedFurnitureData[drop].min)):
+				var dropPos = playgroundHandler.currentPlaygroundNode.map_to_world(tile_pos)
+				dropPos = Vector2(dropPos.x + randi() % 32, dropPos.y + randi() % 32)
 				
-				var dropitem2 = preload("res://scenes/entities/droppeditem.tscn")
+				var dropitem = preload("res://scenes/entities/droppeditem.tscn")
 				
-				var dropitem2_2 = dropitem2.instance()
-				dropitem2_2.setItem(globalItemHandler.get_item_by_key("nail"))
-				dropitem2_2.setPos(dropPos2)
-				global.get_scene_node().get_node("YSort/Items").add_child(dropitem2_2)
+				var dropitem1 = dropitem.instance()
+				dropitem1.setItem(globalItemHandler.get_item_by_key(drop))
+				dropitem1.setPos(dropPos)
+				global.get_scene_node().get_node("YSort/Items").add_child(dropitem1)
 		
 		var cameraNode = playerNode.get_node("Camera2D")
 		cameraNode.shake(0.2, 15, 8)

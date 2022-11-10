@@ -12,6 +12,8 @@ var selected = 0
 func _ready():
 	for _i in range(slots):
 		items.append({})
+	items[0] = globalItemHandler.get_item_by_key("sledgehammer")
+	items[1] = globalItemHandler.get_item_by_key("hammer")
 
 func broadcast_signal(indexes):
 	emit_signal("items_changed", indexes)
