@@ -31,6 +31,8 @@ var speedMultipliers = {}
 var sprinting = false
 var sprintlockout = false
 
+var crouching = false
+
 #debug
 
 func _ready():
@@ -108,8 +110,14 @@ func player_drink(thirst_value):
 func _unhandled_input(event):
 	if event.is_action_pressed("sprint"):
 		sprinting = true
+		crouching = false
 	elif event.is_action_released("sprint"):
 		sprinting = false
+	if event.is_action_pressed("crouch"):
+		sprinting = false
+		crouching = true
+	elif event.is_action_released("crouch"):
+		crouching = false
 
 #regen every 4 frames i guess
 var regenTick = 0
@@ -138,6 +146,7 @@ func _physics_process(delta):
 	
 	currentSpeed = defaultSpeed * maxSpeedMultiplier
 	
+	#sprinting
 	if input_vector != Vector2.ZERO && sprinting == true && sprintlockout == false:
 		if currentStamina > 0.1:
 			changeStamina(-10*delta)
@@ -148,6 +157,13 @@ func _physics_process(delta):
 		player_buff("speed", 0.6875, "sprinting")
 	else:
 		player_buff("speed", 1, "sprinting")
+	
+	#crouching
+	if input_vector != Vector2.ZERO && crouching == true:
+		player_buff("speed", 0.4, "crouching")
+	else:
+		player_buff("speed", 1, "crouching")
+	
 	if currentStamina < maxStamina && currentHunger > 0 && currentThirst > 0:
 		changeStamina(3*delta)
 		changeHunger(-delta/30)

@@ -23,19 +23,18 @@ func use(playerNode):
 				if currentFloorData[str(selectedTile)].currentDurability < currentFloorData[str(selectedTile)].maxDurability:
 					inventory.set_item_quantity(scrapIndex, -1)
 					inventory.set_item_quantity(nailIndex, -1)
-				
-				playgroundHandler.repair_tile(selectedTile, 50)
-				
-				soundNode = AudioStreamPlayer2D.new()
-				soundNode.stream = load("res://assets/sounds/repair.wav")
-				playgroundHandler.currentPlaygroundNode.add_child(soundNode)
-				soundNode.position = playerNode.position
-				soundNode.bus = "sfx"
-				soundNode.play()
-				soundNode.connect("finished", self, "sound1Finished")
-				
-				var cameraNode = playerNode.get_node("Camera2D")
-				cameraNode.shake(0.1, 6, 5)
+					playgroundHandler.repair_tile(selectedTile, 50)
+					
+					soundNode = AudioStreamPlayer2D.new()
+					soundNode.stream = load("res://assets/sounds/repair.wav")
+					playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+					soundNode.position = playerNode.position
+					soundNode.bus = "sfx"
+					soundNode.play()
+					soundNode.connect("finished", self, "sound1Finished")
+					
+					var cameraNode = playerNode.get_node("Camera2D")
+					cameraNode.shake(0.1, 6, 5)
 		else:
 			var sceneNode = global.get_scene_node()
 			var interactionErrorList = sceneNode.get_node("UI/interactionErrorList")

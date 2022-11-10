@@ -16,6 +16,7 @@ func _ready():
 func _process(delta):
 	# Only shake when there's shake time remaining.
 	if _timer == 0:
+		set_offset(Vector2(0, 0))
 		return
 	# Only shake on certain frames.
 	_last_shook_timer = _last_shook_timer + delta

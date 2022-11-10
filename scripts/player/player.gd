@@ -81,6 +81,13 @@ func move_state(delta):
 	
 	move()
 	
+	if playerstats.crouching == true:
+		collision_layer = 2
+		collision_mask = 2
+	else:
+		collision_layer = 1
+		collision_mask = 1
+	
 #	if Input.is_action_just_pressed("roll") && input_vector != Vector2.ZERO:
 #		state = ROLL
 
