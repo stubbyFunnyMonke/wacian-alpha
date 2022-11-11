@@ -38,10 +38,10 @@ Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 5 )
 
 [node name="MainMenuBG" type="Node2D"]
+pause_mode = 2
 
 [node name="mainMenu" type="CanvasLayer" parent="."]
 pause_mode = 2
-layer = 3
 
 [node name="Container" type="Control" parent="mainMenu"]
 anchor_right = 1.0

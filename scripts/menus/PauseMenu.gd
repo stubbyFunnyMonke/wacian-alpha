@@ -18,3 +18,8 @@ func set_is_paused(value):
 
 func _on_ResumeBtn_pressed():
 	self.is_paused = false
+
+func _on_QuitBtn_pressed():
+	global.quit_game()
+	self.is_paused = false
+	get_tree().paused = false

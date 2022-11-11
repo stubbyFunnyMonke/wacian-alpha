@@ -37,11 +37,14 @@ func reset_game():
 
 func quit_game():
 	ingame = false
-
-#debug purposes
-func _unhandled_input(event):
-	if event.is_action_pressed("debug_reset_game"):
-		reset_game()
+	LoadingScreenNoBar.visible = true
+	LoadingScreenNoBar.get_node("AnimationPlayer").play("loop")
+	
+	get_tree().change_scene("res://scenes/menus/mainMenu.tscn")
+	yield(get_tree().current_scene, "tree_exited")
+	yield(get_tree(), "idle_frame")
+	
+	LoadingScreenNoBar.get_node("AnimationPlayer").play("fadeout")
 
 func get_scene_node():
 	return get_tree().get_current_scene()
