@@ -11,6 +11,9 @@ enum {
 	ACTIVE,
 }
 
+func reset():
+	change_state(CALM)
+
 func change_state(newState):
 	state = newState
 	emit_signal("wave_state_changed")

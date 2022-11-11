@@ -77,7 +77,7 @@ func _on_FallingFurniture_body_entered(body):
 			var hitTile = playgroundHandler.currentPlaygroundNode.world_to_map(position)
 			
 			if playgroundHandler.currentPlaygroundNode.get_cellv(hitTile) == -1 or playerstats.crouching == false:
-				playerstats.changeHp(-calculateDmg)
+				playerstats.hurtPlayer(calculateDmg, self, 1)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

@@ -8,6 +8,7 @@ func _ready():
 	colorrect.hide()
 
 func _on_container_open(cols, rows, items):
+	PauseMenu.get_node("Container").uiOpen = true
 	colorrect.visible = true
 	display_item_slots(cols, rows, items)
 	yield(get_tree(), "idle_frame")

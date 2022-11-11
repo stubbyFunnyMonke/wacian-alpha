@@ -15,8 +15,13 @@ func _ready():
 	for key in containertypes.keys():
 		containertypes[key]["key"] = key
 	
+	reset()
+
+func reset():
 	for floorname in changefloor.floors:
 		containers[floorname] = {}
+	
+	carriedcontaineritems = []
 
 #this will do for testing
 func initializeContainers():

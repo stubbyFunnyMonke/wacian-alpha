@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/menus/PauseMenu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 0.611765 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 1, 0.376471, 0, 0.6 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 5 )
+
+[node name="pauseMenu" type="CanvasLayer"]
+pause_mode = 2
+layer = 3
+
+[node name="Container" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/CenterContainer"]
+margin_left = 419.0
+margin_top = 238.0
+margin_right = 605.0
+margin_bottom = 362.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Container/CenterContainer/VBoxContainer"]
+margin_right = 186.0
+margin_bottom = 16.0
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="ResumeBtn" type="Button" parent="Container/CenterContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 186.0
+margin_bottom = 52.0
+text = "Resume Game"
+
+[node name="OptionsBtn" type="Button" parent="Container/CenterContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 186.0
+margin_bottom = 88.0
+text = "Options"
+
+[node name="QuitBtn" type="Button" parent="Container/CenterContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 186.0
+margin_bottom = 124.0
+text = "Quit"
+
+[connection signal="pressed" from="Container/CenterContainer/VBoxContainer/ResumeBtn" to="Container" method="_on_ResumeBtn_pressed"]

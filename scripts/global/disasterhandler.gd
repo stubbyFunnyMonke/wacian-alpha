@@ -5,7 +5,7 @@ var intensity = 9
 
 #earthquake vars
 var earthquakeIntensity = 4
-var earthquakeActive = true
+var earthquakeActive = false
 var earthquakeLoop = preload("res://assets/sounds/disasters/earthquake/rumble_loop.wav")
 var earthquakeRumble = AudioStreamPlayer.new()
 
@@ -14,6 +14,15 @@ func _ready():
 	earthquakeRumble.stream = earthquakeLoop
 	GlobalSFX.add_child(earthquakeRumble)
 	earthquakeRumble.bus = "ambience"
+
+func reset():
+	intensity = 1
+	
+	earthquakeActive = false
+
+func _unhandled_input(event):
+	if event.is_action_pressed("debug_earthquake_switch"):
+		earthquakeActive = !earthquakeActive
 
 func _physics_process(delta):
 	#earthquake shit

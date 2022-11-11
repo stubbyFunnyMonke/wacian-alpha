@@ -29,6 +29,20 @@ func _ready():
 	
 	changefloor.connect("on_changed_floor", self, "_on_changed_floor")
 
+func reset():
+	storedItem = -1
+	
+	floorItemData = {} 
+	floorPlaygroundData = {} 
+	currentItemsNode = null
+	currentPlaygroundNode  = null
+	currentFloor = 0
+	
+	tile11data = {}
+	
+	tileDurabilityData = {}
+	currentBackgroundNode = null
+
 func newFloor(itemsnode, playgroundnode, backgroundnode):
 	currentItemsNode = itemsnode
 	currentPlaygroundNode = playgroundnode

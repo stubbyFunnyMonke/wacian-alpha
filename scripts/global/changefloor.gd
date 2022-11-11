@@ -8,6 +8,15 @@ var sandboxArea
 var player
 var landedcell = -1
 
+func _ready():
+	reset()
+
+func reset():
+	sandboxArea = null
+	player = null
+	landedcell = -1
+	currentfloor = 0
+
 func changeSandboxInstance(sandbox):
 	sandboxArea = sandbox
 

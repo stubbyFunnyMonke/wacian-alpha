@@ -1,6 +1,7 @@
 extends Node
 
 signal player_stats_changed
+signal hit_player
 
 #max possible values
 const maxHp = 100
@@ -35,11 +36,34 @@ var crouching = false
 
 var stunned = false
 var stunTimer = 0
-#debug
+
+var intangible = false
+var intangibleTimer = 0
+#debug global
 
 func _ready():
 	#player_buff("speed", 9, "test_lol")
-	pass
+	reset()
+
+func reset():
+	currentHp = 100
+	currentSpeed = 16
+	currentStamina = 100
+	currentHunger = 50
+	currentThirst = 50
+	
+	speedMultipliers = {}
+	
+	sprinting = false
+	sprintlockout = false
+	
+	crouching = false
+	
+	stunned = false
+	stunTimer = 0
+	
+	intangible = false
+	intangibleTimer = 0
 
 #outsourced funcs
 
@@ -119,6 +143,36 @@ func stunPlayer(stunTime):
 	soundNode.bus = "sfx"
 	soundNode.play()
 	soundNode.connect("finished", self, "sound1Finished", [soundNode])
+
+func player_set_intangible(intangibleDuration):
+	intangibleTimer = intangibleDuration
+	intangible = true
+
+func hurtPlayer(dmg, source, intangibleDuration):
+	if intangible == false:
+		var playerNode = global.get_scene_node().get_node("YSort/Player")
+		
+		var hitEffect = preload("res://scenes/effects/hitEffect.tscn")
+		var newHitEffect = hitEffect.instance()
+		newHitEffect.position = playerNode.position
+		newHitEffect.get_node("AnimationPlayer").play("play")
+		global.get_scene_node().get_node("YSort").add_child(newHitEffect)
+		changeHp(-dmg)
+		
+		var soundNode = AudioStreamPlayer2D.new()
+		if dmg >= maxHp/2:
+			soundNode.stream = load("res://assets/sounds/hit/hugedamage.wav")
+		else:
+			soundNode.stream = load("res://assets/sounds/hit/smalldamage.wav")
+		playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+		soundNode.position = source.position - playerNode.position
+		soundNode.bus = "sfx"
+		soundNode.play()
+		soundNode.connect("finished", self, "sound1Finished", [soundNode])
+		
+		emit_signal("hit_player")
+		
+		player_set_intangible(intangibleDuration)
 
 func sound1Finished(soundNode):
 	if soundNode:
@@ -203,3 +257,8 @@ func _physics_process(delta):
 		stunTimer = stunTimer - delta
 	else:
 		stunned = false
+	
+	if intangibleTimer > 0:
+		intangibleTimer = intangibleTimer - delta
+	else:
+		intangible = false
