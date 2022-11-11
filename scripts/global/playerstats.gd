@@ -33,6 +33,8 @@ var sprintlockout = false
 
 var crouching = false
 
+var stunned = false
+var stunTimer = 0
 #debug
 
 func _ready():
@@ -104,6 +106,23 @@ func player_drink(thirst_value):
 	changeThirst(thirst_value)
 	emit_signal("player_stats_changed")
 	return true
+
+func stunPlayer(stunTime):
+	stunned = true
+	stunTimer = stunTime
+	
+	var soundNode = AudioStreamPlayer2D.new()
+	soundNode.stream = load("res://assets/sounds/stunned.wav")
+	playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+	var playerNode = global.get_scene_node().get_node("YSort/Player")
+	soundNode.position = playerNode.position
+	soundNode.bus = "sfx"
+	soundNode.play()
+	soundNode.connect("finished", self, "sound1Finished", [soundNode])
+
+func sound1Finished(soundNode):
+	if soundNode:
+		soundNode.queue_free()
 
 #active funcs
 
@@ -178,3 +197,9 @@ func _physics_process(delta):
 	
 	var lowPass = AudioServer.get_bus_effect(1, 0)
 	lowPass.set_cutoff(newcutoff)
+	
+	#controls the player stunning
+	if stunTimer > 0:
+		stunTimer = stunTimer - delta
+	else:
+		stunned = false

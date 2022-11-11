@@ -13,6 +13,8 @@ onready var shadow = $ShadowContainer
 onready var furnitureCrash = $furnitureCrashParticles
 onready var sandboxMap = get_node("/root/Node2D/SandboxArea")
 
+var soundNode
+
 func _ready():
 	if furnitureID != -1:
 		var cellData = playgroundHandler.getFurnitureData(float(furnitureID))
@@ -80,6 +82,14 @@ func _on_FallingFurniture_body_entered(body):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	var currentfloor = changefloor.floors[playgroundHandler.currentFloor]
+	
+	soundNode = AudioStreamPlayer2D.new()
+	soundNode.stream = load("res://assets/sounds/destroy%s.wav" % str((randi() % 2) + 1))
+	playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+	soundNode.position = position
+	soundNode.bus = "sfx"
+	soundNode.play()
+	soundNode.connect("finished", self, "sound1Finished")
 	
 	if anim_name == "fall" or anim_name == "fallNoCrash":
 		get_node("Timer").start()
@@ -154,3 +164,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Timer_timeout():
 	queue_free()
+
+func sound1Finished():
+	if soundNode:
+		soundNode.queue_free()
+		soundNode = null

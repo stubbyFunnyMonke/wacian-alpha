@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rumble_loop.wav-c71f8451911b245b09b2688c0ee64012.sample"
+
+[deps]
+
+source_file="res://assets/sounds/disasters/earthquake/rumble_loop.wav"
+dest_files=[ "res://.import/rumble_loop.wav-c71f8451911b245b09b2688c0ee64012.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

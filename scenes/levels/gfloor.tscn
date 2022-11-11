@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/tilemaps/SandboxArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/UIMain.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/entities/FallingFurniture.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/disasters/earthquakeController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/tilemaps/placeIndicator.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/testing/randomlyFallingObjectsTest.gd" type="Script" id=6]
 [ext_resource path="res://scenes/tilemaps/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/tilemaps/Playground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/engines/main.gd" type="Script" id=11]
@@ -47,6 +46,5 @@ tile_data = PoolIntArray( -458756, 3, 0, -458753, 2, 0, -524288, 2, 0, -524287, 
 
 [node name="HPPostProcessing" parent="." instance=ExtResource( 14 )]
 
-[node name="test" type="Node2D" parent="."]
-script = ExtResource( 6 )
-fallingFurniture = ExtResource( 4 )
+[node name="EarthquakeController" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -500 )

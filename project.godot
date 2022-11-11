@@ -40,7 +40,9 @@ playgroundHandler="*res://scripts/global/playgroundHandler.gd"
 containerhandler="*res://scripts/global/containerhandler.gd"
 playerstats="*res://scripts/global/playerstats.gd"
 WaveSystem="*res://scripts/global/wavesystem.gd"
+disasterHandler="*res://scripts/global/disasterhandler.gd"
 bgmusic="*res://scenes/global/bgmusic.tscn"
+GlobalSFX="*res://scenes/global/globalSFX.tscn"
 
 [input]
 
