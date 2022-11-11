@@ -13,6 +13,11 @@ var tilemapdata
 
 var tile11data = {}
 
+var tileDurabilityData = {}
+var currentBackgroundNode
+
+#on ready/on new floor, check for new unchecked tiles
+
 func _ready():
 	furnituredata = globalItemHandler.read_from_JSON("res://assets/json/furnituredata.json")
 	for key in furnituredata.keys():
@@ -24,10 +29,17 @@ func _ready():
 	
 	changefloor.connect("on_changed_floor", self, "_on_changed_floor")
 
-func newFloor(itemsnode, playgroundnode):
+func newFloor(itemsnode, playgroundnode, backgroundnode):
 	currentItemsNode = itemsnode
 	currentPlaygroundNode = playgroundnode
 	containerhandler.initializeContainers()
+	
+	currentBackgroundNode = backgroundnode
+	for cell in currentBackgroundNode.get_used_cells():
+		var sandboxArea = global.get_scene_node().get_node("SandboxArea")
+		var idfilters = [2, 3, 4, 5]
+		if backgroundnode.get_cellv(cell) != 9 && backgroundnode.get_cellv(cell) != 12 && !idfilters.has(sandboxArea.get_cellv(cell)):
+			init_tile_durability(cell)
 
 func saveItems():
 	#save items and their positions
@@ -87,3 +99,41 @@ func _on_changed_floor(floorname):
 					get_tree().get_current_scene().get_node("YSort/Playground").set_cellv(cellinst.position, cellinst.cellid)
 	
 	currentFloor = changefloor.currentfloor
+
+### tile durability stuff
+
+func init_tile_durability(tile_pos):
+	if !str(currentFloor) in tileDurabilityData:
+		tileDurabilityData[str(currentFloor)] = {}
+	if not str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+		var newData = {
+			"maxDurability": 100,
+			"currentDurability": 100 #randi() % 150
+		}
+		tileDurabilityData[str(currentFloor)][str(tile_pos)] = newData
+
+func deteriorate_tile(tile_pos, dmg):
+	if str(currentFloor) in tileDurabilityData:
+		if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+			if !(tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability <= 0):
+				tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability - dmg
+				#TODO: sfx + vfx +  dmg visualization
+
+func silent_deteriorate_tile(tile_pos, floorlevel, dmg):
+	if str(floorlevel) == str(currentFloor):
+		deteriorate_tile(tile_pos, dmg)
+	elif str(floorlevel) in tileDurabilityData:
+		if str(tile_pos) in tileDurabilityData[str(floorlevel)]:
+			if !(tileDurabilityData[str(floorlevel)][str(tile_pos)].currentDurability <= 0):
+				tileDurabilityData[str(floorlevel)][str(tile_pos)].currentDurability = tileDurabilityData[str(floorlevel)][str(tile_pos)].currentDurability - dmg
+				#TODO: sfx + vfx +  dmg visualization
+
+func repair_tile(tile_pos, heal):
+	if str(currentFloor) in tileDurabilityData:
+		if str(tile_pos) in tileDurabilityData[str(currentFloor)]:
+			if !(tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability >= tileDurabilityData[str(currentFloor)][str(tile_pos)].maxDurability):
+				tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability = tileDurabilityData[str(currentFloor)][str(tile_pos)].currentDurability + heal
+				#TODO: sfx + vfx + hp visualization
+
+
+

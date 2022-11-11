@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/particles/whitePuff00.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=6]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -360 ), 0.0, 0.0, 0, 0, Vector2( 0.992883, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 6 )
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+min_value = 0.4
+_data = [ Vector2( 0, 0.4 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 60, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -90, 0 )
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 100.0
+angle_random = 1.0
+angle_curve = SubResource( 2 )
+scale = 0.4
+scale_curve = SubResource( 10 )
+color = Color( 1, 1, 1, 0.137255 )
+color_ramp = SubResource( 8 )
+
+[node name="furnitureCrashParticles" type="Particles2D"]
+position = Vector2( 0, 16 )
+scale = Vector2( 0.4, 0.4 )
+z_index = -1
+emitting = false
+amount = 64
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.5
+process_material = SubResource( 5 )
+texture = ExtResource( 1 )

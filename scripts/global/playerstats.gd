@@ -15,13 +15,14 @@ const defaultSpeed = 16
 const defaultStamina = 100
 const defaultHunger = 50
 const defaultThirst = 50
+const furnitureRange = 3
 
 #current values
-var currentHp = 40
+var currentHp = 100
 var currentSpeed = 16
-var currentStamina = 20
-var currentHunger = 5
-var currentThirst = 5
+var currentStamina = 100
+var currentHunger = 50
+var currentThirst = 50
 
 #multiplier system??
 var speedMultipliers = {}
@@ -30,6 +31,10 @@ var speedMultipliers = {}
 var sprinting = false
 var sprintlockout = false
 
+var crouching = false
+
+var stunned = false
+var stunTimer = 0
 #debug
 
 func _ready():
@@ -102,13 +107,36 @@ func player_drink(thirst_value):
 	emit_signal("player_stats_changed")
 	return true
 
+func stunPlayer(stunTime):
+	stunned = true
+	stunTimer = stunTime
+	
+	var soundNode = AudioStreamPlayer2D.new()
+	soundNode.stream = load("res://assets/sounds/stunned.wav")
+	playgroundHandler.currentPlaygroundNode.add_child(soundNode)
+	var playerNode = global.get_scene_node().get_node("YSort/Player")
+	soundNode.position = playerNode.position
+	soundNode.bus = "sfx"
+	soundNode.play()
+	soundNode.connect("finished", self, "sound1Finished", [soundNode])
+
+func sound1Finished(soundNode):
+	if soundNode:
+		soundNode.queue_free()
+
 #active funcs
 
 func _unhandled_input(event):
 	if event.is_action_pressed("sprint"):
 		sprinting = true
+		crouching = false
 	elif event.is_action_released("sprint"):
 		sprinting = false
+	if event.is_action_pressed("crouch"):
+		sprinting = false
+		crouching = true
+	elif event.is_action_released("crouch"):
+		crouching = false
 
 #regen every 4 frames i guess
 var regenTick = 0
@@ -137,6 +165,7 @@ func _physics_process(delta):
 	
 	currentSpeed = defaultSpeed * maxSpeedMultiplier
 	
+	#sprinting
 	if input_vector != Vector2.ZERO && sprinting == true && sprintlockout == false:
 		if currentStamina > 0.1:
 			changeStamina(-10*delta)
@@ -147,6 +176,13 @@ func _physics_process(delta):
 		player_buff("speed", 0.6875, "sprinting")
 	else:
 		player_buff("speed", 1, "sprinting")
+	
+	#crouching
+	if input_vector != Vector2.ZERO && crouching == true:
+		player_buff("speed", 0.4, "crouching")
+	else:
+		player_buff("speed", 1, "crouching")
+	
 	if currentStamina < maxStamina && currentHunger > 0 && currentThirst > 0:
 		changeStamina(3*delta)
 		changeHunger(-delta/30)
@@ -161,3 +197,9 @@ func _physics_process(delta):
 	
 	var lowPass = AudioServer.get_bus_effect(1, 0)
 	lowPass.set_cutoff(newcutoff)
+	
+	#controls the player stunning
+	if stunTimer > 0:
+		stunTimer = stunTimer - delta
+	else:
+		stunned = false

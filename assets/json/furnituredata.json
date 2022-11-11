@@ -5,7 +5,13 @@
 		"maintile": 1,
 		"tiles": [1],
 		"rotatable": false,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"scrap": {
+				"min": 1,
+				"max": 3
+			}
+		}
     },
 	"chest": {
 		"furniture_name": "chest",
@@ -13,7 +19,17 @@
 		"maintile": 2,
 		"tiles": [2, 12],
 		"rotatable": false,
-		"actionable": true
+		"actionable": true,
+		"smashedDrops": {
+			"scrap": {
+				"min": 1,
+				"max": 3
+			},
+			"nail": {
+				"min": 2,
+				"max": 5
+			}
+		}
     },
 	"plant": {
 		"furniture_name": "plant",
@@ -21,7 +37,13 @@
 		"maintile": 3,
 		"tiles": [3],
 		"rotatable": false,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"apple": {
+				"min": 2,
+				"max": 7
+			}
+		}
     },
 	"smalltable": {
 		"furniture_name": "smalltable",
@@ -29,7 +51,17 @@
 		"maintile": 4,
 		"tiles": [4],
 		"rotatable": false,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"scrap": {
+				"min": 1,
+				"max": 3
+			},
+			"nail": {
+				"min": 2,
+				"max": 5
+			}
+		}
     },
 	"woodchair": {
 		"furniture_name": "woodchair",
@@ -37,7 +69,17 @@
 		"maintile": 5,
 		"tiles": [5, 6, 7, 8],
 		"rotatable": true,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"scrap": {
+				"min": 1,
+				"max": 3
+			},
+			"nail": {
+				"min": 2,
+				"max": 5
+			}
+		}
     },
 	"bigtable": {
 		"furniture_name": "bigtable",
@@ -45,7 +87,17 @@
 		"maintile": 9,
 		"tiles": [9],
 		"rotatable": false,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"scrap": {
+				"min": 2,
+				"max": 6
+			},
+			"nail": {
+				"min": 4,
+				"max": 10
+			}
+		}
     },
 	"tv": {
 		"furniture_name": "tv",
@@ -53,6 +105,16 @@
 		"maintile": 10,
 		"tiles": [10],
 		"rotatable": false,
-		"actionable": false
+		"actionable": false,
+		"smashedDrops": {
+			"scrap": {
+				"min": 1,
+				"max": 4
+			},
+			"nail": {
+				"min": 3,
+				"max": 7
+			}
+		}
     },
 }

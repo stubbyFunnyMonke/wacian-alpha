@@ -40,7 +40,9 @@ playgroundHandler="*res://scripts/global/playgroundHandler.gd"
 containerhandler="*res://scripts/global/containerhandler.gd"
 playerstats="*res://scripts/global/playerstats.gd"
 WaveSystem="*res://scripts/global/wavesystem.gd"
+disasterHandler="*res://scripts/global/disasterhandler.gd"
 bgmusic="*res://scenes/global/bgmusic.tscn"
+GlobalSFX="*res://scenes/global/globalSFX.tscn"
 
 [input]
 
@@ -92,6 +94,11 @@ useitem={
 sprint={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 debug_wave_state_active={

@@ -52,7 +52,7 @@ func move_state(delta):
 	mouse_vector = get_global_mouse_position() - self.global_position
 	mouse_vector = mouse_vector.normalized()
 	
-	if input_vector != Vector2.ZERO && containermenu.visible == false:
+	if input_vector != Vector2.ZERO && containermenu.visible == false && playerstats.stunned == false:
 		roll_vector = input_vector
 #		swordHitbox.knockback_vector = mouse_vector
 #		animationTree.set("parameters/Idle/blend_position", mouse_vector)
@@ -80,6 +80,21 @@ func move_state(delta):
 		footstep.stop()
 	
 	move()
+	
+	if playerstats.crouching == true:
+		collision_layer = 2
+		collision_mask = 2
+	else:
+		collision_layer = 1
+		collision_mask = 1
+	
+	var stunnedAnimation = $stunEffect
+	if playerstats.stunned == true:
+		stunnedAnimation.playing = true
+		stunnedAnimation.visible = true
+	else:
+		stunnedAnimation.playing = false
+		stunnedAnimation.visible = false
 	
 #	if Input.is_action_just_pressed("roll") && input_vector != Vector2.ZERO:
 #		state = ROLL

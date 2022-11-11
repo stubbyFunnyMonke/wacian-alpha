@@ -29,13 +29,13 @@
         "quantity": 1
     },
 	"scrap": {
-		"name": "Scrap",
+	"name": "Scrap",
         "icon": "scrap.png",
         "stackable": true,
         "quantity": 1
 	},
 	"nail": {
-		"name": "Nails",
+	"name": "Nails",
         "icon": "nail.png",
         "stackable": true,
         "quantity": 1
@@ -43,12 +43,14 @@
 	"hammer": {
         "name": "Hammer",
         "icon": "hammer.png",
-        "stackable": false
+        "stackable": false,
+	"customcursor": true
     },
 	"sledgehammer": {
         "name": "Sledgehammer",
         "icon": "sledgehammer.png",
-        "stackable": false
+        "stackable": false,
+	"customcursor": true
     },
 	"fireextinguisher": {
         "name": "Fire Extinguisher",
