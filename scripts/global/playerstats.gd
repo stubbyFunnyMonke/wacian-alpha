@@ -196,69 +196,70 @@ func _unhandled_input(event):
 var regenTick = 0
 
 func _physics_process(delta):
-	#regen hunger -delta, hp + 3delta
-	if regenTick > 4:
-		regenTick = 0
-		if currentHp < maxHp:
-			if currentHunger > 0 && currentThirst > 0:
-				changeHp(3*delta)
-				changeHunger(-delta)
-				changeThirst(-delta/3)
-	regenTick += 1
-	
-	#check if the player is moving
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("walkright") - Input.get_action_strength("walkleft") 
-	input_vector.y = Input.get_action_strength("walkdown") - Input.get_action_strength("walkup") 
-	
-	#anything related to speed
-	var maxSpeedMultiplier = 1
-	
-	for key in speedMultipliers:
-		maxSpeedMultiplier = maxSpeedMultiplier * speedMultipliers[key]
-	
-	currentSpeed = defaultSpeed * maxSpeedMultiplier
-	
-	#sprinting
-	if input_vector != Vector2.ZERO && sprinting == true && sprintlockout == false:
-		if currentStamina > 0.1:
-			changeStamina(-10*delta)
-			player_buff("speed", 1.5, "sprinting")
+	if global.ingame == true:
+		#regen hunger -delta, hp + 3delta
+		if regenTick > 4:
+			regenTick = 0
+			if currentHp < maxHp:
+				if currentHunger > 0 && currentThirst > 0:
+					changeHp(3*delta)
+					changeHunger(-delta)
+					changeThirst(-delta/3)
+		regenTick += 1
+		
+		#check if the player is moving
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("walkright") - Input.get_action_strength("walkleft") 
+		input_vector.y = Input.get_action_strength("walkdown") - Input.get_action_strength("walkup") 
+		
+		#anything related to speed
+		var maxSpeedMultiplier = 1
+		
+		for key in speedMultipliers:
+			maxSpeedMultiplier = maxSpeedMultiplier * speedMultipliers[key]
+		
+		currentSpeed = defaultSpeed * maxSpeedMultiplier
+		
+		#sprinting
+		if input_vector != Vector2.ZERO && sprinting == true && sprintlockout == false:
+			if currentStamina > 0.1:
+				changeStamina(-10*delta)
+				player_buff("speed", 1.5, "sprinting")
+			else:
+				sprintlockout = true
+		elif sprintlockout == true:
+			player_buff("speed", 0.6875, "sprinting")
 		else:
-			sprintlockout = true
-	elif sprintlockout == true:
-		player_buff("speed", 0.6875, "sprinting")
-	else:
-		player_buff("speed", 1, "sprinting")
-	
-	#crouching
-	if input_vector != Vector2.ZERO && crouching == true:
-		player_buff("speed", 0.4, "crouching")
-	else:
-		player_buff("speed", 1, "crouching")
-	
-	if currentStamina < maxStamina && currentHunger > 0 && currentThirst > 0:
-		changeStamina(3*delta)
-		changeHunger(-delta/30)
-		changeThirst(-delta/30)
-	if currentStamina > maxStamina/4:
-		sprintlockout = false
-	
-	#muffle the sound based on hp
-	var hpPercentage = float(currentHp)/float(maxHp)
-	
-	var newcutoff = 20000 * sin(hpPercentage)
-	
-	var lowPass = AudioServer.get_bus_effect(1, 0)
-	lowPass.set_cutoff(newcutoff)
-	
-	#controls the player stunning
-	if stunTimer > 0:
-		stunTimer = stunTimer - delta
-	else:
-		stunned = false
-	
-	if intangibleTimer > 0:
-		intangibleTimer = intangibleTimer - delta
-	else:
-		intangible = false
+			player_buff("speed", 1, "sprinting")
+		
+		#crouching
+		if input_vector != Vector2.ZERO && crouching == true:
+			player_buff("speed", 0.4, "crouching")
+		else:
+			player_buff("speed", 1, "crouching")
+		
+		if currentStamina < maxStamina && currentHunger > 0 && currentThirst > 0:
+			changeStamina(3*delta)
+			changeHunger(-delta/30)
+			changeThirst(-delta/30)
+		if currentStamina > maxStamina/4:
+			sprintlockout = false
+		
+		#muffle the sound based on hp
+		var hpPercentage = float(currentHp)/float(maxHp)
+		
+		var newcutoff = 20000 * sin(hpPercentage)
+		
+		var lowPass = AudioServer.get_bus_effect(1, 0)
+		lowPass.set_cutoff(newcutoff)
+		
+		#controls the player stunning
+		if stunTimer > 0:
+			stunTimer = stunTimer - delta
+		else:
+			stunned = false
+		
+		if intangibleTimer > 0:
+			intangibleTimer = intangibleTimer - delta
+		else:
+			intangible = false

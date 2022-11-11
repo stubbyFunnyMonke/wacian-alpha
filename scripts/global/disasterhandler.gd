@@ -25,16 +25,17 @@ func _unhandled_input(event):
 		earthquakeActive = !earthquakeActive
 
 func _physics_process(delta):
-	#earthquake shit
-	if earthquakeActive == true:
-		var calculatedEarthquakeIntensity = earthquakeIntensity + intensity
-		if earthquakeRumble.is_playing() == false:
-			earthquakeRumble.play()
-		for floorlevel in playgroundHandler.tileDurabilityData:
-			for tile in playgroundHandler.tileDurabilityData[floorlevel]:
-				var rng = (randi() % 10000/calculatedEarthquakeIntensity) + 1
-				if rng == 1:
-					playgroundHandler.silent_deteriorate_tile(tile, floorlevel, 3  *  (1 + (calculatedEarthquakeIntensity/9)))
-	elif earthquakeActive == false:
-		if earthquakeRumble.is_playing() == true:
-			earthquakeRumble.stop()
+	if global.ingame == true:
+		#earthquake shit
+		if earthquakeActive == true:
+			var calculatedEarthquakeIntensity = earthquakeIntensity + intensity
+			if earthquakeRumble.is_playing() == false:
+				earthquakeRumble.play()
+			for floorlevel in playgroundHandler.tileDurabilityData:
+				for tile in playgroundHandler.tileDurabilityData[floorlevel]:
+					var rng = (randi() % 10000/calculatedEarthquakeIntensity) + 1
+					if rng == 1:
+						playgroundHandler.silent_deteriorate_tile(tile, floorlevel, 3  *  (1 + (calculatedEarthquakeIntensity/9)))
+		elif earthquakeActive == false:
+			if earthquakeRumble.is_playing() == true:
+				earthquakeRumble.stop()

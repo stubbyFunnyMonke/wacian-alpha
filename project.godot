@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game++"
-run/main_scene="res://scenes/test scene.tscn"
+run/main_scene="res://scenes/menus/mainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -19,8 +19,9 @@ func change_state(newState):
 	emit_signal("wave_state_changed")
 
 func _physics_process(delta):
-	match state:
-		CALM: pass
-		CONTROL: pass
-		ANTICIPATION: pass
-		ACTIVE: pass
+	if global.ingame == true:
+		match state:
+			CALM: pass
+			CONTROL: pass
+			ANTICIPATION: pass
+			ACTIVE: pass
