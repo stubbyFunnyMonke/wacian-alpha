@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
@@ -75,6 +75,30 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -159,6 +183,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "intropart2"
@@ -212,6 +260,57 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "startgame"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
 
@@ -257,6 +356,7 @@ anims/RESET = SubResource( 7 )
 anims/end = SubResource( 10 )
 anims/intropart1 = SubResource( 8 )
 anims/intropart2 = SubResource( 9 )
+anims/startgame = SubResource( 11 )
 
 [node name="mainMenu" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -421,6 +521,7 @@ margin_right = 624.0
 margin_bottom = 318.0
 
 [node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 224.0
 margin_bottom = 16.0
@@ -430,6 +531,7 @@ align = 1
 valign = 1
 
 [node name="Label2" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 20.0
 margin_right = 224.0
@@ -445,6 +547,7 @@ autoplay = true
 bus = "menu music"
 
 [connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
+[connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/PlayBtn" to="mainMenu/Container" method="_on_PlayBtn_pressed"]
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/QuitBtn" to="mainMenu/Container" method="_on_QuitBtn_pressed"]
 [connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn2" to="mainMenu/Container" method="_on_BackBtn2_pressed"]
