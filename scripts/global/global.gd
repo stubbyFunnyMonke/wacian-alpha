@@ -37,6 +37,9 @@ func reset_game():
 
 func quit_game():
 	ingame = false
+	
+	bgmusic.reset()
+	
 	LoadingScreenNoBar.visible = true
 	LoadingScreenNoBar.get_node("AnimationPlayer").play("loop")
 	
