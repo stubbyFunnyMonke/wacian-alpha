@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=3]
 [ext_resource path="res://scripts/menus/mainMenuPrimary.gd" type="Script" id=4]
+[ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -437,6 +438,11 @@ custom_fonts/font = ExtResource( 1 )
 text = "Presents..."
 align = 1
 valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="mainMenu"]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "menu music"
 
 [connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/PlayBtn" to="mainMenu/Container" method="_on_PlayBtn_pressed"]

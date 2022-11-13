@@ -8,9 +8,6 @@ const introSequence = [
 
 onready var animPlayer1 = get_node("IntroAnims1")
 
-func _ready():
-	print(introSequence.find("intropart2"))
-
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
 		if animPlayer1.is_playing():
