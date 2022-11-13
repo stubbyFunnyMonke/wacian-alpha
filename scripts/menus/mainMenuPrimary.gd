@@ -7,6 +7,7 @@ const introSequence = [
 ]
 
 onready var animPlayer1 = get_node("IntroAnims1")
+onready var mainmenumusic = $mainMenu/AudioStreamPlayer
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
@@ -23,3 +24,6 @@ func play_next_anim(anim_name):
 		animPlayer1.play("RESET")
 		yield(get_tree(), "idle_frame")
 		animPlayer1.play(introSequence[currentIndex + 1])
+
+func _on_AudioStreamPlayer_finished():
+	mainmenumusic.play()

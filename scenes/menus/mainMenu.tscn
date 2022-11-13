@@ -449,3 +449,4 @@ bus = "menu music"
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/QuitBtn" to="mainMenu/Container" method="_on_QuitBtn_pressed"]
 [connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn2" to="mainMenu/Container" method="_on_BackBtn2_pressed"]
 [connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/ConfirmQuitBtn2" to="mainMenu/Container" method="_on_ConfirmQuitBtn2_pressed"]
+[connection signal="finished" from="mainMenu/AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
