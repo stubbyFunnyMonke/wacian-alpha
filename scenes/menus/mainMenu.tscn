@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=3]
 [ext_resource path="res://scripts/menus/mainMenuPrimary.gd" type="Script" id=4]
 [ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/images/logo.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -378,58 +379,58 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 370.0
-margin_top = 200.0
-margin_right = 654.0
-margin_bottom = 400.0
+margin_left = 366.0
+margin_top = 150.0
+margin_right = 657.0
+margin_bottom = 449.0
 custom_constants/separation = 10
 
-[node name="Label" type="Label" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_right = 284.0
-margin_bottom = 16.0
-text = "insert logo here"
-align = 1
-valign = 1
+[node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_right = 291.0
+margin_bottom = 155.0
+texture = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 26.0
-margin_right = 284.0
-margin_bottom = 56.0
+visible = false
+margin_top = 165.0
+margin_right = 291.0
+margin_bottom = 195.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="PlayBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 66.0
-margin_right = 284.0
-margin_bottom = 92.0
+margin_top = 165.0
+margin_right = 291.0
+margin_bottom = 191.0
 text = "Start Game"
 
 [node name="TutorialBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 102.0
-margin_right = 284.0
-margin_bottom = 128.0
+margin_top = 201.0
+margin_right = 291.0
+margin_bottom = 227.0
 text = "Play Tutorial"
 
 [node name="CreditsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 138.0
-margin_right = 284.0
-margin_bottom = 164.0
+margin_top = 237.0
+margin_right = 291.0
+margin_bottom = 263.0
 text = "Credits"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 174.0
-margin_right = 284.0
-margin_bottom = 200.0
+margin_top = 273.0
+margin_right = 291.0
+margin_bottom = 299.0
 alignment = 1
 
 [node name="OptionsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 140.0
+margin_left = 3.0
+margin_right = 143.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 140, 0 )
 text = "Options"
 
 [node name="QuitBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 144.0
-margin_right = 284.0
+margin_left = 147.0
+margin_right = 287.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 140, 0 )
 text = "Quit"
@@ -515,10 +516,10 @@ margin_bottom = -300.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Intro/CenterContainer"]
-margin_left = 400.0
-margin_top = 282.0
-margin_right = 624.0
-margin_bottom = 318.0
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
 
 [node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
 visible = false
