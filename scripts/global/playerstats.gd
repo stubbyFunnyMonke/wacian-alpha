@@ -33,6 +33,7 @@ var sprinting = false
 var sprintlockout = false
 
 var crouching = false
+var unCrouchBuffer = false
 
 var stunned = false
 var stunTimer = 0
@@ -58,6 +59,7 @@ func reset():
 	sprintlockout = false
 	
 	crouching = false
+	unCrouchBuffer = false
 	
 	stunned = false
 	stunTimer = 0
@@ -189,8 +191,9 @@ func _unhandled_input(event):
 	if event.is_action_pressed("crouch"):
 		sprinting = false
 		crouching = true
+		unCrouchBuffer = false
 	elif event.is_action_released("crouch"):
-		crouching = false
+		unCrouchBuffer = true
 
 #regen every 4 frames i guess
 var regenTick = 0
@@ -198,6 +201,8 @@ var regenTick = 0
 func _physics_process(delta):
 	if global.ingame == true:
 		#regen hunger -delta, hp + 3delta
+		var player = global.get_scene_node().get_node("YSort/Player")
+		
 		if regenTick > 4:
 			regenTick = 0
 			if currentHp < maxHp:
@@ -244,6 +249,11 @@ func _physics_process(delta):
 			changeThirst(-delta/30)
 		if currentStamina > maxStamina/4:
 			sprintlockout = false
+		
+		#buffer crouch if under table
+		var playerTile = playgroundHandler.currentPlaygroundNode.world_to_map(player.position)
+		if playgroundHandler.currentPlaygroundNode.get_cellv(playerTile) == -1 && unCrouchBuffer == true:
+				crouching = false
 		
 		#muffle the sound based on hp
 		var hpPercentage = float(currentHp)/float(maxHp)
