@@ -273,3 +273,7 @@ func _physics_process(delta):
 			intangibleTimer = intangibleTimer - delta
 		else:
 			intangible = false
+		
+		#trigger game over
+		if currentHp <= 0:
+			global.game_over()

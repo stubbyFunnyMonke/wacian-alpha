@@ -35,6 +35,16 @@ func reset_game():
 	
 	ingame = true
 
+func game_over():
+	#TODO: implement death messages + sfx + music + the scene
+	
+	ingame = false
+	
+	bgmusic.reset()
+	
+	get_tree().change_scene("res://scenes/menus/GameOverScreen.tscn")
+	pass
+
 func quit_game():
 	ingame = false
 	
