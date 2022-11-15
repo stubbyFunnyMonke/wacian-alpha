@@ -1,6 +1,7 @@
 extends Control
 
 onready var animationPlayer = $AnimationPlayer
+onready var WaveText = $WaveText
 
 var old_wave_state = WaveSystem.state
 
@@ -44,3 +45,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			WaveSystem.CONTROL: transition_to_control()
 			WaveSystem.ANTICIPATION: transition_to_anticipation()
 			WaveSystem.ACTIVE: transition_to_active()
+
+func _physics_process(delta):
+	WaveText.text = "Wave "+str(WaveSystem.waveNumber)

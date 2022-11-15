@@ -51,3 +51,12 @@ func quit_game():
 
 func get_scene_node():
 	return get_tree().get_current_scene()
+
+func wait(duration):
+	var t = Timer.new()
+	t.set_wait_time(duration)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
