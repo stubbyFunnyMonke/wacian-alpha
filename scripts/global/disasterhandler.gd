@@ -22,7 +22,7 @@ func _ready():
 	earthquakeRumble.bus = "ambience"
 
 func reset():
-	intensity = 1
+	#intensity = 1
 	
 	for disaster in disasterData:
 		disasterData[disaster].active = false

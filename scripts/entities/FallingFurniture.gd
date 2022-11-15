@@ -3,7 +3,7 @@ extends Area2D
 var furnitureID = -1
 var containerItems = []
 
-var maxDamage = 20
+var maxDamage = 90
 var minDamage = 5
 
 onready var animPlayer = $AnimationPlayer
@@ -99,12 +99,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if playerNode.position.distance_to(self.position) <= 256:
 			var cameraShakeMultiplier = playerNode.position.distance_to(self.position)/256
 			cameraShakeMultiplier = 1 - cameraShakeMultiplier
-			cameraNode.shake(0.1, (15 * cameraShakeMultiplier), (8 * cameraShakeMultiplier))
+			cameraNode.shake(0.1, (15 * cameraShakeMultiplier) * (disasterHandler.intensity * 0.1), (8 * cameraShakeMultiplier) * (disasterHandler.intensity * 0.1))
 		
 		var hitTile = playgroundHandler.currentPlaygroundNode.world_to_map(position)
 		#check if adjacent blocks are taken/can be put on
 		
-		if furnitureID != -1:
+		if int(furnitureID) != -1:
 			var tilesize = playgroundHandler.tilemapdata[furnitureID].tilesize
 			
 			hitTile = Vector2(hitTile.x - tilesize[0] + 1, hitTile.y - tilesize[1] + 1)

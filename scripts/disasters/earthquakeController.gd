@@ -40,7 +40,7 @@ func _physics_process(delta):
 					var xPos = 32
 					var yPos = 32
 					
-					if newObstacle.furnitureID != -1:
+					if int(newObstacle.furnitureID) != -1:
 						var tilesize = playgroundHandler.tilemapdata[newObstacle.furnitureID].tilesize
 						xPos = tilesize[0] * 32
 						yPos = tilesize[1] * 32
