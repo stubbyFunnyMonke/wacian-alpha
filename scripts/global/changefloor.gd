@@ -2,7 +2,7 @@ extends Node
 
 signal on_changed_floor(newfloor)
 
-var floors = ["gfloor.tscn", "floor2.tscn"]
+var floors = ["gfloor.tscn", "floor2.tscn", "rooftop.tscn"]
 var currentfloor = 0
 var sandboxArea
 var player

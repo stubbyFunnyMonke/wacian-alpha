@@ -10,7 +10,7 @@ onready var animPlayer1 = get_node("IntroAnims1")
 onready var mainmenumusic = $mainMenu/AudioStreamPlayer
 
 func _unhandled_input(event):
-	if event.pressed:
+	if event is InputEventKey and event.pressed:
 		if animPlayer1.is_playing() && animPlayer1.current_animation != "startgame":
 			play_next_anim(animPlayer1.current_animation)
 
