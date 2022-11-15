@@ -39,7 +39,7 @@ func game_over():
 	#TODO: implement death messages + sfx + music + the scene
 	
 	ingame = false
-	
+	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
 	
 	get_tree().change_scene("res://scenes/menus/GameOverScreen.tscn")
@@ -47,9 +47,8 @@ func game_over():
 
 func quit_game():
 	ingame = false
-	
+	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
-	
 	LoadingScreenNoBar.visible = true
 	LoadingScreenNoBar.get_node("AnimationPlayer").play("loop")
 	

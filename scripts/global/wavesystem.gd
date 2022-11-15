@@ -34,16 +34,20 @@ func waveLoop():
 	change_state(ANTICIPATION)
 	yield(global.wait(5), "completed")
 	change_state(ACTIVE)
+	yield(global.wait(15), "completed")
 	
 	var durations = []
 	
 	for disaster in disasterHandler.disasterData:
 		var dis = disasterHandler.disasterData[disaster]
-		if dis.start >= waveNumber:
+		if dis.start <= waveNumber:
 			dis.active = true
 			durations.append(dis.duration)
 	
 	yield(global.wait(getMax(durations)), "completed")
+	
+	for disaster in disasterHandler.disasterData:
+		disasterHandler.disasterData[disaster].active = false
 	
 	waveNumber += 1
 	waveLoop()
