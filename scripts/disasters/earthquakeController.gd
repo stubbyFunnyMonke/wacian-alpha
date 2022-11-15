@@ -12,7 +12,7 @@ func _ready():
 
 func _physics_process(delta):
 	var intensity = disasterHandler.earthquakeIntensity + disasterHandler.intensity
-	if disasterHandler.earthquakeActive == true:
+	if disasterHandler.disasterData["earthquake"].active == true:
 		if debris.emitting == false:
 			debris.emitting = true
 			debris.amount = 1024 - int(float(1024)/float(intensity)/float(4.5))
