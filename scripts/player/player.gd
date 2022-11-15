@@ -24,6 +24,7 @@ var roll_vector = Vector2.DOWN
 #onready var hurtbox = $Hurtbox
 onready var footstep = $footstep
 onready var footstepTimer = $footstep/Timer
+onready var blinkEffects = $BlinkEffects
 
 var containermenu
 
@@ -34,11 +35,34 @@ func _ready():
 #	animationTree.active = true
 #	swordHitbox.knockback_vector = roll_vector
 	containermenu = get_tree().get_current_scene().get_node("UI/ContainerMenu")
+	playerstats.connect("hit_player", self, "_on_hit")
 
 func _physics_process(delta): #renderstepped :flushed:
 	match state:
 		MOVE: move_state(delta)
 		ROLL: roll_state(delta)
+	
+	if playerstats.crouching == true:
+		collision_layer = 2
+		collision_mask = 2
+	else:
+		collision_layer = 1
+		collision_mask = 1
+	
+	var stunnedAnimation = $stunEffect
+	if playerstats.stunned == true:
+		stunnedAnimation.playing = true
+		stunnedAnimation.visible = true
+	else:
+		stunnedAnimation.playing = false
+		stunnedAnimation.visible = false
+	
+	if playerstats.intangible == true:
+		if !blinkEffects.is_playing():
+			blinkEffects.play("intangible")
+	elif !blinkEffects.is_playing():
+		blinkEffects.play("RESET")
+
 
 func move_state(delta):
 	var mouse_vector = Vector2.ZERO
@@ -81,21 +105,6 @@ func move_state(delta):
 	
 	move()
 	
-	if playerstats.crouching == true:
-		collision_layer = 2
-		collision_mask = 2
-	else:
-		collision_layer = 1
-		collision_mask = 1
-	
-	var stunnedAnimation = $stunEffect
-	if playerstats.stunned == true:
-		stunnedAnimation.playing = true
-		stunnedAnimation.visible = true
-	else:
-		stunnedAnimation.playing = false
-		stunnedAnimation.visible = false
-	
 #	if Input.is_action_just_pressed("roll") && input_vector != Vector2.ZERO:
 #		state = ROLL
 
@@ -113,3 +122,6 @@ func roll_animation_finished():
 
 func attack_animation_finished():
 	state = MOVE
+
+func _on_hit():
+	blinkEffects.play("hit")

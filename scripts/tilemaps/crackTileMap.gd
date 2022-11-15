@@ -25,6 +25,7 @@ func update_tile(tile_pos):
 		update_bitmask_area(tile_pos)
 
 func _physics_process(delta):
-	var currentFloorData = playgroundHandler.tileDurabilityData[str(playgroundHandler.currentFloor)]
-	for tile in currentFloorData:
-		update_tile(str2var("Vector2" + tile))
+	if str(playgroundHandler.currentFloor) in playgroundHandler.tileDurabilityData:
+		var currentFloorData = playgroundHandler.tileDurabilityData[str(playgroundHandler.currentFloor)]
+		for tile in currentFloorData:
+			update_tile(str2var("Vector2" + tile))

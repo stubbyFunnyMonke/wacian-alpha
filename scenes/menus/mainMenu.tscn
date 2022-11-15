@@ -1,0 +1,556 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/themes/menus.tres" type="Theme" id=3]
+[ext_resource path="res://scripts/menus/mainMenuPrimary.gd" type="Script" id=4]
+[ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/images/logo.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Container:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Container:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Container:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "intropart1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "intropart2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 0.466516 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Container:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 0.535887, 0.34151 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 600 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Container:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "startgame"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 0.611765 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 1, 0.376471, 0, 0.6 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 5 )
+
+[node name="MainMenuBG" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="IntroAnims1" type="AnimationPlayer" parent="."]
+root_node = NodePath("../mainMenu")
+autoplay = "intropart1"
+anims/RESET = SubResource( 7 )
+anims/end = SubResource( 10 )
+anims/intropart1 = SubResource( 8 )
+anims/intropart2 = SubResource( 9 )
+anims/startgame = SubResource( 11 )
+
+[node name="mainMenu" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Container" type="Control" parent="mainMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -256.0
+margin_top = -150.0
+margin_right = -256.0
+margin_bottom = -150.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
+margin_left = 366.0
+margin_top = 150.0
+margin_right = 657.0
+margin_bottom = 449.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_right = 291.0
+margin_bottom = 155.0
+texture = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 165.0
+margin_right = 291.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="PlayBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 291.0
+margin_bottom = 191.0
+text = "Start Game"
+
+[node name="TutorialBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 201.0
+margin_right = 291.0
+margin_bottom = 227.0
+text = "Play Tutorial"
+
+[node name="CreditsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 237.0
+margin_right = 291.0
+margin_bottom = 263.0
+text = "Credits"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 273.0
+margin_right = 291.0
+margin_bottom = 299.0
+alignment = 1
+
+[node name="OptionsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 3.0
+margin_right = 143.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 140, 0 )
+text = "Options"
+
+[node name="QuitBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 287.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 140, 0 )
+text = "Quit"
+
+[node name="QuitContainer" type="Control" parent="mainMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="mainMenu/QuitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/QuitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/QuitContainer/CenterContainer"]
+margin_left = 335.0
+margin_top = 249.0
+margin_right = 689.0
+margin_bottom = 350.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_right = 354.0
+margin_bottom = 35.0
+text = "Are you sure you want
+to quit?"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 354.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 354.0
+margin_bottom = 101.0
+alignment = 1
+
+[node name="BackBtn2" type="Button" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 175.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 175, 0 )
+text = "Back"
+
+[node name="ConfirmQuitBtn2" type="Button" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 179.0
+margin_right = 354.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 175, 0 )
+text = "Quit"
+
+[node name="Intro" type="Control" parent="mainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="mainMenu/Intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/Intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Intro/CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 224.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "Group 2 SD11-A"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 20.0
+margin_right = 224.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Presents..."
+align = 1
+valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="mainMenu"]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "menu music"
+
+[connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
+[connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/PlayBtn" to="mainMenu/Container" method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/QuitBtn" to="mainMenu/Container" method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn2" to="mainMenu/Container" method="_on_BackBtn2_pressed"]
+[connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/ConfirmQuitBtn2" to="mainMenu/Container" method="_on_ConfirmQuitBtn2_pressed"]
+[connection signal="finished" from="mainMenu/AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

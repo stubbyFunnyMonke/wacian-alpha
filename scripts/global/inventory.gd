@@ -10,8 +10,14 @@ var items = []
 var selected = 0
 
 func _ready():
+	reset()
+
+func reset():
+	items = []
 	for _i in range(slots):
 		items.append({})
+	
+	#debug purposes
 	items[0] = globalItemHandler.get_item_by_key("sledgehammer")
 	items[1] = globalItemHandler.get_item_by_key("hammer")
 

@@ -18,6 +18,10 @@ func _ready():
 	introNode.connect("finished", self, "_intro_ended")
 	loopNode.connect("finished", self, "_loop_ended")
 
+func reset():
+	introNode.stop()
+	loopNode.stop()
+
 func _on_wave_state_changed():
 	match WaveSystem.state:
 		WaveSystem.CALM: transition_to_calm()
@@ -27,14 +31,16 @@ func _on_wave_state_changed():
 	old_wave_state = WaveSystem.state
 
 func _intro_ended():
-	match WaveSystem.state:
-		WaveSystem.CALM: pass
-		WaveSystem.CONTROL: transition_to_control_2()
-		WaveSystem.ANTICIPATION: transition_to_anticipation_2()
-		WaveSystem.ACTIVE: transition_to_active_2()
+	if global.ingame == true:
+		match WaveSystem.state:
+			WaveSystem.CALM: pass
+			WaveSystem.CONTROL: transition_to_control_2()
+			WaveSystem.ANTICIPATION: transition_to_anticipation_2()
+			WaveSystem.ACTIVE: transition_to_active_2()
 
 func _loop_ended():
-	loopNode.play()
+	if global.ingame == true:
+		loopNode.play()
 
 func transition_to_calm():
 	if old_wave_state == WaveSystem.ACTIVE:

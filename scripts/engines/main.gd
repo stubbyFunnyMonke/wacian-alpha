@@ -20,6 +20,8 @@ func _unhandled_input(event):
 		if containermenu.visible:
 			containermenu.visible = false
 			containerhandler.close_container()
+			yield(get_tree(), "idle_frame")
+			PauseMenu.get_node("Container").uiOpen = false
 	if event.is_action_pressed("useitem"):
 		if inventory.get_selected():
 			var scriptname = inventory.get_selected().key + ".gd"
