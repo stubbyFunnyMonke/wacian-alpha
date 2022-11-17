@@ -367,6 +367,8 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
