@@ -3,7 +3,19 @@ extends Control
 var is_paused = false setget set_is_paused
 var uiOpen = false
 
+onready var clickSFX = PauseMenu.get_node("clickSFX")
 onready var QuitContainer = get_node("/root/PauseMenu/QuitContainer")
+
+func _ready():
+	for i in get_all_children(PauseMenu):
+		if i.get_class() == "Button":
+			i.connect("pressed", self, "clickSFX")
+
+func get_all_children(in_node,arr:=[]):
+	arr.push_back(in_node)
+	for child in in_node.get_children():
+		arr = get_all_children(child,arr)
+	return arr
 
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
@@ -35,3 +47,6 @@ func _on_BackBtn_pressed():
 	if visible == false:
 		self.visible = true
 		QuitContainer.visible = false
+
+func clickSFX():
+	clickSFX.play()

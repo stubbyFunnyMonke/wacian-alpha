@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/tilemaps/SandboxArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/UIMain.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/tilemaps/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/tilemaps/Playground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/tilemaps/PlaygroundLayer2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/shaders/gameLighting.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/engines/main.gd" type="Script" id=11]
 [ext_resource path="res://scenes/shaders/HPPostProcessing.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/tilemaps/crackTileMap.tscn" type="PackedScene" id=17]
@@ -50,3 +51,5 @@ tile_data = PoolIntArray( -524288, 1, 0, -524287, 1, 0, -524285, 10, 0, -524284,
 
 [node name="EarthquakeController" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -500 )
+
+[node name="gameLighting" parent="." instance=ExtResource( 10 )]

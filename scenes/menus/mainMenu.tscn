@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/menus/mainMenuPrimary.gd" type="Script" id=4]
 [ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/images/logo.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/menu_select.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -380,9 +381,9 @@ rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
 margin_left = 366.0
-margin_top = 150.0
+margin_top = 130.0
 margin_right = 657.0
-margin_bottom = 449.0
+margin_bottom = 469.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
@@ -391,34 +392,33 @@ margin_bottom = 155.0
 texture = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-visible = false
 margin_top = 165.0
 margin_right = 291.0
 margin_bottom = 195.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="PlayBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 165.0
+margin_top = 205.0
 margin_right = 291.0
-margin_bottom = 191.0
+margin_bottom = 231.0
 text = "Start Game"
 
 [node name="TutorialBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 201.0
+margin_top = 241.0
 margin_right = 291.0
-margin_bottom = 227.0
+margin_bottom = 267.0
 text = "Play Tutorial"
 
 [node name="CreditsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 237.0
+margin_top = 277.0
 margin_right = 291.0
-margin_bottom = 263.0
+margin_bottom = 303.0
 text = "Credits"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 273.0
+margin_top = 313.0
 margin_right = 291.0
-margin_bottom = 299.0
+margin_bottom = 339.0
 alignment = 1
 
 [node name="OptionsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
@@ -546,6 +546,10 @@ valign = 1
 stream = ExtResource( 5 )
 autoplay = true
 bus = "menu music"
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="mainMenu"]
+stream = ExtResource( 7 )
+bus = "menu sfx"
 
 [connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
 [connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]

@@ -21,16 +21,23 @@ func _ready():
 func reset():
 	introNode.stop()
 	loopNode.stop()
+	
+	var lowPass = AudioServer.get_bus_effect(1, 0)
+	lowPass.set_cutoff(20000)
+	
 
 func _on_wave_state_changed():
-	match WaveSystem.state:
-		WaveSystem.CALM: transition_to_calm()
-		WaveSystem.CONTROL: transition_to_control()
-		WaveSystem.ANTICIPATION: transition_to_anticipation()
-		WaveSystem.ACTIVE: transition_to_active()
-	old_wave_state = WaveSystem.state
+	loopNode.disconnect("finished", self, "start_anticipation_loop")
+	if global.ingame == true:
+		match WaveSystem.state:
+			WaveSystem.CALM: transition_to_calm()
+			WaveSystem.CONTROL: transition_to_control()
+			WaveSystem.ANTICIPATION: transition_to_anticipation()
+			WaveSystem.ACTIVE: transition_to_active()
+		old_wave_state = WaveSystem.state
 
 func _intro_ended():
+	loopNode.disconnect("finished", self, "start_anticipation_loop")
 	if global.ingame == true:
 		match WaveSystem.state:
 			WaveSystem.CALM: pass
@@ -85,7 +92,6 @@ func transition_to_anticipation_2():
 	loopNode.connect("finished", self, "start_anticipation_loop")
 
 func start_anticipation_loop():
-	loopNode.disconnect("finished", self, "start_anticipation_loop")
 	loopNode.stop()
 	loopNode.stream = preload("res://assets/music/welcome to ohio/anticipation loop.wav")
 	loopNode.play()

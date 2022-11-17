@@ -46,6 +46,18 @@ playerstats="*res://scripts/global/playerstats.gd"
 disasterHandler="*res://scripts/global/disasterhandler.gd"
 PauseMenu="*res://scenes/menus/pauseMenu.tscn"
 
+[debug]
+
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 walkup={
