@@ -45,6 +45,7 @@ containerhandler="*res://scripts/global/containerhandler.gd"
 playerstats="*res://scripts/global/playerstats.gd"
 disasterHandler="*res://scripts/global/disasterhandler.gd"
 PauseMenu="*res://scenes/menus/pauseMenu.tscn"
+WaveIndicator="*res://scenes/ui/WaveIndicator.tscn"
 
 [debug]
 
