@@ -744,9 +744,9 @@ script = ExtResource( 3 )
 [node name="WaveText" type="Label" parent="WaveIndicator"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -64.0
+margin_left = 448.0
 margin_top = 20.0
-margin_right = 64.0
+margin_right = 576.0
 margin_bottom = 36.0
 theme = SubResource( 1 )
 text = "Wave 420"

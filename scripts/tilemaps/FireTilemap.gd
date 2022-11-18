@@ -17,6 +17,18 @@ func _physics_process(delta):
 		if not (str(tile) in tiles):
 			tiles.append(str(tile))
 			emit_signal("fire_tiles_changed")
+		else:
+			#fire decay
+			var decayRNG = (randi() % 2500/disasterHandler.intensity) + 1
+			if decayRNG == 1:
+				#decay for non flammable surfaces
+				if fireSpreadable.get_cellv(tile) == -1:
+					set_cellv(tile, -1)
+				else:
+					#decay for flammable surfaces
+					var decayRNG2 = (randi() % 10000/disasterHandler.intensity) + 1
+					if decayRNG2 == 1:
+						set_cellv(tile, -1)
 		
 		#spread fire
 		var rng = (randi() % 100/disasterHandler.intensity) + 1
