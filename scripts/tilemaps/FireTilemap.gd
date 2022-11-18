@@ -12,6 +12,7 @@ func _ready():
 	emit_signal("fire_tiles_changed")
 
 func _physics_process(delta):
+	#handle fire tiles
 	for tile in get_used_cells():
 		if not (str(tile) in tiles):
 			tiles.append(str(tile))
@@ -23,12 +24,13 @@ func _physics_process(delta):
 			var spreadPos = Vector2(tile.x + (randi() % 3) - 1, tile.y + (randi() % 3) - 1)
 			if fireSpreadable.get_cellv(spreadPos) != -1:
 				set_cellv(spreadPos, 0)
-		
-		#burn player
-		var playerNode = global.get_scene_node().get_node("YSort/Player")
-		if get_cellv(world_to_map(playerNode.position)) != -1:
-			playerstats.player_set_on_fire(4)
 	
+	#burn player
+	var playerNode = global.get_scene_node().get_node("YSort/Player")
+	if get_cellv(world_to_map(playerNode.position)) != -1 && playerstats.onfire == false:
+		playerstats.player_set_on_fire(4)
+	
+	#remove old tiles
 	for old_tile in tiles:
 		if not str2var("Vector2" + old_tile) in get_used_cells():
 			tiles.erase(old_tile)
@@ -46,6 +48,17 @@ func _on_Fire_fire_tiles_changed():
 			var pos = Vector2(map_to_world(tile).x, map_to_world(tile).y)
 			newLight.position = pos
 			self.add_child(newLight)
+			
+			var fireStream = preload("res://assets/sounds/disasters/fire.wav")
+			var fireSound = AudioStreamPlayer2D.new()
+			fireSound.stream = fireStream
+			newLight.add_child(fireSound)
+			fireSound.bus = "sfx"
+			fireSound.play()
+			
+			var smokeParticles = preload("res://scenes/particles/smokeParticles.tscn")
+			var smoke = smokeParticles.instance()
+			newLight.add_child(smoke)
 	
 	for light in get_children():
 		if light is Light2D:

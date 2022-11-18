@@ -20,11 +20,20 @@ var earthquakeIntensity = 4
 var earthquakeLoop = preload("res://assets/sounds/disasters/earthquake/rumble_loop.wav")
 var earthquakeRumble = AudioStreamPlayer.new()
 
+#storm vars
+var rainLoop = preload("res://assets/sounds/disasters/storm/rain_loop.wav")
+var raining = AudioStreamPlayer.new()
+
 func _ready():
 	#initialize earthquake Rumble
 	earthquakeRumble.stream = earthquakeLoop
 	GlobalSFX.add_child(earthquakeRumble)
 	earthquakeRumble.bus = "ambience"
+	
+	#initialize rain sounds
+	raining.stream = rainLoop
+	GlobalSFX.add_child(raining)
+	raining.bus = "ambience"
 
 func reset():
 	#intensity = 1
@@ -49,3 +58,19 @@ func _physics_process(delta):
 		elif disasterData["earthquake"].active == false:
 			if earthquakeRumble.is_playing() == true:
 				earthquakeRumble.stop()
+		
+		#storm stuff
+		if disasterData["storm"].active == true:
+			if raining.is_playing() == false:
+				raining.play()
+		elif disasterData["storm"].active == false:
+			if raining.is_playing() == true:
+				raining.stop()
+				
+	else:
+		
+		#stop all sounds
+		if raining.is_playing() == true:
+			raining.stop()
+		if earthquakeRumble.is_playing() == true:
+			earthquakeRumble.stop()

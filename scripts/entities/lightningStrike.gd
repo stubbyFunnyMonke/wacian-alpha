@@ -39,7 +39,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	soundNode.stream = load("res://assets/sounds/disasters/storm/lightning_strike.wav")
 	playgroundHandler.currentPlaygroundNode.add_child(soundNode)
 	soundNode.position = position
-	soundNode.bus = "sfx"
+	soundNode.bus = "ambience"
 	soundNode.play()
 	soundNode.connect("finished", self, "sound1Finished")
 	

@@ -19,6 +19,8 @@ func _ready():
 	loopNode.connect("finished", self, "_loop_ended")
 
 func reset():
+	loopNode.disconnect("finished", self, "start_anticipation_loop")
+	
 	introNode.stop()
 	loopNode.stop()
 	

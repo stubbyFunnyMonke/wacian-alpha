@@ -53,6 +53,7 @@ func game_over():
 	t.queue_free()
 	
 	ingame = false
+	WaveSystem.end()
 	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
 	
@@ -61,6 +62,7 @@ func game_over():
 
 func quit_game():
 	ingame = false
+	WaveSystem.end()
 	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
 	LoadingScreenNoBar.visible = true
@@ -74,5 +76,13 @@ func quit_game():
 
 func get_scene_node():
 	return get_tree().get_current_scene()
+
+#for generating waveIDs and other ID related stuff if ever
+var ascii_letters_and_digits = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+func gen_unique_string(length: int) -> String:
+	var result = ""
+	for i in range(length):
+		result += ascii_letters_and_digits[randi() % ascii_letters_and_digits.length()]
+	return result
 
 
