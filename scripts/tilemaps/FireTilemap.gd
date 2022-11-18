@@ -31,7 +31,7 @@ func _physics_process(delta):
 						set_cellv(tile, -1)
 		
 		#spread fire
-		var rng = (randi() % 100/disasterHandler.intensity) + 1
+		var rng = (randi() % 500/disasterHandler.intensity) + 1
 		if rng == 1:
 			var spreadPos = Vector2(tile.x + (randi() % 3) - 1, tile.y + (randi() % 3) - 1)
 			if fireSpreadable.get_cellv(spreadPos) != -1:
