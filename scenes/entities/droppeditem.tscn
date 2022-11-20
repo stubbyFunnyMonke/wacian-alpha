@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/images/items/apple.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/shadows/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://scripts/entities/droppeditem.gd" type="Script" id=4]
-[ext_resource path="res://assets/sounds/item_pickup.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/item_general.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 

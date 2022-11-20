@@ -18,7 +18,7 @@ func reset():
 		items.append({})
 	
 	#debug purposes
-	items[0] = globalItemHandler.get_item_by_key("sledgehammer")
+	items[0] = globalItemHandler.get_item_by_key("fireextinguisher")
 	items[1] = globalItemHandler.get_item_by_key("hammer")
 
 func broadcast_signal(indexes):

@@ -733,12 +733,15 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="WaveIndicator" type="Control"]
+[node name="WaveIndicatorLayer" type="CanvasLayer"]
+
+[node name="WaveIndicator" type="Control" parent="."]
 anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 3 )
 
-[node name="WaveText" type="Label" parent="."]
+[node name="WaveText" type="Label" parent="WaveIndicator"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 448.0
@@ -749,7 +752,7 @@ theme = SubResource( 1 )
 text = "Wave 420"
 align = 1
 
-[node name="DangerText" type="Label" parent="."]
+[node name="DangerText" type="Label" parent="WaveIndicator"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
@@ -765,7 +768,7 @@ custom_colors/font_color_shadow = Color( 0.4, 0, 0, 1 )
 text = "DANGER"
 align = 1
 
-[node name="Symbol1" type="Sprite" parent="."]
+[node name="Symbol1" type="Sprite" parent="WaveIndicator"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 440, 25 )
@@ -773,7 +776,7 @@ texture = ExtResource( 2 )
 hframes = 3
 frame = 2
 
-[node name="Symbol2" type="Sprite" parent="."]
+[node name="Symbol2" type="Sprite" parent="WaveIndicator"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 590, 26.5 )
@@ -781,7 +784,7 @@ texture = ExtResource( 2 )
 hframes = 3
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WaveIndicator"]
 anims/RESET = SubResource( 2 )
 anims/anticipation = SubResource( 5 )
 anims/assault = SubResource( 6 )
@@ -790,4 +793,4 @@ anims/assault = SubResource( 6 )
 anims/control = SubResource( 3 )
 anims/normal = SubResource( 4 )
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="WaveIndicator/AnimationPlayer" to="WaveIndicator" method="_on_AnimationPlayer_animation_finished"]

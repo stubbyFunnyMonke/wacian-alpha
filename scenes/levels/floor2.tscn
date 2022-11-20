@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/tilemaps/SandboxArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/UIMain.tscn" type="PackedScene" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://scenes/tilemaps/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/tilemaps/Playground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/tilemaps/PlaygroundLayer2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/shaders/gameLighting.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/engines/main.gd" type="Script" id=11]
+[ext_resource path="res://scenes/tilemaps/FireSpreadable.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/tilemaps/FireTilemap.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/shaders/HPPostProcessing.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/tilemaps/crackTileMap.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/Camera2D.tscn" type="PackedScene" id=18]
@@ -42,6 +45,12 @@ tile_data = PoolIntArray( -524288, 1, 0, -524287, 1, 0, -524285, 10, 0, -524284,
 
 [node name="PlaygroundLayer2" parent="YSort/Playground" instance=ExtResource( 9 )]
 
+[node name="Fire" parent="YSort" instance=ExtResource( 13 )]
+
+[node name="FireSpreadable" parent="YSort/Fire" instance=ExtResource( 12 )]
+visible = false
+tile_data = PoolIntArray( -589824, 0, 0, -589823, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -524288, 0, 0, -524287, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -458752, 0, 0, -458751, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -262144, 0, 0, -262143, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -196608, 0, 0, -196607, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0 )
+
 [node name="Items" type="Node2D" parent="YSort"]
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
@@ -50,3 +59,5 @@ tile_data = PoolIntArray( -524288, 1, 0, -524287, 1, 0, -524285, 10, 0, -524284,
 
 [node name="EarthquakeController" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -500 )
+
+[node name="gameLighting" parent="." instance=ExtResource( 10 )]

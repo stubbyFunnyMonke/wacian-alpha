@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/disasters/stormShaders.gd" type="Script" id=1]
+
+[node name="gameLighting" type="CanvasModulate"]
+script = ExtResource( 1 )
+
+[connection signal="strong_thunder" from="." to="." method="_on_gameLighting_strong_thunder"]
+[connection signal="thunder" from="." to="." method="_on_gameLighting_thunder"]

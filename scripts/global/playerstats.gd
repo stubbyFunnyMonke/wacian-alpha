@@ -40,6 +40,9 @@ var stunTimer = 0
 
 var intangible = false
 var intangibleTimer = 0
+
+var onfire = false
+var onfireTimer = 0
 #debug global
 
 func _ready():
@@ -66,6 +69,9 @@ func reset():
 	
 	intangible = false
 	intangibleTimer = 0
+	
+	onfire = false
+	onfireTimer = 0
 
 #outsourced funcs
 
@@ -150,6 +156,10 @@ func player_set_intangible(intangibleDuration):
 	intangibleTimer = intangibleDuration
 	intangible = true
 
+func player_set_on_fire(fireDuration):
+	onfireTimer = fireDuration
+	onfire = true
+
 func hurtPlayer(dmg, source, intangibleDuration):
 	if intangible == false:
 		var playerNode = global.get_scene_node().get_node("YSort/Player")
@@ -166,11 +176,11 @@ func hurtPlayer(dmg, source, intangibleDuration):
 			soundNode.stream = load("res://assets/sounds/hit/hugedamage.wav")
 		else:
 			soundNode.stream = load("res://assets/sounds/hit/smalldamage.wav")
-		playgroundHandler.currentPlaygroundNode.add_child(soundNode)
-		soundNode.position = source.position - playerNode.position
+		soundNode.position = playerNode.position
 		soundNode.bus = "sfx"
 		soundNode.play()
 		soundNode.connect("finished", self, "sound1Finished", [soundNode])
+		playgroundHandler.currentPlaygroundNode.add_child(soundNode)
 		
 		emit_signal("hit_player")
 		
@@ -256,12 +266,16 @@ func _physics_process(delta):
 				crouching = false
 		
 		#muffle the sound based on hp
-		var hpPercentage = float(currentHp)/float(maxHp)
-		
-		var newcutoff = 20000 * sin(hpPercentage)
-		
-		var lowPass = AudioServer.get_bus_effect(1, 0)
-		lowPass.set_cutoff(newcutoff)
+		if global.ingame == true:
+			var hpPercentage = float(currentHp)/float(maxHp)
+			
+			var newcutoff = 20000 * sin(hpPercentage)
+			
+			var lowPass = AudioServer.get_bus_effect(1, 0)
+			lowPass.set_cutoff(newcutoff)
+		else:
+			var lowPass = AudioServer.get_bus_effect(1, 0)
+			lowPass.set_cutoff(20000)
 		
 		#controls the player stunning
 		if stunTimer > 0:
@@ -273,6 +287,15 @@ func _physics_process(delta):
 			intangibleTimer = intangibleTimer - delta
 		else:
 			intangible = false
+		
+		#burn the player lol
+		if onfireTimer > 0:
+			onfireTimer = onfireTimer - delta
+		else:
+			onfire = false
+		
+		if onfire == true:
+			hurtPlayer(1, "fire", 0.5)
 		
 		#trigger game over
 		if currentHp <= 0:

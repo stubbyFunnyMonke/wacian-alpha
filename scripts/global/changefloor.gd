@@ -2,7 +2,7 @@ extends Node
 
 signal on_changed_floor(newfloor)
 
-var floors = ["gfloor.tscn", "floor2.tscn"]
+var floors = ["gfloor.tscn", "floor2.tscn", "rooftop.tscn"]
 var currentfloor = 0
 var sandboxArea
 var player
@@ -69,3 +69,20 @@ func _physics_process(_delta):
 			if success:
 				playgroundHandler.saveItems()
 				playgroundHandler.savePlayground()
+				playgroundHandler.saveFireTiles()
+				
+				yield(get_tree(), "idle_frame")
+				
+				#switch ambience muffling thingy
+				if floors[currentfloor] != "rooftop.tscn":
+					var lowPass = AudioServer.get_bus_effect(5, 0)
+					lowPass.set_cutoff(2000)
+					
+					var reverb = AudioServer.get_bus_effect(5, 1)
+					reverb.set_wet(0.5)
+				else:
+					var lowPass = AudioServer.get_bus_effect(5, 0)
+					lowPass.set_cutoff(20000)
+					
+					var reverb = AudioServer.get_bus_effect(5, 1)
+					reverb.set_wet(1)
