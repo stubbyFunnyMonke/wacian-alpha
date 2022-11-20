@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/menus/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://assets/sounds/menu_select.wav" type="AudioStream" id=3]
+[ext_resource path="res://scenes/menus/OptionsContainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/menus/OptionsPauseMenu.gd" type="Script" id=5]
 
 [node name="pauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -131,6 +133,9 @@ margin_right = 186.0
 margin_bottom = 124.0
 text = "Quit"
 
+[node name="OptionsContainer" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+
 [node name="clickSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "menu sfx"
@@ -138,4 +143,5 @@ bus = "menu sfx"
 [connection signal="pressed" from="QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn" to="Container" method="_on_BackBtn_pressed"]
 [connection signal="pressed" from="QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/ConfirmQuitBtn" to="Container" method="_on_ConfirmQuitBtn_pressed"]
 [connection signal="pressed" from="Container/CenterContainer/VBoxContainer/ResumeBtn" to="Container" method="_on_ResumeBtn_pressed"]
+[connection signal="pressed" from="Container/CenterContainer/VBoxContainer/OptionsBtn" to="Container" method="_on_OptionsBtn_pressed"]
 [connection signal="pressed" from="Container/CenterContainer/VBoxContainer/QuitBtn" to="Container" method="_on_QuitBtn_pressed"]

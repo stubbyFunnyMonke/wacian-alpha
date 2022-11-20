@@ -7,7 +7,7 @@ func _ready():
 	PauseMenu.get_node("Container").visible = false
 	
 	#debug
-	reset_game()
+	#reset_game()
 
 func reset_game():
 	ingame = false

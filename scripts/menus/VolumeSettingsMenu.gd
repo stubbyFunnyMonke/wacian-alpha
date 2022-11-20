@@ -6,7 +6,7 @@ var sfx_bus_1 = AudioServer.get_bus_index("sfx")
 var sfx_bus_2 = AudioServer.get_bus_index("menu sfx")
 
 var music_bus_1 = AudioServer.get_bus_index("music")
-var music_bus_2 = AudioServer.get_bus_index("music transition")
+var music_bus_2 = AudioServer.get_bus_index("music transitions")
 var music_bus_3 = AudioServer.get_bus_index("menu music")
 
 onready var MasterVSlider = get_node("VBoxContainer/MasterVolume/MasterVSlider")

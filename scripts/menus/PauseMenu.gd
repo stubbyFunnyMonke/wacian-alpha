@@ -5,6 +5,7 @@ var uiOpen = false
 
 onready var clickSFX = PauseMenu.get_node("clickSFX")
 onready var QuitContainer = get_node("/root/PauseMenu/QuitContainer")
+onready var OptionsContainer = get_node("/root/PauseMenu/OptionsContainer")
 
 func _ready():
 	for i in get_all_children(PauseMenu):
@@ -50,3 +51,8 @@ func _on_BackBtn_pressed():
 
 func clickSFX():
 	clickSFX.play()
+
+func _on_OptionsBtn_pressed():
+	self.visible = false
+	OptionsContainer.visible = true
+	uiOpen = true

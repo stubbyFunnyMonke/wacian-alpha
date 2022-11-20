@@ -1,0 +1,273 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/themes/menus.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/menus/Options.gd" type="Script" id=3]
+[ext_resource path="res://scripts/menus/VolumeSettingsMenu.gd" type="Script" id=4]
+
+[node name="OptionsContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="SideBar" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -755.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="CenterContainer" type="CenterContainer" parent="SideBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SideBar/CenterContainer"]
+margin_left = 9.0
+margin_top = 257.0
+margin_right = 259.0
+margin_bottom = 343.0
+
+[node name="VolumeBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 26.0
+theme = ExtResource( 1 )
+text = "Volume Settings"
+
+[node name="ControlBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 250.0
+margin_bottom = 56.0
+theme = ExtResource( 1 )
+text = "Controls"
+
+[node name="BackBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 250.0
+margin_bottom = 86.0
+theme = ExtResource( 1 )
+text = "Back"
+
+[node name="VolumeSettingsContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 270.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VolumeSettingsContainer"]
+margin_right = 754.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="spacing2" type="Control" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_right = 754.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 754.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
+text = "Volume Settings"
+align = 1
+
+[node name="spacing5" type="Control" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 754.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="MasterVolume" type="HBoxContainer" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 754.0
+margin_bottom = 114.0
+
+[node name="spacing4" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MasterVolume"]
+margin_right = 20.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label" type="Label" parent="VolumeSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 24.0
+margin_right = 232.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "Master Volume"
+
+[node name="spacing2" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 236.0
+margin_right = 256.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="MasterVSlider" type="HSlider" parent="VolumeSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 260.0
+margin_right = 730.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -30.0
+max_value = 0.0
+
+[node name="spacing3" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 734.0
+margin_right = 754.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="spacing3" type="Control" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 118.0
+margin_right = 754.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="SFXVolume" type="HBoxContainer" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 142.0
+margin_right = 754.0
+margin_bottom = 158.0
+
+[node name="spacing4" type="Control" parent="VolumeSettingsContainer/VBoxContainer/SFXVolume"]
+margin_right = 20.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label" type="Label" parent="VolumeSettingsContainer/VBoxContainer/SFXVolume"]
+margin_left = 24.0
+margin_right = 184.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "SFX Volume"
+
+[node name="spacing2" type="Control" parent="VolumeSettingsContainer/VBoxContainer/SFXVolume"]
+margin_left = 188.0
+margin_right = 256.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 68, 0 )
+
+[node name="SFXVSlider" type="HSlider" parent="VolumeSettingsContainer/VBoxContainer/SFXVolume"]
+margin_left = 260.0
+margin_right = 730.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -30.0
+max_value = 0.0
+
+[node name="spacing3" type="Control" parent="VolumeSettingsContainer/VBoxContainer/SFXVolume"]
+margin_left = 734.0
+margin_right = 754.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="spacing4" type="Control" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 162.0
+margin_right = 754.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="MusicVolume" type="HBoxContainer" parent="VolumeSettingsContainer/VBoxContainer"]
+margin_top = 186.0
+margin_right = 754.0
+margin_bottom = 202.0
+
+[node name="spacing4" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MusicVolume"]
+margin_right = 20.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label" type="Label" parent="VolumeSettingsContainer/VBoxContainer/MusicVolume"]
+margin_left = 24.0
+margin_right = 216.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "Music Volume"
+
+[node name="spacing2" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MusicVolume"]
+margin_left = 220.0
+margin_right = 256.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 36, 0 )
+
+[node name="MusicVSlider" type="HSlider" parent="VolumeSettingsContainer/VBoxContainer/MusicVolume"]
+margin_left = 260.0
+margin_right = 730.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -30.0
+max_value = 0.0
+
+[node name="spacing3" type="Control" parent="VolumeSettingsContainer/VBoxContainer/MusicVolume"]
+margin_left = 734.0
+margin_right = 754.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="ControlSettingsContainer" type="ScrollContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 270.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlSettingsContainer"]
+margin_right = 754.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="spacing2" type="Control" parent="ControlSettingsContainer/VBoxContainer"]
+margin_right = 754.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="ControlSettingsContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 754.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
+text = "Controls"
+align = 1
+
+[node name="spacing4" type="Control" parent="ControlSettingsContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 754.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="MasterVolume" type="HBoxContainer" parent="ControlSettingsContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 754.0
+margin_bottom = 114.0
+
+[node name="spacing4" type="Control" parent="ControlSettingsContainer/VBoxContainer/MasterVolume"]
+margin_right = 20.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Label" type="Label" parent="ControlSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 24.0
+margin_right = 280.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "Work in Progress"
+
+[node name="spacing3" type="Control" parent="ControlSettingsContainer/VBoxContainer/MasterVolume"]
+margin_left = 284.0
+margin_right = 304.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="spacing3" type="Control" parent="ControlSettingsContainer/VBoxContainer"]
+margin_top = 118.0
+margin_right = 754.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 20 )
+
+[connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/VolumeBtn" to="." method="_on_VolumeBtn_pressed"]
+[connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/ControlBtn" to="." method="_on_ControlBtn_pressed"]
+[connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/MasterVolume/MasterVSlider" to="VolumeSettingsContainer" method="_on_MasterVSlider_value_changed"]
+[connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/SFXVolume/SFXVSlider" to="VolumeSettingsContainer" method="_on_SFXVSlider_value_changed"]
+[connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/MusicVolume/MusicVSlider" to="VolumeSettingsContainer" method="_on_MusicVSlider_value_changed"]
