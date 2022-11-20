@@ -73,16 +73,16 @@ func _physics_process(_delta):
 				
 				yield(get_tree(), "idle_frame")
 				
-				#switch ambience muffling thingy
-				if floors[currentfloor] != "rooftop.tscn":
-					var lowPass = AudioServer.get_bus_effect(5, 0)
-					lowPass.set_cutoff(2000)
-					
-					var reverb = AudioServer.get_bus_effect(5, 1)
-					reverb.set_wet(0.5)
-				else:
-					var lowPass = AudioServer.get_bus_effect(5, 0)
-					lowPass.set_cutoff(20000)
-					
-					var reverb = AudioServer.get_bus_effect(5, 1)
-					reverb.set_wet(1)
+		#switch ambience muffling thingy
+		if floors[currentfloor] != "rooftop.tscn":
+			var lowPass = AudioServer.get_bus_effect(5, 0)
+			lowPass.set_cutoff(2000)
+			
+			var reverb = AudioServer.get_bus_effect(5, 1)
+			reverb.set_wet(0.5)
+		else:
+			var lowPass = AudioServer.get_bus_effect(5, 0)
+			lowPass.set_cutoff(20000)
+			
+			var reverb = AudioServer.get_bus_effect(5, 1)
+			reverb.set_wet(1)

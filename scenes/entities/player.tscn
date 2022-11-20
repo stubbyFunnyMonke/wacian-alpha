@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/images/background/water/water.tres" type="Texture" id=15]
 [ext_resource path="res://scripts/player/playerwaterLevel.gd" type="Script" id=16]
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=20]
 code = "shader_type canvas_item;
 
 uniform bool active = false;
@@ -33,7 +33,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+shader = SubResource( 20 )
 shader_param/active = false
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -199,7 +199,7 @@ script = ExtResource( 6 )
 visible = false
 position = Vector2( 1.31102, -14.4212 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 speed_scale = 2.0
 playing = true
 
@@ -218,7 +218,7 @@ shadow_enabled = true
 visible = false
 material = SubResource( 18 )
 frames = SubResource( 17 )
-frame = 5
+frame = 3
 speed_scale = 2.0
 playing = true
 script = ExtResource( 11 )
@@ -229,7 +229,7 @@ position = Vector2( 0.105111, -12.7092 )
 scale = Vector2( 0.888319, 1.58527 )
 z_index = -1
 frames = SubResource( 17 )
-frame = 4
+frame = 2
 speed_scale = 2.0
 playing = true
 

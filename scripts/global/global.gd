@@ -43,6 +43,8 @@ func reset_game():
 func game_over():
 	#TODO: implement death messages + sfx + music + the scene
 	
+	ingame = false
+	
 	#wait
 	var t = Timer.new()
 	t.set_wait_time(0.5)
@@ -52,7 +54,6 @@ func game_over():
 	yield(t, "timeout")
 	t.queue_free()
 	
-	ingame = false
 	WaveSystem.end()
 	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
