@@ -1,6 +1,7 @@
 extends Control
 
 onready var QuitContainer = get_node("/root/MainMenuBG/mainMenu/QuitContainer")
+onready var CreditsContainer = get_node("/root/MainMenuBG/mainMenu/CreditsContainer")
 onready var introAnims = get_node("/root/MainMenuBG/IntroAnims1")
 onready var mainmenumusic = get_node("/root/MainMenuBG/mainMenu/AudioStreamPlayer")
 onready var clickSFX = get_node("/root/MainMenuBG/mainMenu/clickSFX")
@@ -38,3 +39,7 @@ func _on_IntroAnims1_animation_finished(anim_name):
 
 func clickSFX():
 	clickSFX.play()
+
+func _on_CreditsBtn_pressed():
+	self.visible = false
+	CreditsContainer.visible = true

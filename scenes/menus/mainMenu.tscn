@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/images/logo.png" type="Texture" id=6]
 [ext_resource path="res://assets/sounds/menu_select.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/images/misc/pokemon-gengar.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/custom_font_huge.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scripts/menus/CreditsContainer.gd" type="Script" id=10]
+[ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=11]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -313,6 +317,209 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1400, 200, 200 )
+
+[sub_resource type="SpriteFrames" id=51]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
 
@@ -363,6 +570,314 @@ anims/startgame = SubResource( 11 )
 [node name="mainMenu" type="CanvasLayer" parent="."]
 pause_mode = 2
 
+[node name="CreditsContainer" type="Control" parent="mainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="Background" type="ColorRect" parent="mainMenu/CreditsContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="mainMenu/CreditsContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
+margin_right = 1012.0
+margin_bottom = 1161.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="spacing" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_right = 1012.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 1012.0
+margin_bottom = 171.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Group 2 SD11-A
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 175.0
+margin_right = 1012.0
+margin_bottom = 226.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0.305882, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Wacian Dev Team
+"
+align = 1
+valign = 1
+
+[node name="spacing2" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 230.0
+margin_right = 1012.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="florenzo" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 284.0
+margin_right = 1012.0
+margin_bottom = 453.0
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Florenzo Amor
+"
+align = 1
+valign = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo/Label"]
+position = Vector2( 504.829, -28.8774 )
+scale = Vector2( 0.231818, 0.231818 )
+frames = SubResource( 51 )
+frame = 6
+speed_scale = 10.0
+playing = true
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Lead Programmer
+Artist
+Game Designer
+Sound Designer
+Game OST Composer
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing3" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 457.0
+margin_right = 1012.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="zam" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 471.0
+margin_right = 1012.0
+margin_bottom = 602.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Zam Pallones
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 131.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Artist
+Game Designer
+Concept Artist
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing8" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 606.0
+margin_right = 1012.0
+margin_bottom = 616.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="joseph" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 620.0
+margin_right = 1012.0
+margin_bottom = 694.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Joseph David Kriel Cruz
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Game Designer
+"
+align = 1
+valign = 1
+
+[node name="spacing4" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 698.0
+margin_right = 1012.0
+margin_bottom = 708.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="dale" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 712.0
+margin_right = 1012.0
+margin_bottom = 805.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "John Dale Bas
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Artist
+Game Designer
+"
+align = 1
+valign = 1
+
+[node name="spacing5" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 809.0
+margin_right = 1012.0
+margin_bottom = 819.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="lei" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 823.0
+margin_right = 1012.0
+margin_bottom = 916.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Lei Villacorta
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Artist
+Game Designer
+"
+align = 1
+valign = 1
+
+[node name="spacing6" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 920.0
+margin_right = 1012.0
+margin_bottom = 930.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="enzo" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 934.0
+margin_right = 1012.0
+margin_bottom = 1027.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Enzo Gabriel Esquires
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Game Designer
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing7" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1031.0
+margin_right = 1012.0
+margin_bottom = 1131.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1135.0
+margin_right = 1012.0
+margin_bottom = 1161.0
+rect_min_size = Vector2( 175, 0 )
+theme = ExtResource( 3 )
+text = "Back"
+
 [node name="Container" type="Control" parent="mainMenu"]
 visible = false
 anchor_right = 1.0
@@ -382,10 +897,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 5486.0
-margin_top = 3130.0
-margin_right = 5777.0
-margin_bottom = 3469.0
+margin_left = 5998.0
+margin_top = 3430.0
+margin_right = 6289.0
+margin_bottom = 3769.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
@@ -518,10 +1033,10 @@ margin_bottom = -300.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Intro/CenterContainer"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_left = 400.0
+margin_top = 282.0
+margin_right = 624.0
+margin_bottom = 318.0
 
 [node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
 visible = false
@@ -555,7 +1070,9 @@ bus = "menu sfx"
 
 [connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
 [connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]
+[connection signal="pressed" from="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/BackBtn2" to="mainMenu/CreditsContainer" method="_on_BackBtn2_pressed"]
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/PlayBtn" to="mainMenu/Container" method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/CreditsBtn" to="mainMenu/Container" method="_on_CreditsBtn_pressed"]
 [connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/QuitBtn" to="mainMenu/Container" method="_on_QuitBtn_pressed"]
 [connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn2" to="mainMenu/Container" method="_on_BackBtn2_pressed"]
 [connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/ConfirmQuitBtn2" to="mainMenu/Container" method="_on_ConfirmQuitBtn2_pressed"]
