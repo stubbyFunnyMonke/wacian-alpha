@@ -2,6 +2,7 @@ extends Control
 
 onready var QuitContainer = get_node("/root/MainMenuBG/mainMenu/QuitContainer")
 onready var CreditsContainer = get_node("/root/MainMenuBG/mainMenu/CreditsContainer")
+onready var OptionsContainer = get_node("/root/MainMenuBG/mainMenu/OptionsContainer")
 onready var introAnims = get_node("/root/MainMenuBG/IntroAnims1")
 onready var mainmenumusic = get_node("/root/MainMenuBG/mainMenu/AudioStreamPlayer")
 onready var clickSFX = get_node("/root/MainMenuBG/mainMenu/clickSFX")
@@ -21,6 +22,8 @@ func get_all_children(in_node,arr:=[]):
 func _on_PlayBtn_pressed():
 	introAnims.play("startgame")
 	mainmenumusic.stop()
+	yield(introAnims, "animation_finished")
+	global.reset_game()
 
 func _on_QuitBtn_pressed():
 	self.visible = false
@@ -33,13 +36,13 @@ func _on_BackBtn2_pressed():
 func _on_ConfirmQuitBtn2_pressed():
 	get_tree().quit()
 
-func _on_IntroAnims1_animation_finished(anim_name):
-	if anim_name == "startgame":
-		global.reset_game()
-
 func clickSFX():
 	clickSFX.play()
 
 func _on_CreditsBtn_pressed():
 	self.visible = false
 	CreditsContainer.visible = true
+
+func _on_OptionsBtn_pressed():
+	self.visible = false
+	OptionsContainer.visible = true

@@ -58,6 +58,7 @@ gdscript/warnings/unused_signal=false
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
