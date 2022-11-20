@@ -14,11 +14,11 @@ func _ready():
 func _physics_process(delta):
 	var intensity = disasterHandler.intensity
 	if disasterHandler.disasterData["storm"].active == true:
-		if debris.emitting == false && changefloor.floors[changefloor.currentfloor] == "rooftop.tscn":
-			debris.emitting = true
-			debris.amount = 1024 - int(float(1024)/float(intensity)/float(4.5))
-		
 		if changefloor.floors[changefloor.currentfloor] == "rooftop.tscn":
+			if debris.emitting == false:
+				debris.emitting = true
+				debris.amount = 1024 - int(float(1024)/float(intensity)/float(4.5))
+			
 			var rainDropSpeed = 5
 			for i in rainDropSpeed:
 				var newRainDropParticle = rainDrop.instance()

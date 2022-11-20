@@ -7,6 +7,10 @@ onready var fireSpreadable = get_node("FireSpreadable")
 var tiles = []
 
 func _ready():
+	if changefloor.floors[changefloor.currentfloor] in playgroundHandler.fireTiles:
+		for savedTile in playgroundHandler.fireTiles[changefloor.floors[changefloor.currentfloor]]:
+			set_cellv(savedTile, 0)
+	
 	for tile in get_used_cells():
 		tiles.append(str(tile))
 	emit_signal("fire_tiles_changed")
@@ -20,6 +24,10 @@ func _physics_process(delta):
 		else:
 			#fire decay
 			var decayRNG = (randi() % 2500/disasterHandler.intensity) + 1
+			
+			if changefloor.floors[changefloor.currentfloor] == "gfloor.tscn" && (float(disasterHandler.waterLevel)/float(disasterHandler.maxWaterLevel)) > 0.25:
+				set_cellv(tile, -1)
+			
 			if decayRNG == 1:
 				#decay for non flammable surfaces
 				if fireSpreadable.get_cellv(tile) == -1:

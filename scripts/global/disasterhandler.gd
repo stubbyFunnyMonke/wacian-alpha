@@ -4,7 +4,7 @@ extends Node
 var intensity = 9
 var disasterData = {
 	"earthquake": {
-		"start": 2,
+		"start": 1,
 		"duration": 90,
 		"active": false
 	},
@@ -23,6 +23,8 @@ var earthquakeRumble = AudioStreamPlayer.new()
 #storm vars
 var rainLoop = preload("res://assets/sounds/disasters/storm/rain_loop.wav")
 var raining = AudioStreamPlayer.new()
+var waterLevel = 0
+const maxWaterLevel = 1000
 
 func _ready():
 	#initialize earthquake Rumble
@@ -40,6 +42,8 @@ func reset():
 	
 	for disaster in disasterData:
 		disasterData[disaster].active = false
+	
+	waterLevel = 500
 
 func _physics_process(delta):
 	if global.ingame == true:
@@ -63,10 +67,26 @@ func _physics_process(delta):
 		if disasterData["storm"].active == true:
 			if raining.is_playing() == false:
 				raining.play()
+			
+			var totalMaxDurability = 0
+			var totalCurrentDurability = 0
+			
+			for tile in playgroundHandler.tileDurabilityData[str(0)]:
+				totalMaxDurability = totalMaxDurability + playgroundHandler.tileDurabilityData[str(0)][tile].maxDurability
+				totalCurrentDurability = totalCurrentDurability + playgroundHandler.tileDurabilityData[str(0)][tile].currentDurability
+			
+			var durabilityPercentage = totalCurrentDurability/totalMaxDurability
+			if durabilityPercentage > 1: durabilityPercentage = 1
+			
+			if waterLevel <= maxWaterLevel:
+				waterLevel = waterLevel + (delta * (1 - durabilityPercentage) * intensity) 
+			print(waterLevel)
 		elif disasterData["storm"].active == false:
 			if raining.is_playing() == true:
 				raining.stop()
-				
+			
+			if waterLevel > 0:
+				waterLevel = waterLevel - (delta * 5)
 	else:
 		
 		#stop all sounds

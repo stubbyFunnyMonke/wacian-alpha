@@ -36,7 +36,7 @@ color_ramp = SubResource( 8 )
 [node name="sprintParticles" type="Particles2D"]
 position = Vector2( 0, 16 )
 scale = Vector2( 0.2, 0.2 )
-z_index = -1
+z_index = -2
 process_material = SubResource( 5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

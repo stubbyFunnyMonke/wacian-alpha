@@ -6,6 +6,7 @@ var floorItemData = {}
 var floorPlaygroundData = {} 
 var currentItemsNode
 var currentPlaygroundNode 
+var currentFireTilemap
 var currentFloor = 0
 
 var furnituredata
@@ -16,6 +17,7 @@ var tile11data = {}
 var tileDurabilityData = {}
 var currentBackgroundNode
 
+var fireTiles = {}
 #on ready/on new floor, check for new unchecked tiles
 
 func _ready():
@@ -42,10 +44,13 @@ func reset():
 	
 	tileDurabilityData = {}
 	currentBackgroundNode = null
+	
+	fireTiles = {}
 
-func newFloor(itemsnode, playgroundnode, backgroundnode):
+func newFloor(itemsnode, playgroundnode, backgroundnode, firetilemap):
 	currentItemsNode = itemsnode
 	currentPlaygroundNode = playgroundnode
+	currentFireTilemap = firetilemap
 	containerhandler.initializeContainers()
 	
 	currentBackgroundNode = backgroundnode
@@ -78,6 +83,13 @@ func savePlayground():
 		} 
 		cellsArray.append(newItem)
 	floorPlaygroundData[changefloor.floors[currentFloor]] = cellsArray
+
+func saveFireTiles():
+	#save items and their positions
+	var cellsArray = []
+	
+	cellsArray = currentFireTilemap.get_used_cells()
+	fireTiles[changefloor.floors[currentFloor]] = cellsArray
 
 func getFurnitureData(tileID):
 	var foundfurniture

@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/disasters/stormShaders.gd" type="Script" id=1]
 
 [node name="gameLighting" type="CanvasModulate"]
-color = Color( 0.219608, 0.235294, 0.301961, 1 )
 script = ExtResource( 1 )
 
+[connection signal="strong_thunder" from="." to="." method="_on_gameLighting_strong_thunder"]
 [connection signal="thunder" from="." to="." method="_on_gameLighting_thunder"]

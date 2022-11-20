@@ -37,7 +37,7 @@ func _ready():
 	var player = get_node("YSort/Player")
 	changefloor.changeSandboxInstance(sandboxarea)
 	changefloor.initializePlayer(player)
-	playgroundHandler.newFloor(get_node("YSort/Items"), get_node("YSort/Playground"), get_node("Background"))
+	playgroundHandler.newFloor(get_node("YSort/Items"), get_node("YSort/Playground"), get_node("Background"), get_node("YSort/Fire"))
 
 func _on_ItemSlot_gui_input(event, index, slotowner):
 	if event is InputEventMouseButton:
