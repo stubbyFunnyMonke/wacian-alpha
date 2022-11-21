@@ -654,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 2
+frame = 24
 speed_scale = 10.0
 playing = true
 
@@ -826,8 +826,8 @@ rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Programmer
-Artist
 Game Designer
+Tester
 "
 align = 1
 valign = 1
@@ -1050,8 +1050,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2048.0
-margin_bottom = 1200.0
+margin_right = 3072.0
+margin_bottom = 1800.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1065,10 +1065,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 1390.0
-margin_top = 730.0
-margin_right = 1681.0
-margin_bottom = 1069.0
+margin_left = 1902.0
+margin_top = 1030.0
+margin_right = 2193.0
+margin_bottom = 1369.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]

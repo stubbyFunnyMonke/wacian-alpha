@@ -79,7 +79,7 @@ func _physics_process(delta):
 			if durabilityPercentage > 1: durabilityPercentage = 1
 			
 			if waterLevel <= maxWaterLevel:
-				waterLevel = waterLevel + (delta * (1 - durabilityPercentage) * intensity) 
+				waterLevel = waterLevel + (10 * (1 - durabilityPercentage) * (delta * intensity)) 
 			print(waterLevel)
 		elif disasterData["storm"].active == false:
 			if raining.is_playing() == true:
