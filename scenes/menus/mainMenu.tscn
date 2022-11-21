@@ -589,7 +589,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
 margin_right = 1012.0
-margin_bottom = 1697.0
+margin_bottom = 1787.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -653,7 +653,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 6
+frame = 21
 speed_scale = 10.0
 playing = true
 
@@ -896,38 +896,24 @@ text = "Special Thanks
 align = 1
 valign = 1
 
-[node name="Label4" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
 margin_top = 1405.0
 margin_right = 1012.0
-margin_bottom = 1456.0
-size_flags_vertical = 1
-custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.592157, 0.305882, 0, 1 )
-custom_fonts/font = ExtResource( 11 )
-text = "Special Thanks
-"
-align = 1
-valign = 1
-
-[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1460.0
-margin_right = 1012.0
-margin_bottom = 1485.0
+margin_bottom = 1430.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="rohan" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1489.0
+margin_top = 1434.0
 margin_right = 1012.0
-margin_bottom = 1563.0
+margin_bottom = 1508.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
 margin_right = 1012.0
 margin_bottom = 35.0
-custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Rohan
 "
@@ -946,16 +932,78 @@ text = "I don't know why I put him here
 align = 1
 valign = 1
 
-[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1567.0
+[node name="spacing12" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1512.0
 margin_right = 1012.0
-margin_bottom = 1667.0
+margin_bottom = 1522.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="jiro" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1526.0
+margin_right = 1012.0
+margin_bottom = 1600.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Jiro
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "He asked to be put here
+"
+align = 1
+valign = 1
+
+[node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1604.0
+margin_right = 1012.0
+margin_bottom = 1614.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="you" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1618.0
+margin_right = 1012.0
+margin_bottom = 1653.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/you"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "...and you!
+"
+align = 1
+valign = 1
+
+[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1657.0
+margin_right = 1012.0
+margin_bottom = 1757.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1671.0
+margin_top = 1761.0
 margin_right = 1012.0
-margin_bottom = 1697.0
+margin_bottom = 1787.0
 rect_min_size = Vector2( 175, 0 )
 theme = ExtResource( 3 )
 text = "Back"
@@ -979,10 +1027,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 878.0
-margin_top = 430.0
-margin_right = 1169.0
-margin_bottom = 769.0
+margin_left = 1390.0
+margin_top = 730.0
+margin_right = 1681.0
+margin_bottom = 1069.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
