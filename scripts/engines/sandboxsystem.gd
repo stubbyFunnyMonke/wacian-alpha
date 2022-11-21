@@ -69,7 +69,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if containermenu.visible:
 		return
 	
-	if event.is_action_pressed("lclick"):
+	if event.is_action_pressed("furniture_move"):
 		if tile_cell_at_mouse_pos != -1:
 			#check if the tile has some furniture
 			
@@ -196,7 +196,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 					playgroundHandler.storedItem = foundfurniture.tiles[index + 1]
 	
-	if event.is_action_pressed("rclick"):
+	if event.is_action_pressed("furniture_interact"):
 		if tile_cell_at_mouse_pos != -1:
 			#tile has furniture
 			if playgroundHandler.storedItem == -1:
