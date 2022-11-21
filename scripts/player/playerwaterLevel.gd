@@ -24,11 +24,11 @@ func _physics_process(delta):
 				
 				if cancel == false:
 					visible = true
-					playerstats.player_buff("speed", 0.6875, "flood")
 					
 					#lol
 					if waterLevelPercentage > 0.5:
 						playerstats.changeOxygen(-delta * 10)
+						playerstats.player_buff("speed", 0.6875, "flood")
 					
 					if waterLevelPercentage <= 0.25:
 						frame = 0

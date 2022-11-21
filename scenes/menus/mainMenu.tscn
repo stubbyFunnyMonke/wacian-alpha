@@ -572,6 +572,7 @@ anims/startgame = SubResource( 11 )
 pause_mode = 2
 
 [node name="CreditsContainer" type="Control" parent="mainMenu"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -588,7 +589,7 @@ rect_min_size = Vector2( 1024, 600 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
-margin_right = 1012.0
+margin_right = 1024.0
 margin_bottom = 1787.0
 size_flags_horizontal = 3
 alignment = 1
@@ -653,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 21
+frame = 2
 speed_scale = 10.0
 playing = true
 
@@ -1012,8 +1013,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2048.0
-margin_bottom = 1200.0
+margin_right = 1024.0
+margin_bottom = 600.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1027,10 +1028,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 1390.0
-margin_top = 730.0
-margin_right = 1681.0
-margin_bottom = 1069.0
+margin_left = 366.0
+margin_top = 130.0
+margin_right = 657.0
+margin_bottom = 469.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
