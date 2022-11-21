@@ -12,14 +12,15 @@ func _ready():
 	timer.start(1)
 
 func display_item():
-	sprite.texture = load("res://assets/images/items/%s" % item.icon)
-	if !item.has('quantity'):
-		quantity.text = ""
-	else:
-		if item.quantity == 1:
+	if "icon" in item:
+		sprite.texture = load("res://assets/images/items/%s" % item.icon)
+		if !item.has('quantity'):
 			quantity.text = ""
 		else:
-			quantity.text = str(item.quantity)
+			if item.quantity == 1:
+				quantity.text = ""
+			else:
+				quantity.text = str(item.quantity)
 
 func get_item():
 	var doneAdding

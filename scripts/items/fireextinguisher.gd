@@ -13,7 +13,7 @@ func use(playerNode):
 		if playerNode.position.distance_to(playgroundHandler.currentPlaygroundNode.map_to_world(selectedTile)) < 32 * playerstats.furnitureRange:
 			var extinguishParticles = preload("res://scenes/particles/extinguishParticles.tscn")
 			var extinguishing = extinguishParticles.instance()
-			extinguishing.position = fireTiles.get_node(str(selectedTile)).position + Vector2(16, 16)
+			extinguishing.position = fireTiles.map_to_world(selectedTile).position + Vector2(16, 16)
 			extinguishing.emitting = true
 			global.get_scene_node().get_node("YSort").add_child(extinguishing)
 			
@@ -24,6 +24,8 @@ func use(playerNode):
 			soundNode.bus = "sfx"
 			soundNode.play()
 			soundNode.connect("finished", self, "sound1Finished")
+			
+			yield(get_tree(), "idle_frame")
 			
 			fireTiles.set_cellv(selectedTile, -1)
 

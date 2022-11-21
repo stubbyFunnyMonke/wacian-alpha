@@ -654,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 2
+frame = 32
 speed_scale = 10.0
 playing = true
 
@@ -970,6 +970,43 @@ text = "He asked to be put here
 align = 1
 valign = 1
 
+[node name="spacing14" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 3130.0
+margin_right = 1012.0
+margin_bottom = 3140.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="aaron" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1526.0
+margin_right = 1012.0
+margin_bottom = 1600.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Aaron
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Beta Tester
+"
+align = 1
+valign = 1
+
 [node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
 margin_top = 1604.0
 margin_right = 1012.0
@@ -1028,10 +1065,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 366.0
-margin_top = 130.0
-margin_right = 657.0
-margin_bottom = 469.0
+margin_left = 878.0
+margin_top = 430.0
+margin_right = 1169.0
+margin_bottom = 769.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
