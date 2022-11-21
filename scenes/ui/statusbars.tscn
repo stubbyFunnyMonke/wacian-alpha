@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/themes/progressbar.tres" type="Theme" id=1]
 [ext_resource path="res://assets/images/ui/hpicon.png" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://assets/images/ui/thirsticon.png" type="Texture" id=7]
 [ext_resource path="res://scripts/ui/thirstbar.gd" type="Script" id=8]
 [ext_resource path="res://scripts/ui/staminabar.gd" type="Script" id=9]
+[ext_resource path="res://scripts/ui/oxygen.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.529412, 0.615686, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.376471, 0, 1 )
@@ -434,6 +438,17 @@ tracks/1/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+
+[node name="oxygen" type="ProgressBar" parent="."]
+margin_left = 57.0
+margin_top = 479.0
+margin_right = 257.0
+margin_bottom = 495.0
+rect_scale = Vector2( 1, 0.2 )
+theme = ExtResource( 1 )
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+script = ExtResource( 10 )
 
 [node name="healthbar" type="ProgressBar" parent="."]
 margin_left = 56.979

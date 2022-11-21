@@ -43,7 +43,7 @@ func reset():
 	for disaster in disasterData:
 		disasterData[disaster].active = false
 	
-	waterLevel = 500
+	waterLevel = 1000
 
 func _physics_process(delta):
 	if global.ingame == true:

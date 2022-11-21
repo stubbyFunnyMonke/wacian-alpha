@@ -9,6 +9,7 @@ const maxSpeed = 100
 const maxStamina = 100
 const maxHunger = 50
 const maxThirst = 50
+const maxOxygen = 100
 
 #default values (no buffs or debuffs and whatnot)
 const defaultHp = 100
@@ -24,6 +25,7 @@ var currentSpeed = 16
 var currentStamina = 100
 var currentHunger = 50
 var currentThirst = 50
+var currentOxygen = 100
 
 #multiplier system??
 var speedMultipliers = {}
@@ -55,6 +57,7 @@ func reset():
 	currentStamina = 100
 	currentHunger = 50
 	currentThirst = 50
+	currentOxygen = 100
 	
 	speedMultipliers = {}
 	
@@ -123,6 +126,17 @@ func changeStamina(amount):
 		currentStamina = newamount
 	else:
 		currentStamina = 0
+	emit_signal("player_stats_changed")
+
+func changeOxygen(amount):
+	var newamount = currentOxygen + amount
+	
+	if newamount >= maxOxygen:
+		currentOxygen = maxOxygen
+	elif newamount > 0:
+		currentOxygen = newamount
+	else:
+		currentOxygen = 0
 	emit_signal("player_stats_changed")
 
 func player_eat(hunger_value):
@@ -296,6 +310,10 @@ func _physics_process(delta):
 		
 		if onfire == true:
 			hurtPlayer(1, "fire", 0.5)
+		
+		#lol
+		if currentOxygen <= 0:
+			hurtPlayer(1, "drowning", 0.1)
 		
 		#trigger game over
 		if currentHp <= 0:

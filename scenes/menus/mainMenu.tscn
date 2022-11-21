@@ -572,7 +572,6 @@ anims/startgame = SubResource( 11 )
 pause_mode = 2
 
 [node name="CreditsContainer" type="Control" parent="mainMenu"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -589,8 +588,8 @@ rect_min_size = Vector2( 1024, 600 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
-margin_right = 1024.0
-margin_bottom = 1161.0
+margin_right = 1012.0
+margin_bottom = 1697.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -654,7 +653,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 25
+frame = 6
 speed_scale = 10.0
 playing = true
 
@@ -685,7 +684,7 @@ rect_pivot_offset = Vector2( -79.5008, -212 )
 [node name="zam" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
 margin_top = 471.0
 margin_right = 1012.0
-margin_bottom = 602.0
+margin_bottom = 621.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
@@ -703,11 +702,12 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 131.0
+margin_bottom = 150.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Artist
+text = "Programmer
+Artist
 Game Designer
 Concept Artist
 Tester
@@ -716,16 +716,16 @@ align = 1
 valign = 1
 
 [node name="spacing8" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 606.0
+margin_top = 625.0
 margin_right = 1012.0
-margin_bottom = 616.0
+margin_bottom = 635.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="joseph" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 620.0
+margin_top = 639.0
 margin_right = 1012.0
-margin_bottom = 694.0
+margin_bottom = 732.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
@@ -743,26 +743,27 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Game Designer
+text = "Programmer
+Game Designer
 "
 align = 1
 valign = 1
 
 [node name="spacing4" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 698.0
+margin_top = 736.0
 margin_right = 1012.0
-margin_bottom = 708.0
+margin_bottom = 746.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="dale" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 712.0
+margin_top = 750.0
 margin_right = 1012.0
-margin_bottom = 805.0
+margin_bottom = 862.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
@@ -780,27 +781,28 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 93.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Artist
+text = "Programmer
+Artist
 Game Designer
 "
 align = 1
 valign = 1
 
 [node name="spacing5" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 809.0
+margin_top = 866.0
 margin_right = 1012.0
-margin_bottom = 819.0
+margin_bottom = 876.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="lei" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 823.0
+margin_top = 880.0
 margin_right = 1012.0
-margin_bottom = 916.0
+margin_bottom = 992.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
@@ -818,27 +820,28 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 93.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Artist
+text = "Programmer
+Artist
 Game Designer
 "
 align = 1
 valign = 1
 
 [node name="spacing6" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 920.0
+margin_top = 996.0
 margin_right = 1012.0
-margin_bottom = 930.0
+margin_bottom = 1006.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="enzo" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 934.0
+margin_top = 1010.0
 margin_right = 1012.0
-margin_bottom = 1027.0
+margin_bottom = 1122.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
@@ -856,26 +859,103 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 93.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Game Designer
+text = "Programmer
+Game Designer
 Tester
 "
 align = 1
 valign = 1
 
 [node name="spacing7" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1031.0
+margin_top = 1126.0
 margin_right = 1012.0
-margin_bottom = 1131.0
+margin_bottom = 1226.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="spacing9" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1230.0
+margin_right = 1012.0
+margin_bottom = 1330.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label3" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1334.0
+margin_right = 1012.0
+margin_bottom = 1401.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Special Thanks
+"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1405.0
+margin_right = 1012.0
+margin_bottom = 1456.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0.305882, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Special Thanks
+"
+align = 1
+valign = 1
+
+[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1460.0
+margin_right = 1012.0
+margin_bottom = 1485.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="rohan" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1489.0
+margin_right = 1012.0
+margin_bottom = 1563.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Rohan
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "I don't know why I put him here
+"
+align = 1
+valign = 1
+
+[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1567.0
+margin_right = 1012.0
+margin_bottom = 1667.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1135.0
+margin_top = 1671.0
 margin_right = 1012.0
-margin_bottom = 1161.0
+margin_bottom = 1697.0
 rect_min_size = Vector2( 175, 0 )
 theme = ExtResource( 3 )
 text = "Back"
@@ -884,6 +964,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 2048.0
+margin_bottom = 1200.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -897,10 +979,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 366.0
-margin_top = 130.0
-margin_right = 657.0
-margin_bottom = 469.0
+margin_left = 878.0
+margin_top = 430.0
+margin_right = 1169.0
+margin_bottom = 769.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
@@ -1033,10 +1115,10 @@ margin_bottom = -300.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Intro/CenterContainer"]
-margin_left = 400.0
-margin_top = 282.0
-margin_right = 624.0
-margin_bottom = 318.0
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
 
 [node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
 visible = false
