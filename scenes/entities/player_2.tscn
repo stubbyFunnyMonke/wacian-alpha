@@ -242,7 +242,7 @@ graph_offset = Vector2( -164.695, 0 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=41]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 3.15661
+radius = 4.35228
 height = 6.5289
 
 [sub_resource type="AtlasTexture" id=2]
@@ -360,21 +360,20 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-rotation = -0.00558556
 collision_mask = 5
 script = ExtResource( 2 )
 sprintParticles = ExtResource( 7 )
 
 [node name="Shadow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.486275 )
-position = Vector2( 0, 6 )
+position = Vector2( -0.099556, 9.33287 )
 scale = Vector2( 1, 0.6 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 7 )
-position = Vector2( 0.0446842, -7.99988 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 0.169971, -8.65496 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 8
@@ -400,14 +399,16 @@ parameters/idle/blend_position = Vector2( 0.00652373, 0.456897 )
 parameters/walk/blend_position = Vector2( -0.560843, -0.083815 )
 
 [node name="HeldFurniture" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.595094, -3.81437 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0343253, 0.776422 )
+position = Vector2( -0.0569325, 1.85776 )
 rotation = -1.5708
 scale = Vector2( 1.863, 0.886 )
 shape = SubResource( 42 )
 
 [node name="footstep" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -0.107003, 3.3332 )
 stream = ExtResource( 5 )
 bus = "sfx"
 
@@ -420,7 +421,7 @@ script = ExtResource( 6 )
 visible = false
 position = Vector2( 1.31102, -14.4212 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -439,8 +440,10 @@ shadow_enabled = true
 [node name="fireEffect" type="AnimatedSprite" parent="."]
 visible = false
 material = SubResource( 18 )
+position = Vector2( -0.461504, -4.67833 )
+scale = Vector2( 0.634501, 1 )
 frames = SubResource( 17 )
-frame = 3
+frame = 5
 speed_scale = 2.0
 playing = true
 script = ExtResource( 11 )
@@ -451,7 +454,7 @@ position = Vector2( 0.105111, -12.7092 )
 scale = Vector2( 0.888319, 1.58527 )
 z_index = -1
 frames = SubResource( 17 )
-frame = 2
+frame = 4
 speed_scale = 2.0
 playing = true
 

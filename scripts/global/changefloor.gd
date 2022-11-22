@@ -26,7 +26,7 @@ func initializePlayer(playerEntity):
 	if landedcell != -1:
 		var landingcell = getcellwithid(landedcell)
 		if landingcell:
-			player.position = sandboxArea.map_to_world(landingcell)
+			player.position = sandboxArea.map_to_world(landingcell) + Vector2(16, 16)
 			landedcell = -1
 			
 	emit_signal("on_changed_floor", floors[currentfloor])

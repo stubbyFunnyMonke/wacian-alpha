@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
@@ -13,6 +13,15 @@
 [ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=11]
 [ext_resource path="res://scenes/menus/OptionsContainer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/images/misc/sirraden.jpg" type="Texture" id=13]
+[ext_resource path="res://assets/images/misc/Tree.png" type="Texture" id=14]
+[ext_resource path="res://scenes/tilemaps/Ocean.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/images/misc/GrassBackground.png" type="Texture" id=16]
+[ext_resource path="res://scenes/particles/rainParticles.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/ui/vignette.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/menus/menuLighting.gd" type="Script" id=19]
+[ext_resource path="res://assets/images/misc/menu-volcano.png" type="Texture" id=20]
+[ext_resource path="res://scenes/particles/smokeParticles.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/menus/lightningMenu.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -319,6 +328,25 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment()
+{
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=52]
+shader = SubResource( 1 )
+shader_param/color = Color( 0, 0, 0, 1 )
+shader_param/multiplier = 0.0
+shader_param/softness = 2.0
+
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 8 )
@@ -535,7 +563,7 @@ bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
 shadow_color = Color( 1, 0.376471, 0, 0.6 )
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=53]
 bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -553,7 +581,7 @@ default_font = ExtResource( 1 )
 Button/styles/disabled = SubResource( 4 )
 Button/styles/focus = SubResource( 6 )
 Button/styles/hover = SubResource( 3 )
-Button/styles/normal = SubResource( 1 )
+Button/styles/normal = SubResource( 53 )
 Button/styles/pressed = SubResource( 5 )
 
 [node name="MainMenuBG" type="Node2D"]
@@ -572,7 +600,17 @@ anims/startgame = SubResource( 11 )
 [node name="mainMenu" type="CanvasLayer" parent="."]
 pause_mode = 2
 
+[node name="Background" type="ColorRect" parent="mainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.188235 )
+
+[node name="Vignette" parent="mainMenu" instance=ExtResource( 18 )]
+material = SubResource( 52 )
+script = null
+
 [node name="CreditsContainer" type="Control" parent="mainMenu"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -589,7 +627,7 @@ rect_min_size = Vector2( 1024, 600 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
-margin_right = 1012.0
+margin_right = 1024.0
 margin_bottom = 2650.0
 size_flags_horizontal = 3
 alignment = 1
@@ -654,7 +692,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 14
+frame = 18
 speed_scale = 10.0
 playing = true
 
@@ -1189,8 +1227,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 18432.0
-margin_bottom = 10800.0
+margin_right = 22528.0
+margin_bottom = 13200.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1204,10 +1242,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 9070.0
-margin_top = 5230.0
-margin_right = 9361.0
-margin_bottom = 5569.0
+margin_left = 11118.0
+margin_top = 6448.0
+margin_right = 11409.0
+margin_bottom = 6751.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
@@ -1226,12 +1264,6 @@ margin_top = 205.0
 margin_right = 291.0
 margin_bottom = 231.0
 text = "Start Game"
-
-[node name="TutorialBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
-margin_top = 241.0
-margin_right = 291.0
-margin_bottom = 267.0
-text = "Play Tutorial"
 
 [node name="CreditsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
 margin_top = 277.0
@@ -1377,6 +1409,340 @@ bus = "menu music"
 [node name="clickSFX" type="AudioStreamPlayer" parent="mainMenu"]
 stream = ExtResource( 7 )
 bus = "menu sfx"
+
+[node name="menuLighting" type="CanvasModulate" parent="."]
+script = ExtResource( 19 )
+
+[node name="GrassBackground" type="Sprite" parent="."]
+position = Vector2( 550.892, 687.886 )
+scale = Vector2( 23.3162, 7.73221 )
+texture = ExtResource( 16 )
+
+[node name="Menu-volcano" type="Sprite" parent="."]
+position = Vector2( 397.743, 329.643 )
+scale = Vector2( 11.557, 7.73221 )
+texture = ExtResource( 20 )
+
+[node name="lightningstrike_set_1" type="Node2D" parent="."]
+visible = false
+position = Vector2( 397.743, 329.643 )
+scale = Vector2( 11.557, 7.73221 )
+
+[node name="lightningStrike" parent="lightningstrike_set_1" instance=ExtResource( 22 )]
+position = Vector2( -18.3465, -15.4429 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="lightningStrike2" parent="lightningstrike_set_1" instance=ExtResource( 22 )]
+position = Vector2( 28.6401, -5.34034 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="lightningStrike3" parent="lightningstrike_set_1" instance=ExtResource( 22 )]
+position = Vector2( 41.9403, -43.4694 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="lightningstrike_set_2" type="Node2D" parent="."]
+visible = false
+position = Vector2( 397.743, 329.643 )
+scale = Vector2( 11.557, 7.73221 )
+
+[node name="lightningStrike2" parent="lightningstrike_set_2" instance=ExtResource( 22 )]
+position = Vector2( 3.56606, 8.18406 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="lightningStrike3" parent="lightningstrike_set_2" instance=ExtResource( 22 )]
+position = Vector2( 38.1246, -32.878 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="lightningstrike_set_3" type="Node2D" parent="."]
+visible = false
+position = Vector2( 397.743, 329.643 )
+scale = Vector2( 11.557, 7.73221 )
+
+[node name="lightningStrike" parent="lightningstrike_set_3" instance=ExtResource( 22 )]
+position = Vector2( -0.576626, 1.66628 )
+scale = Vector2( 0.259582, 0.387988 )
+
+[node name="Ocean" parent="." instance=ExtResource( 15 )]
+position = Vector2( 152.189, 95.5937 )
+
+[node name="debris" parent="." instance=ExtResource( 17 )]
+
+[node name="Middleground3" type="Node2D" parent="."]
+modulate = Color( 0.596078, 0.690196, 1, 1 )
+position = Vector2( -97.589, 224.321 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Tree" type="Sprite" parent="Middleground3"]
+position = Vector2( 160.428, 395.757 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree2" type="Sprite" parent="Middleground3"]
+position = Vector2( 378.217, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree3" type="Sprite" parent="Middleground3"]
+position = Vector2( 595.979, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree4" type="Sprite" parent="Middleground3"]
+position = Vector2( 813.768, 401.414 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree5" type="Sprite" parent="Middleground3"]
+position = Vector2( 1035.59, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree6" type="Sprite" parent="Middleground3"]
+position = Vector2( 1253.35, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree7" type="Sprite" parent="Middleground3"]
+position = Vector2( 1471.14, 403.309 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree8" type="Sprite" parent="Middleground3"]
+position = Vector2( 1701.24, 405.23 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree9" type="Sprite" parent="Middleground3"]
+position = Vector2( 1919.03, 408.058 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree10" type="Sprite" parent="Middleground3"]
+position = Vector2( 2136.8, 408.058 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree11" type="Sprite" parent="Middleground3"]
+position = Vector2( 2354.58, 410.886 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree12" type="Sprite" parent="Middleground3"]
+position = Vector2( 2576.41, 409.952 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree13" type="Sprite" parent="Middleground3"]
+position = Vector2( 2794.17, 409.952 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree14" type="Sprite" parent="Middleground3"]
+position = Vector2( 3011.96, 412.781 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Middleground2" type="Node2D" parent="."]
+modulate = Color( 0.415686, 0.545098, 1, 1 )
+position = Vector2( -108.932, 185.058 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Tree" type="Sprite" parent="Middleground2"]
+position = Vector2( 160.428, 395.757 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree2" type="Sprite" parent="Middleground2"]
+position = Vector2( 378.217, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree3" type="Sprite" parent="Middleground2"]
+position = Vector2( 595.979, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree4" type="Sprite" parent="Middleground2"]
+position = Vector2( 813.768, 401.414 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree5" type="Sprite" parent="Middleground2"]
+position = Vector2( 1035.59, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree6" type="Sprite" parent="Middleground2"]
+position = Vector2( 1253.35, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree7" type="Sprite" parent="Middleground2"]
+position = Vector2( 1471.14, 403.309 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree8" type="Sprite" parent="Middleground2"]
+position = Vector2( 1701.24, 405.23 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree9" type="Sprite" parent="Middleground2"]
+position = Vector2( 1919.03, 408.058 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree10" type="Sprite" parent="Middleground2"]
+position = Vector2( 2136.8, 408.058 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree11" type="Sprite" parent="Middleground2"]
+position = Vector2( 2354.58, 410.886 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree12" type="Sprite" parent="Middleground2"]
+position = Vector2( 2576.41, 409.952 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree13" type="Sprite" parent="Middleground2"]
+position = Vector2( 2794.17, 409.952 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree14" type="Sprite" parent="Middleground2"]
+position = Vector2( 3011.96, 412.781 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Middleground1" type="Node2D" parent="."]
+modulate = Color( 0.6, 0.690196, 1, 1 )
+position = Vector2( -37.2723, 126.644 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Tree" type="Sprite" parent="Middleground1"]
+position = Vector2( 160.428, 395.757 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree2" type="Sprite" parent="Middleground1"]
+position = Vector2( 378.217, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree3" type="Sprite" parent="Middleground1"]
+position = Vector2( 595.979, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree4" type="Sprite" parent="Middleground1"]
+position = Vector2( 813.768, 401.414 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree5" type="Sprite" parent="Middleground1"]
+position = Vector2( 1035.59, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree6" type="Sprite" parent="Middleground1"]
+position = Vector2( 1253.35, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree7" type="Sprite" parent="Middleground1"]
+position = Vector2( 1471.14, 403.309 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Foreground" type="Node2D" parent="."]
+modulate = Color( 0.352941, 0.494118, 0.972549, 1 )
+position = Vector2( -262.484, 113.558 )
+
+[node name="Tree" type="Sprite" parent="Foreground"]
+position = Vector2( 160.428, 395.757 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree2" type="Sprite" parent="Foreground"]
+position = Vector2( 378.217, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree3" type="Sprite" parent="Foreground"]
+position = Vector2( 595.979, 398.586 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree4" type="Sprite" parent="Foreground"]
+position = Vector2( 813.768, 401.414 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree5" type="Sprite" parent="Foreground"]
+position = Vector2( 1035.59, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree6" type="Sprite" parent="Foreground"]
+position = Vector2( 1253.35, 400.48 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="Tree7" type="Sprite" parent="Foreground"]
+position = Vector2( 1471.14, 403.309 )
+scale = Vector2( 6.36545, 6.36545 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.01936, 13.3586 )
+
+[node name="smokeParticles" parent="." instance=ExtResource( 21 )]
+position = Vector2( 344.892, 202.141 )
+scale = Vector2( 2, 2 )
+amount = 20
+script = null
 
 [connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
 [connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]

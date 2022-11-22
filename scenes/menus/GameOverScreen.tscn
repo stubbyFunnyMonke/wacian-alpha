@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/menus/GameOverMenu.gd" type="Script" id=2]
-[ext_resource path="res://assets/images/player.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/player/charlesidle1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/music/game over/game_over_theme.wav" type="AudioStream" id=5]
 [ext_resource path="res://scripts/menus/GameOverScreenPrimary.gd" type="Script" id=6]
@@ -312,15 +312,15 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 7 )
-position = Vector2( 0.102469, -0.00220454 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 0.00535417, 0.0237797 )
+scale = Vector2( 1.65165, 1.65165 )
 texture = ExtResource( 3 )
 
 [node name="Camera2D" parent="Sprite" instance=ExtResource( 4 )]
 
 [node name="HeartShatter" type="Sprite" parent="."]
-position = Vector2( 0.86061, 1.18273 )
-scale = Vector2( 0.399612, 0.399612 )
+position = Vector2( 0.0106301, 0.00576949 )
+scale = Vector2( 0.261059, 0.261059 )
 texture = ExtResource( 7 )
 hframes = 2
 
