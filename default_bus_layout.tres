@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=6 format=2]
+[gd_resource type="AudioBusLayout" load_steps=5 format=2]
 
 [sub_resource type="AudioEffectLowPassFilter" id=3]
 resource_name = "LowPassFilter"
@@ -12,9 +12,6 @@ resource_name = "EQ6"
 
 [sub_resource type="AudioEffectLowPassFilter" id=4]
 resource_name = "LowPassFilter"
-
-[sub_resource type="AudioEffectReverb" id=5]
-resource_name = "Reverb"
 
 [resource]
 bus/1/name = "ingame"
@@ -54,9 +51,7 @@ bus/5/bypass_fx = false
 bus/5/volume_db = 0.0
 bus/5/send = "sfx"
 bus/5/effect/0/effect = SubResource( 4 )
-bus/5/effect/0/enabled = true
-bus/5/effect/1/effect = SubResource( 5 )
-bus/5/effect/1/enabled = true
+bus/5/effect/0/enabled = false
 bus/6/name = "menus"
 bus/6/solo = false
 bus/6/mute = false

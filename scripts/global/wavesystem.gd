@@ -76,6 +76,46 @@ func waveLoop(waveID):
 			return
 		#############GAME CHECKS###############
 		
+		var durations = []
+		var available = []
+		var selected = []
+		
+		for disaster in disasterHandler.disasterData:
+			var dis = disasterHandler.disasterData[disaster]
+			if dis.start <= waveNumber:
+				available.append(disaster)
+				durations.append(dis.duration)
+		
+		if waveNumber > 5:
+			var shuffleAvailable = []
+			var indexList = range(available.size())
+			for i in range(available.size()):
+				var x = randi()%indexList.size()
+				shuffleAvailable.append(available[indexList[x]])
+				indexList.remove(x)
+			
+			for n in 2:
+				selected.append(shuffleAvailable[n])
+		else:
+			var rand_index = randi() % available.size()
+			selected.append(available[rand_index])
+		
+		var maxText = ""
+		
+		for disaster in selected:
+			var index = selected.find(disaster, 0)
+			if (index + 1) == selected.size():
+				maxText = maxText + disaster.to_upper()
+			else:
+				maxText = maxText + disaster.to_upper() + ", "
+		
+		Textbox.queue_text("WARNING! Incoming disasters: " + maxText)
+		amber_alert()
+		#############GAME CHECKS###############
+		if waveInstances[waveID].active == false:
+			return
+		#############GAME CHECKS###############
+		
 		#wait 2
 		t.set_wait_time(15) #beat drop
 		t.set_one_shot(true)
@@ -87,24 +127,20 @@ func waveLoop(waveID):
 			return
 		#############GAME CHECKS###############
 		
-		var durations = []
-		
-		for disaster in disasterHandler.disasterData:
-			var dis = disasterHandler.disasterData[disaster]
+		for selectedDisaster in selected:
+			var dis = disasterHandler.disasterData[selectedDisaster]
 			if dis.start <= waveNumber:
-				print(dis)
 				dis.active = true
-				durations.append(dis.duration)
-		
-		print(getMax(durations))
 		
 		#############GAME CHECKS###############
 		if waveInstances[waveID].active == false:
 			return
 		#############GAME CHECKS###############
 		
+		var randomDuration = (randi() % getMax(durations)) + getMax(durations)
+		
 		#wait 3
-		t.set_wait_time(getMax(durations))
+		t.set_wait_time(randomDuration)
 		t.set_one_shot(true)
 		t.start()
 		yield(t, "timeout")
@@ -120,6 +156,17 @@ func waveLoop(waveID):
 		
 		waveNumber += 1
 		waveLoop(waveID)
+
+func amber_alert():
+	var thunderStream = preload("res://assets/sounds/disasters/amber_alert.wav")
+	var thunderSound = AudioStreamPlayer.new()
+	thunderSound.stream = thunderStream
+	GlobalSFX.add_child(thunderSound)
+	thunderSound.bus = "sfx"
+	thunderSound.play()
+	thunderSound.name = "amber_alert"
+	yield(thunderSound, "finished")
+	thunderSound.queue_free()
 
 func getMax(array):
 	var maxVal = array[0]

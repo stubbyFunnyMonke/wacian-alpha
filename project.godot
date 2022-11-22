@@ -47,6 +47,7 @@ disasterHandler="*res://scripts/global/disasterhandler.gd"
 PauseMenu="*res://scenes/menus/pauseMenu.tscn"
 WaveIndicator="*res://scenes/ui/WaveIndicator.tscn"
 InputMapper="*res://scenes/menus/control_settings/InputMapper.tscn"
+Textbox="*res://scenes/ui/Textbox.tscn"
 
 [debug]
 

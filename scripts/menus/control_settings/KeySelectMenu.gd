@@ -8,7 +8,6 @@ func _ready():
 func _input(event):
 	if not event.is_pressed():
 		return
-	print(event)
 	if event.is_class("InputEventKey"):
 		emit_signal("key_selected", event.scancode, "InputEventKey")
 	elif event.is_class("InputEventMouseButton"):

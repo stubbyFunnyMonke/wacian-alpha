@@ -590,7 +590,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
 margin_right = 1012.0
-margin_bottom = 2428.0
+margin_bottom = 2650.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -654,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 24
+frame = 21
 speed_scale = 10.0
 playing = true
 
@@ -900,13 +900,13 @@ valign = 1
 [node name="spacing17" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
 margin_top = 1405.0
 margin_right = 1012.0
-margin_bottom = 1605.0
-rect_min_size = Vector2( 0, 200 )
+margin_bottom = 1625.0
+rect_min_size = Vector2( 0, 220 )
 
 [node name="sirraden" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1609.0
+margin_top = 1629.0
 margin_right = 1012.0
-margin_bottom = 1683.0
+margin_bottom = 1722.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Sirraden" type="Sprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
@@ -929,25 +929,62 @@ valign = 1
 [node name="Label5" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "\"Papunta na tayo sa exciting part!\"
+-Sir Raden
+"
+align = 1
+valign = 1
+
+[node name="spacing18" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1726.0
+margin_right = 1012.0
+margin_bottom = 1751.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="mentors" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1755.0
+margin_right = 1012.0
+margin_bottom = 1829.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/mentors"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Patrick Ragun & Juliana Ambos
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/mentors"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Mentors
 "
 align = 1
 valign = 1
 
 [node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1687.0
+margin_top = 1833.0
 margin_right = 1012.0
-margin_bottom = 1712.0
+margin_bottom = 1858.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="rohan" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1716.0
+margin_top = 1862.0
 margin_right = 1012.0
-margin_bottom = 1790.0
+margin_bottom = 1955.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
@@ -965,26 +1002,27 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Beta Tester
+
 "
 align = 1
 valign = 1
 
 [node name="spacing12" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1794.0
+margin_top = 1959.0
 margin_right = 1012.0
-margin_bottom = 1804.0
+margin_bottom = 1969.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="aaron" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1808.0
+margin_top = 1973.0
 margin_right = 1012.0
-margin_bottom = 1882.0
+margin_bottom = 2066.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
@@ -1002,26 +1040,27 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Beta Tester
+
 "
 align = 1
 valign = 1
 
 [node name="spacing14" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1886.0
+margin_top = 2070.0
 margin_right = 1012.0
-margin_bottom = 1896.0
+margin_bottom = 2080.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="jiro" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1900.0
+margin_top = 2084.0
 margin_right = 1012.0
-margin_bottom = 1974.0
+margin_bottom = 2177.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
@@ -1039,26 +1078,27 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "He asked to be put here
+
 "
 align = 1
 valign = 1
 
 [node name="spacing16" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1978.0
+margin_top = 2181.0
 margin_right = 1012.0
-margin_bottom = 1988.0
+margin_bottom = 2191.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="nile" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1992.0
+margin_top = 2195.0
 margin_right = 1012.0
-margin_bottom = 2066.0
+margin_bottom = 2288.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
@@ -1076,26 +1116,27 @@ valign = 1
 [node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
 margin_top = 39.0
 margin_right = 1012.0
-margin_bottom = 74.0
+margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Nile Jocson
+
 "
 align = 1
 valign = 1
 
 [node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2070.0
+margin_top = 2292.0
 margin_right = 1012.0
-margin_bottom = 2080.0
+margin_bottom = 2302.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="you" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2084.0
+margin_top = 2306.0
 margin_right = 1012.0
-margin_bottom = 2119.0
+margin_bottom = 2341.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/you"]
@@ -1111,15 +1152,15 @@ align = 1
 valign = 1
 
 [node name="spacing15" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2123.0
+margin_top = 2345.0
 margin_right = 1012.0
-margin_bottom = 2223.0
+margin_bottom = 2445.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="Label4" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2227.0
+margin_top = 2449.0
 margin_right = 1012.0
-margin_bottom = 2294.0
+margin_bottom = 2516.0
 size_flags_vertical = 1
 custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -1131,15 +1172,15 @@ align = 1
 valign = 1
 
 [node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2298.0
+margin_top = 2520.0
 margin_right = 1012.0
-margin_bottom = 2398.0
+margin_bottom = 2620.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 2402.0
+margin_top = 2624.0
 margin_right = 1012.0
-margin_bottom = 2428.0
+margin_bottom = 2650.0
 rect_min_size = Vector2( 175, 0 )
 theme = ExtResource( 3 )
 text = "Back"
@@ -1148,8 +1189,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 15360.0
-margin_bottom = 9000.0
+margin_right = 17408.0
+margin_bottom = 10200.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1163,10 +1204,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 7534.0
-margin_top = 4330.0
-margin_right = 7825.0
-margin_bottom = 4669.0
+margin_left = 8558.0
+margin_top = 4930.0
+margin_right = 8849.0
+margin_bottom = 5269.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]

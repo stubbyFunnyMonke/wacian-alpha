@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/custom_font_huge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/ui/Textbox.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.396078 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0 )
+
+[node name="Textbox" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 175.0
+margin_top = 418.0
+margin_right = 505.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+margin_right = 1354.0
+margin_bottom = 217.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+margin_right = 1354.0
+margin_bottom = 217.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1338.0
+margin_bottom = 201.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1338.0
+margin_bottom = 201.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 185.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "*"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 1286.0
+margin_bottom = 185.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "gggg"
+autowrap = true
+
+[node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+margin_left = 1290.0
+margin_right = 1322.0
+margin_bottom = 185.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "v"
+valign = 2
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

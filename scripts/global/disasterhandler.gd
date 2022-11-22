@@ -9,14 +9,14 @@ var disasterData = {
 		"active": false
 	},
 	"storm": {
-		"start": 1,
+		"start": 3,
 		"duration": 90,
 		"active": false
 	}
 }
 
 #earthquake vars
-var earthquakeIntensity = 4
+var earthquakeIntensity = 2
 var earthquakeLoop = preload("res://assets/sounds/disasters/earthquake/rumble_loop.wav")
 var earthquakeRumble = AudioStreamPlayer.new()
 
@@ -80,7 +80,6 @@ func _physics_process(delta):
 			
 			if waterLevel <= maxWaterLevel:
 				waterLevel = waterLevel + (10 * (1 - durabilityPercentage) * (delta * intensity)) 
-			print(waterLevel)
 		elif disasterData["storm"].active == false:
 			if raining.is_playing() == true:
 				raining.stop()
