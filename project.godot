@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game++"
-run/main_scene="res://scenes/menus/mainMenu.tscn"
+run/main_scene="res://scenes/entities/player.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -48,6 +48,7 @@ PauseMenu="*res://scenes/menus/pauseMenu.tscn"
 WaveIndicator="*res://scenes/ui/WaveIndicator.tscn"
 InputMapper="*res://scenes/menus/control_settings/InputMapper.tscn"
 Textbox="*res://scenes/ui/Textbox.tscn"
+<<<<<<<HEADTextbox="*res://scenes/ui/Textbox.tscn"
 
 [debug]
 
