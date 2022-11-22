@@ -654,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 21
+frame = 14
 speed_scale = 10.0
 playing = true
 
@@ -1189,8 +1189,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 17408.0
-margin_bottom = 10200.0
+margin_right = 18432.0
+margin_bottom = 10800.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1204,10 +1204,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 8558.0
-margin_top = 4930.0
-margin_right = 8849.0
-margin_bottom = 5269.0
+margin_left = 9070.0
+margin_top = 5230.0
+margin_right = 9361.0
+margin_bottom = 5569.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]

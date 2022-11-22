@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/tilemaps/SandboxArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/UIMain.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/player_2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/tilemaps/FloorShadows.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/tilemaps/placeIndicator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/disasters/earthquakeController.tscn" type="PackedScene" id=6]
@@ -42,7 +42,8 @@ tile_data = PoolIntArray( -1114103, 1, 0, -1114102, 1, 0, -1114101, 1, 0, -11141
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 494.277, -207.584 )
+position = Vector2( 412.71, -259.924 )
+scale = Vector2( 1, 1 )
 
 [node name="Camera2D" parent="YSort/Player" instance=ExtResource( 18 )]
 
