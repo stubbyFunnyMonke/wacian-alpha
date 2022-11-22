@@ -27,6 +27,17 @@ func reset():
 	waveNumber = 1
 	change_state(CALM)
 	
+	yield(Guide, "finished")
+	
+	#wait 1
+	var t = Timer.new()
+	t.set_wait_time(2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
+	
 	waveLoop(newWaveInstance.id)
 
 func end():

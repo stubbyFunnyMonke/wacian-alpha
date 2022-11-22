@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/menus/Guide.gd" type="Script" id=2]
+
+[node name="Guide" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.678431 )
+
+[node name="SideBar" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -528.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="Label" type="Label" parent="Control/SideBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_fonts/font = ExtResource( 1 )
+text = "Welcome to Wacian! In this game, you must try to survive neverending waves of natural disasters!"
+align = 1
+valign = 1
+autowrap = true

@@ -23,6 +23,7 @@ func reset_game():
 	containerhandler.reset()
 	playgroundHandler.reset()
 	changefloor.reset()
+	Guide.reset()
 	
 	for floorlevel in changefloor.floors:
 		get_tree().change_scene("res://scenes/levels/" + floorlevel)

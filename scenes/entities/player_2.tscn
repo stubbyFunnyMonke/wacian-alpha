@@ -435,7 +435,7 @@ script = ExtResource( 6 )
 visible = false
 position = Vector2( 0.68602, -21.5462 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 2.0
 playing = true
 
@@ -457,6 +457,7 @@ material = SubResource( 18 )
 position = Vector2( -0.461504, -4.67833 )
 scale = Vector2( 0.634501, 1 )
 frames = SubResource( 17 )
+frame = 5
 speed_scale = 2.0
 playing = true
 script = ExtResource( 11 )
@@ -467,7 +468,7 @@ position = Vector2( 0.105111, -12.7092 )
 scale = Vector2( 0.888319, 1.58527 )
 z_index = -1
 frames = SubResource( 17 )
-frame = 5
+frame = 4
 speed_scale = 2.0
 playing = true
 
