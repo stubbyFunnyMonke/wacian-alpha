@@ -16,10 +16,6 @@ func reset():
 	items = []
 	for _i in range(slots):
 		items.append({})
-	
-	#debug purposes
-	items[0] = globalItemHandler.get_item_by_key("fireextinguisher")
-	items[1] = globalItemHandler.get_item_by_key("hammer")
 
 func broadcast_signal(indexes):
 	emit_signal("items_changed", indexes)

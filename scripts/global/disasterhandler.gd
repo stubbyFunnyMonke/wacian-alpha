@@ -15,6 +15,9 @@ var disasterData = {
 	}
 }
 
+var currentApartmentHP = 0
+var maxApartmentHP = 80
+
 #earthquake vars
 var earthquakeIntensity = 2
 var earthquakeLoop = preload("res://assets/sounds/disasters/earthquake/rumble_loop.wav")
@@ -86,6 +89,23 @@ func _physics_process(delta):
 			
 			if waterLevel > 0:
 				waterLevel = waterLevel - (delta * 5)
+		
+		#uhh building collapse stuff
+		var totalMaxDurability = 0
+		var totalCurrentDurability = 0
+		
+		for floorNum in playgroundHandler.tileDurabilityData:
+			for tile in playgroundHandler.tileDurabilityData[floorNum]:
+				totalMaxDurability = totalMaxDurability + playgroundHandler.tileDurabilityData[floorNum][tile].maxDurability
+				totalCurrentDurability = totalCurrentDurability + playgroundHandler.tileDurabilityData[floorNum][tile].currentDurability
+		
+		var durabilityPercentage = float(totalCurrentDurability)/float(totalMaxDurability)
+		if durabilityPercentage > 1: durabilityPercentage = 1
+		durabilityPercentage = durabilityPercentage * 100
+		currentApartmentHP = durabilityPercentage - 20
+		
+		if currentApartmentHP <= 0:
+			global.game_over()
 	else:
 		
 		#stop all sounds

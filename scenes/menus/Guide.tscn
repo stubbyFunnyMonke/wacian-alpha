@@ -1,7 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/Guide.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/1-2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/2.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/3.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/4-2.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/4.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/6-1.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/5-2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/5-1.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/10-1.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/8-1.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/8-2.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/11-1.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/7-1.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/9-1.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/14-1.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/13-1.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/14-2.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/12-1.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/15-1.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/16-2.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/18.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/16-3.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/17.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/misc/guide_menu_stuff/16-1.png" type="Texture" id=27]
 
 [node name="Guide" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -24,15 +49,438 @@ margin_right = -528.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.372549 )
 
-[node name="Label" type="Label" parent="Control/SideBar"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/SideBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
 margin_top = 16.0
 margin_right = -16.0
 margin_bottom = -16.0
+
+[node name="spacing" type="Control" parent="Control/SideBar/VBoxContainer"]
+margin_right = 464.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label" type="Label" parent="Control/SideBar/VBoxContainer"]
+margin_top = 104.0
+margin_right = 464.0
+margin_bottom = 263.0
 custom_fonts/font = ExtResource( 1 )
 text = "Welcome to Wacian! In this game, you must try to survive neverending waves of natural disasters!"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="spacing2" type="Control" parent="Control/SideBar/VBoxContainer"]
+margin_top = 267.0
+margin_right = 464.0
+margin_bottom = 513.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="Control/SideBar/VBoxContainer"]
+margin_top = 517.0
+margin_right = 464.0
+margin_bottom = 568.0
+custom_fonts/font = ExtResource( 1 )
+text = "Press Enter to Continue"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ImagesContainers" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 498.0
+
+[node name="0" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/0"]
+margin_left = 27.546
+margin_top = 11.6541
+margin_right = 1036.55
+margin_bottom = 603.654
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/0"]
+margin_left = 28.6055
+margin_top = 283.936
+margin_right = 1043.61
+margin_bottom = 879.936
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="1" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/1"]
+margin_left = 29.4983
+margin_top = 23.9864
+margin_right = 1102.5
+margin_bottom = 1284.99
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="2" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/2"]
+margin_left = 31.0
+margin_top = 140.003
+margin_right = 1104.0
+margin_bottom = 825.003
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="3" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/3"]
+margin_left = 48.1971
+margin_top = 21.8607
+margin_right = 663.197
+margin_bottom = 642.861
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/3"]
+margin_left = 146.299
+margin_top = 293.533
+margin_right = 808.299
+margin_bottom = 894.533
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="4" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/4"]
+margin_left = 155.006
+margin_top = 19.8811
+margin_right = 867.006
+margin_bottom = 606.881
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/4"]
+margin_left = 34.5134
+margin_top = 286.935
+margin_right = 909.513
+margin_bottom = 919.935
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
+expand = true
+
+[node name="5" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/5"]
+margin_left = 33.8284
+margin_top = 219.196
+margin_right = 1028.83
+margin_bottom = 592.196
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 9 )
+expand = true
+
+[node name="6" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/6"]
+margin_left = 56.6786
+margin_top = 184.982
+margin_right = 971.679
+margin_bottom = 724.982
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 16 )
+expand = true
+
+[node name="7" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/7"]
+margin_left = 29.2599
+margin_top = 39.7004
+margin_right = 882.26
+margin_bottom = 596.7
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 13 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/7"]
+margin_left = 160.992
+margin_top = 304.639
+margin_right = 906.992
+margin_bottom = 908.639
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+expand = true
+
+[node name="8" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/8"]
+margin_left = 85.6389
+margin_top = 69.9603
+margin_right = 851.639
+margin_bottom = 1148.96
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 17 )
+expand = true
+
+[node name="9" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/9"]
+margin_left = 51.9821
+margin_top = 169.534
+margin_right = 1053.98
+margin_bottom = 762.534
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 12 )
+
+[node name="10" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/10"]
+margin_left = 46.8061
+margin_top = 202.758
+margin_right = 1009.81
+margin_bottom = 505.758
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="11" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/11"]
+margin_left = 46.8061
+margin_top = 202.758
+margin_right = 1009.81
+margin_bottom = 505.758
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 21 )
+expand = true
+
+[node name="12" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/12"]
+margin_left = 47.0
+margin_top = 203.0
+margin_right = 957.0
+margin_bottom = 612.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 19 )
+expand = true
+
+[node name="13" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/13"]
+margin_left = 101.0
+margin_top = 50.0
+margin_right = 945.0
+margin_bottom = 590.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 18 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/13"]
+margin_left = 28.0467
+margin_top = 326.071
+margin_right = 986.047
+margin_bottom = 831.071
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 20 )
+expand = true
+
+[node name="14" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/14"]
+margin_left = 62.5563
+margin_top = 159.159
+margin_right = 994.556
+margin_bottom = 762.159
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 22 )
+expand = true
+
+[node name="15" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/15"]
+margin_left = 72.7158
+margin_top = 8.98782
+margin_right = 911.716
+margin_bottom = 248.988
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 27 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/15"]
+margin_left = 31.9512
+margin_top = 119.757
+margin_right = 600.951
+margin_bottom = 622.757
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 23 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="Control/ImagesContainers/15"]
+margin_left = 183.978
+margin_top = 340.0
+margin_right = 807.978
+margin_bottom = 871.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 25 )
+expand = true
+
+[node name="16" type="Control" parent="Control/ImagesContainers"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/16"]
+margin_left = 71.4853
+margin_top = 115.159
+margin_right = 934.485
+margin_bottom = 920.159
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 26 )
+expand = true
+
+[node name="17" type="Control" parent="Control/ImagesContainers"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImagesContainers/17"]
+margin_left = 19.9221
+margin_top = 30.9156
+margin_right = 1126.92
+margin_bottom = 680.916
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 24 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ImagesContainers/17"]
+margin_left = 41.0686
+margin_top = 307.935
+margin_right = 1056.07
+margin_bottom = 903.935
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )

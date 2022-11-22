@@ -42,7 +42,8 @@ const controlsSequence = {
 
 var current = 0
 
-onready var textLabel = get_node("Control/SideBar/Label")
+onready var textLabel = get_node("Control/SideBar/VBoxContainer/Label")
+onready var imagesContainers = get_node("Control/ImagesContainers")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,6 +54,12 @@ func reset():
 	$Control.visible = true
 
 func display_new_guide():
+	for child in imagesContainers.get_children():
+		if child.name != str(current):
+			child.visible = false
+		else:
+			child.visible = true
+	
 	if !(current in textSequence):
 		$Control.visible = false
 		emit_signal("finished")
@@ -72,7 +79,7 @@ func display_new_guide():
 	else:
 		textLabel.text = textSequence[current]
 
-func _unhandled_input(event):
-	if event is InputEventKey and event.pressed and global.ingame == true:
+func _process(delta):
+	display_new_guide()
+	if Input.is_action_just_pressed("ui_accept") and global.ingame == true && $Control.visible == true:
 		current += 1
-		display_new_guide()
