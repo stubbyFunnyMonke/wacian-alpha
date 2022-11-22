@@ -50,9 +50,11 @@ func _physics_process(delta): #renderstepped :flushed:
 	if playerstats.crouching == true:
 		collision_layer = 2
 		collision_mask = 2
+		$Sprite.scale = Vector2(1.5, 0.75)
 	else:
 		collision_layer = 1
 		collision_mask = 1
+		$Sprite.scale = Vector2(1.5, 1.5)
 		
 	var stunnedAnimation = $stunEffect
 	if playerstats.stunned == true:

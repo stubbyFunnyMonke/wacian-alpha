@@ -127,6 +127,9 @@ func waveLoop(waveID):
 			return
 		#############GAME CHECKS###############
 		
+		Textbox.change_state(Textbox.State.READY)
+		Textbox.hide_textbox()
+		
 		for selectedDisaster in selected:
 			var dis = disasterHandler.disasterData[selectedDisaster]
 			if dis.start <= waveNumber:
@@ -137,7 +140,7 @@ func waveLoop(waveID):
 			return
 		#############GAME CHECKS###############
 		
-		var randomDuration = (randi() % getMax(durations)) + getMax(durations)
+		var randomDuration = (randi() % getMax(durations)) + int(getMax(durations)/2)
 		
 		#wait 3
 		t.set_wait_time(randomDuration)
