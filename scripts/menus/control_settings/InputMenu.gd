@@ -5,8 +5,9 @@ onready var _action_list = get_node("VBoxContainer/ScrollContainer/ActionList")
 func _ready():
 	InputMapper.connect('profile_changed', self, 'rebuild')
 	$VBoxContainer/ProfilesMenuContainer/ProfilesMenu.initialize(InputMapper)
+	
+	$VBoxContainer/ProfilesMenuContainer/ProfilesMenu.select(InputMapper.current_profile_id)
 	InputMapper.change_profile($VBoxContainer/ProfilesMenuContainer/ProfilesMenu.selected)
-
 
 func rebuild(input_profile, is_customizable=false):
 	_action_list.clear()
@@ -16,6 +17,7 @@ func rebuild(input_profile, is_customizable=false):
 		if is_customizable:
 			line.connect('change_button_pressed', self, \
 				'_on_InputLine_change_button_pressed', [input_action, line])
+			InputMapper.connect('keybinds_changed', line, "_on_keybinds_changed", [input_action, line])
 
 func _on_InputLine_change_button_pressed(action_name, line):
 	set_process_input(false)

@@ -28,23 +28,9 @@ func update_key(scancode, inputType):
 		if scancode in mouseButtonList:
 			$Key.text = str(mouseButtonList[scancode])
 
-
-#debug purposes
-func dir(class_instance):
-	var output = {}
-	var methods = []
-	for method in class_instance.get_method_list():
-		methods.append(method.name)
-	
-	output["METHODS"] = methods
-	
-	var properties = []
-	for prop in class_instance.get_property_list():
-		if prop.type == 3:
-			properties.append(prop.name)
-	output["PROPERTIES"] = properties
-
-	return output
+func _on_keybinds_changed(action_name, line):
+	if weakref(line).get_ref():
+		line.update_key(InputMapper.get_selected_profile()[action_name][0], InputMapper.get_selected_profile()[action_name][1])
 
 func _on_ChangeButton_pressed():
 	emit_signal('change_button_pressed')

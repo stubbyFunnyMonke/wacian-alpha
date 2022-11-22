@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scripts/menus/CreditsContainer.gd" type="Script" id=10]
 [ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=11]
 [ext_resource path="res://scenes/menus/OptionsContainer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/images/misc/sirraden.jpg" type="Texture" id=13]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -572,7 +573,6 @@ anims/startgame = SubResource( 11 )
 pause_mode = 2
 
 [node name="CreditsContainer" type="Control" parent="mainMenu"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -589,8 +589,8 @@ rect_min_size = Vector2( 1024, 600 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
-margin_right = 1024.0
-margin_bottom = 1879.0
+margin_right = 1012.0
+margin_bottom = 2428.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -654,7 +654,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 15
+frame = 24
 speed_scale = 10.0
 playing = true
 
@@ -897,16 +897,57 @@ text = "Special Thanks
 align = 1
 valign = 1
 
-[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+[node name="spacing17" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
 margin_top = 1405.0
 margin_right = 1012.0
-margin_bottom = 1430.0
+margin_bottom = 1605.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="sirraden" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1609.0
+margin_right = 1012.0
+margin_bottom = 1683.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Sirraden" type="Sprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+position = Vector2( 507.825, -119.962 )
+scale = Vector2( 0.170816, 0.170816 )
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sir Raden
+"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "\"Papunta na tayo sa exciting part!\"
+"
+align = 1
+valign = 1
+
+[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1687.0
+margin_right = 1012.0
+margin_bottom = 1712.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="rohan" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1434.0
+margin_top = 1716.0
 margin_right = 1012.0
-margin_bottom = 1508.0
+margin_bottom = 1790.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
@@ -916,7 +957,7 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Rohan
+text = "Rohan Teylan
 "
 align = 1
 valign = 1
@@ -934,16 +975,16 @@ align = 1
 valign = 1
 
 [node name="spacing12" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1512.0
+margin_top = 1794.0
 margin_right = 1012.0
-margin_bottom = 1522.0
+margin_bottom = 1804.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="aaron" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1526.0
+margin_top = 1808.0
 margin_right = 1012.0
-margin_bottom = 1600.0
+margin_bottom = 1882.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
@@ -953,7 +994,7 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Aaron
+text = "Aaron Escandor
 "
 align = 1
 valign = 1
@@ -971,16 +1012,16 @@ align = 1
 valign = 1
 
 [node name="spacing14" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 3130.0
+margin_top = 1886.0
 margin_right = 1012.0
-margin_bottom = 3140.0
+margin_bottom = 1896.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="jiro" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1526.0
+margin_top = 1900.0
 margin_right = 1012.0
-margin_bottom = 1600.0
+margin_bottom = 1974.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
@@ -990,7 +1031,7 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Jiro
+text = "Jiro Gaffud
 "
 align = 1
 valign = 1
@@ -1007,17 +1048,54 @@ text = "He asked to be put here
 align = 1
 valign = 1
 
-[node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1604.0
+[node name="spacing16" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1978.0
 margin_right = 1012.0
-margin_bottom = 1614.0
+margin_bottom = 1988.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="nile" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1992.0
+margin_right = 1012.0
+margin_bottom = 2066.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Nile Jocson
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Nile Jocson
+"
+align = 1
+valign = 1
+
+[node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2070.0
+margin_right = 1012.0
+margin_bottom = 2080.0
 rect_min_size = Vector2( 0, 10 )
 rect_pivot_offset = Vector2( -79.5008, -212 )
 
 [node name="you" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1618.0
+margin_top = 2084.0
 margin_right = 1012.0
-margin_bottom = 1653.0
+margin_bottom = 2119.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/you"]
@@ -1032,16 +1110,36 @@ text = "...and you!
 align = 1
 valign = 1
 
-[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1657.0
+[node name="spacing15" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2123.0
 margin_right = 1012.0
-margin_bottom = 1757.0
+margin_bottom = 2223.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label4" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2227.0
+margin_right = 1012.0
+margin_bottom = 2294.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Thanks for playing!
+"
+align = 1
+valign = 1
+
+[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2298.0
+margin_right = 1012.0
+margin_bottom = 2398.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
-margin_top = 1761.0
+margin_top = 2402.0
 margin_right = 1012.0
-margin_bottom = 1787.0
+margin_bottom = 2428.0
 rect_min_size = Vector2( 175, 0 )
 theme = ExtResource( 3 )
 text = "Back"
@@ -1050,8 +1148,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 8192.0
-margin_bottom = 4800.0
+margin_right = 15360.0
+margin_bottom = 9000.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1065,10 +1163,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 3950.0
-margin_top = 2230.0
-margin_right = 4241.0
-margin_bottom = 2569.0
+margin_left = 7534.0
+margin_top = 4330.0
+margin_right = 7825.0
+margin_bottom = 4669.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]

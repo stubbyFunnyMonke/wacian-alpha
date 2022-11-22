@@ -1,6 +1,7 @@
 extends Node
 
 signal profile_changed(new_profile, is_customizable)
+signal keybinds_changed
 
 var current_profile_id = 0
 var profiles = {
@@ -70,6 +71,7 @@ func change_action_key(action_name, key_scancode):
 	new_event.set_scancode(key_scancode)
 	InputMap.action_add_event(action_name, new_event)
 	get_selected_profile()[action_name] = [key_scancode, "InputEventKey"]
+	emit_signal("keybinds_changed")
 
 func change_action_mouse(action_name, button_mask):
 	erase_action_events(action_name)
@@ -78,6 +80,7 @@ func change_action_mouse(action_name, button_mask):
 	new_event.set_button_index(button_mask)
 	InputMap.action_add_event(action_name, new_event)
 	get_selected_profile()[action_name] = [button_mask, "InputEventMouseButton"]
+	emit_signal("keybinds_changed")
 
 func erase_action_events(action_name):
 	var input_events = InputMap.get_action_list(action_name)
