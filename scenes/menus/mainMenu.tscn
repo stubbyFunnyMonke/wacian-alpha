@@ -1,0 +1,1390 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/menus/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/themes/menus.tres" type="Theme" id=3]
+[ext_resource path="res://scripts/menus/mainMenuPrimary.gd" type="Script" id=4]
+[ext_resource path="res://assets/music/ploutonion at hierapolis/main menu theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/images/logo.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/menu_select.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/images/misc/pokemon-gengar.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/custom_font_huge.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scripts/menus/CreditsContainer.gd" type="Script" id=10]
+[ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=11]
+[ext_resource path="res://scenes/menus/OptionsContainer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/images/misc/sirraden.jpg" type="Texture" id=13]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Container:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Container:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Container:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "intropart1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "intropart2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 0.466516 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Container:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 0.535887, 0.34151 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 600 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Container:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "startgame"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/CenterContainer/VBoxContainer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/CenterContainer/VBoxContainer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 800, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 1000, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 800, 1200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 200, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 400, 1400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 600, 1400, 200, 200 )
+
+[sub_resource type="SpriteFrames" id=51]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 0.611765 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 1, 0.376471, 0, 0.6 )
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+shadow_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 5 )
+
+[node name="MainMenuBG" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="IntroAnims1" type="AnimationPlayer" parent="."]
+root_node = NodePath("../mainMenu")
+autoplay = "intropart1"
+anims/RESET = SubResource( 7 )
+anims/end = SubResource( 10 )
+anims/intropart1 = SubResource( 8 )
+anims/intropart2 = SubResource( 9 )
+anims/startgame = SubResource( 11 )
+
+[node name="mainMenu" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="CreditsContainer" type="Control" parent="mainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="Background" type="ColorRect" parent="mainMenu/CreditsContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="mainMenu/CreditsContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
+margin_right = 1012.0
+margin_bottom = 2650.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="spacing" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_right = 1012.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 1012.0
+margin_bottom = 171.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Group 2 SD11-A
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 175.0
+margin_right = 1012.0
+margin_bottom = 226.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0.305882, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Wacian Dev Team
+"
+align = 1
+valign = 1
+
+[node name="spacing2" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 230.0
+margin_right = 1012.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="florenzo" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 284.0
+margin_right = 1012.0
+margin_bottom = 453.0
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Florenzo Amor
+"
+align = 1
+valign = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo/Label"]
+position = Vector2( 504.829, -28.8774 )
+scale = Vector2( 0.231818, 0.231818 )
+frames = SubResource( 51 )
+frame = 21
+speed_scale = 10.0
+playing = true
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/florenzo"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Lead Programmer
+Artist
+Game Designer
+Sound Designer
+Game OST Composer
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing3" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 457.0
+margin_right = 1012.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="zam" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 471.0
+margin_right = 1012.0
+margin_bottom = 621.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Zam Pallones
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/zam"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Programmer
+Artist
+Game Designer
+Concept Artist
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing8" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 625.0
+margin_right = 1012.0
+margin_bottom = 635.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="joseph" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 639.0
+margin_right = 1012.0
+margin_bottom = 732.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Joseph David Kriel Cruz
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/joseph"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Programmer
+Game Designer
+"
+align = 1
+valign = 1
+
+[node name="spacing4" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 736.0
+margin_right = 1012.0
+margin_bottom = 746.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="dale" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 750.0
+margin_right = 1012.0
+margin_bottom = 862.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "John Dale Bas
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/dale"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Programmer
+Artist
+Game Designer
+"
+align = 1
+valign = 1
+
+[node name="spacing5" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 866.0
+margin_right = 1012.0
+margin_bottom = 876.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="lei" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 880.0
+margin_right = 1012.0
+margin_bottom = 992.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Lei Villacorta
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/lei"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Programmer
+Game Designer
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing6" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 996.0
+margin_right = 1012.0
+margin_bottom = 1006.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="enzo" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1010.0
+margin_right = 1012.0
+margin_bottom = 1122.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.0705882, 0.592157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Enzo Gabriel Esquires
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/enzo"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Programmer
+Game Designer
+Tester
+"
+align = 1
+valign = 1
+
+[node name="spacing7" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1126.0
+margin_right = 1012.0
+margin_bottom = 1226.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="spacing9" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1230.0
+margin_right = 1012.0
+margin_bottom = 1330.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label3" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1334.0
+margin_right = 1012.0
+margin_bottom = 1401.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Special Thanks
+"
+align = 1
+valign = 1
+
+[node name="spacing17" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1405.0
+margin_right = 1012.0
+margin_bottom = 1625.0
+rect_min_size = Vector2( 0, 220 )
+
+[node name="sirraden" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1629.0
+margin_right = 1012.0
+margin_bottom = 1722.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Sirraden" type="Sprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+position = Vector2( 507.825, -119.962 )
+scale = Vector2( 0.170816, 0.170816 )
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sir Raden
+"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "\"Papunta na tayo sa exciting part!\"
+-Sir Raden
+"
+align = 1
+valign = 1
+
+[node name="spacing18" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1726.0
+margin_right = 1012.0
+margin_bottom = 1751.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="mentors" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1755.0
+margin_right = 1012.0
+margin_bottom = 1829.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/mentors"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Patrick Ragun & Juliana Ambos
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/mentors"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Mentors
+"
+align = 1
+valign = 1
+
+[node name="spacing10" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1833.0
+margin_right = 1012.0
+margin_bottom = 1858.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="rohan" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1862.0
+margin_right = 1012.0
+margin_bottom = 1955.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Rohan Teylan
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/rohan"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Beta Tester
+
+"
+align = 1
+valign = 1
+
+[node name="spacing12" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1959.0
+margin_right = 1012.0
+margin_bottom = 1969.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="aaron" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1973.0
+margin_right = 1012.0
+margin_bottom = 2066.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Aaron Escandor
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/aaron"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Beta Tester
+
+"
+align = 1
+valign = 1
+
+[node name="spacing14" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2070.0
+margin_right = 1012.0
+margin_bottom = 2080.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="jiro" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2084.0
+margin_right = 1012.0
+margin_bottom = 2177.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Jiro Gaffud
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/jiro"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "He asked to be put here
+
+"
+align = 1
+valign = 1
+
+[node name="spacing16" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2181.0
+margin_right = 1012.0
+margin_bottom = 2191.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="nile" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2195.0
+margin_right = 1012.0
+margin_bottom = 2288.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Nile Jocson
+"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/nile"]
+margin_top = 39.0
+margin_right = 1012.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Nile Jocson
+
+"
+align = 1
+valign = 1
+
+[node name="spacing13" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2292.0
+margin_right = 1012.0
+margin_bottom = 2302.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( -79.5008, -212 )
+
+[node name="you" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2306.0
+margin_right = 1012.0
+margin_bottom = 2341.0
+rect_pivot_offset = Vector2( -79.5008, -226 )
+
+[node name="Label" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/you"]
+margin_right = 1012.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.592157, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "...and you!
+"
+align = 1
+valign = 1
+
+[node name="spacing15" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2345.0
+margin_right = 1012.0
+margin_bottom = 2445.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label4" type="Label" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2449.0
+margin_right = 1012.0
+margin_bottom = 2516.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.572549, 0.592157, 0, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Thanks for playing!
+"
+align = 1
+valign = 1
+
+[node name="spacing11" type="Control" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2520.0
+margin_right = 1012.0
+margin_bottom = 2620.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="BackBtn2" type="Button" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer"]
+margin_top = 2624.0
+margin_right = 1012.0
+margin_bottom = 2650.0
+rect_min_size = Vector2( 175, 0 )
+theme = ExtResource( 3 )
+text = "Back"
+
+[node name="Container" type="Control" parent="mainMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 17408.0
+margin_bottom = 10200.0
+theme = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -256.0
+margin_top = -150.0
+margin_right = -256.0
+margin_bottom = -150.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
+margin_left = 8558.0
+margin_top = 4930.0
+margin_right = 8849.0
+margin_bottom = 5269.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_right = 291.0
+margin_bottom = 155.0
+texture = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 291.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="PlayBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 205.0
+margin_right = 291.0
+margin_bottom = 231.0
+text = "Start Game"
+
+[node name="TutorialBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 241.0
+margin_right = 291.0
+margin_bottom = 267.0
+text = "Play Tutorial"
+
+[node name="CreditsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 277.0
+margin_right = 291.0
+margin_bottom = 303.0
+text = "Credits"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
+margin_top = 313.0
+margin_right = 291.0
+margin_bottom = 339.0
+alignment = 1
+
+[node name="OptionsBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 3.0
+margin_right = 143.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 140, 0 )
+text = "Options"
+
+[node name="QuitBtn" type="Button" parent="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 287.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 140, 0 )
+text = "Quit"
+
+[node name="QuitContainer" type="Control" parent="mainMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="mainMenu/QuitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.372549 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/QuitContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/QuitContainer/CenterContainer"]
+margin_left = 335.0
+margin_top = 249.0
+margin_right = 689.0
+margin_bottom = 350.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_right = 354.0
+margin_bottom = 35.0
+text = "Are you sure you want
+to quit?"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 354.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 354.0
+margin_bottom = 101.0
+alignment = 1
+
+[node name="BackBtn2" type="Button" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 175.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 175, 0 )
+text = "Back"
+
+[node name="ConfirmQuitBtn2" type="Button" parent="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 179.0
+margin_right = 354.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 175, 0 )
+text = "Quit"
+
+[node name="Intro" type="Control" parent="mainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="mainMenu/Intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="mainMenu/Intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Intro/CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Label" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 224.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "Group 2 SD11-A"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="mainMenu/Intro/CenterContainer/VBoxContainer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 20.0
+margin_right = 224.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Presents..."
+align = 1
+valign = 1
+
+[node name="OptionsContainer" parent="mainMenu" instance=ExtResource( 12 )]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="mainMenu"]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "menu music"
+
+[node name="clickSFX" type="AudioStreamPlayer" parent="mainMenu"]
+stream = ExtResource( 7 )
+bus = "menu sfx"
+
+[connection signal="animation_finished" from="IntroAnims1" to="." method="_on_IntroAnims1_animation_finished"]
+[connection signal="animation_finished" from="IntroAnims1" to="mainMenu/Container" method="_on_IntroAnims1_animation_finished"]
+[connection signal="pressed" from="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/BackBtn2" to="mainMenu/CreditsContainer" method="_on_BackBtn2_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/PlayBtn" to="mainMenu/Container" method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/CreditsBtn" to="mainMenu/Container" method="_on_CreditsBtn_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/OptionsBtn" to="mainMenu/Container" method="_on_OptionsBtn_pressed"]
+[connection signal="pressed" from="mainMenu/Container/CenterContainer/VBoxContainer/HBoxContainer/QuitBtn" to="mainMenu/Container" method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/BackBtn2" to="mainMenu/Container" method="_on_BackBtn2_pressed"]
+[connection signal="pressed" from="mainMenu/QuitContainer/CenterContainer/VBoxContainer/HBoxContainer/ConfirmQuitBtn2" to="mainMenu/Container" method="_on_ConfirmQuitBtn2_pressed"]
+[connection signal="finished" from="mainMenu/AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
