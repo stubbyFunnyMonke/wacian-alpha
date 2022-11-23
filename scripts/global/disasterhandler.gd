@@ -4,12 +4,12 @@ extends Node
 var intensity = 9
 var disasterData = {
 	"earthquake": {
-		"start": 3,
+		"start": 1,
 		"duration": 90,
 		"active": false
 	},
 	"storm": {
-		"start": 1,
+		"start": 2,
 		"duration": 90,
 		"active": false
 	}
