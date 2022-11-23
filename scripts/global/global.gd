@@ -2,6 +2,9 @@ extends Node
 
 var ingame = false
 
+#GRAPHICS SETTINGS
+var particles = true
+
 func _ready():
 	LoadingScreenNoBar.visible = false
 	PauseMenu.get_node("Container").visible = false

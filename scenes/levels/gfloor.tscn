@@ -47,7 +47,6 @@ z_index = -2
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -33.6567, -50.3894 )
-scale = Vector2( 1, 1 )
 
 [node name="Camera2D" parent="YSort/Player" instance=ExtResource( 18 )]
 

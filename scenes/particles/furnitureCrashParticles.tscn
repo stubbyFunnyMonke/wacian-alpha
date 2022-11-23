@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/particles/whitePuff00.png" type="Texture" id=1]
+[ext_resource path="res://scripts/particles/furnitureCrashParticles.gd" type="Script" id=2]
 
 [sub_resource type="Curve" id=6]
 min_value = -360.0
@@ -50,3 +51,4 @@ speed_scale = 3.0
 explosiveness = 0.5
 process_material = SubResource( 5 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )

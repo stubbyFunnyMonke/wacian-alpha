@@ -163,11 +163,12 @@ func _unhandled_input(event: InputEvent) -> void:
 					if containerData:
 						containerhandler.addNew(tile_pos)
 					
-					var thudparticles = placeFurniture.instance()
-					thudparticles.position.x = map_to_world(tile_pos).x + (16 * tilesize[0])
-					thudparticles.position.y = map_to_world(tile_pos).y + 32
-					thudparticles.process_material.emission_box_extents = Vector3(135 * tilesize[0], 1, 1)
-					add_child(thudparticles)
+					if global.particles == true:
+						var thudparticles = placeFurniture.instance()
+						thudparticles.position.x = map_to_world(tile_pos).x + (16 * tilesize[0])
+						thudparticles.position.y = map_to_world(tile_pos).y + 32
+						thudparticles.process_material.emission_box_extents = Vector3(135 * tilesize[0], 1, 1)
+						add_child(thudparticles)
 					
 					set_cell(tile_pos.x, tile_pos.y, playgroundHandler.storedItem)
 					place.position = mouse_pos

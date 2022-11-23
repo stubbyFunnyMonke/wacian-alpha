@@ -77,9 +77,10 @@ func _on_Fire_fire_tiles_changed():
 			fireSound.bus = "sfx"
 			fireSound.play()
 			
-			var smokeParticles = preload("res://scenes/particles/smokeParticles.tscn")
-			var smoke = smokeParticles.instance()
-			newLight.add_child(smoke)
+			if global.particles == true:
+				var smokeParticles = preload("res://scenes/particles/smokeParticles.tscn")
+				var smoke = smokeParticles.instance()
+				newLight.add_child(smoke)
 	
 	for light in get_children():
 		if light is Light2D:

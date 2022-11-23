@@ -103,10 +103,11 @@ func move_state(delta):
 			footstep.play()
 			
 			if playerstats.sprinting == true && playerstats.sprintlockout != true:
-				var stepParticles = sprintParticles.instance()
-				stepParticles.position.x = position.x
-				stepParticles.position.y = position.y + 16
-				get_tree().get_current_scene().add_child(stepParticles)
+				if global.particles == true:
+					var stepParticles = sprintParticles.instance()
+					stepParticles.position.x = position.x
+					stepParticles.position.y = position.y + 16
+					get_tree().get_current_scene().add_child(stepParticles)
 	else:
 #		animationState.travel("Idle")
 #		animationTree.set("parameters/Idle/blend_position", mouse_vector)

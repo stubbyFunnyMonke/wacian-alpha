@@ -14,8 +14,9 @@ func _physics_process(delta):
 	var intensity = disasterHandler.earthquakeIntensity + disasterHandler.intensity
 	if disasterHandler.disasterData["earthquake"].active == true:
 		if debris.emitting == false && changefloor.floors[changefloor.currentfloor] != "rooftop.tscn":
-			debris.emitting = true
-			debris.amount = 1024 - int(float(1024)/float(intensity)/float(4.5))
+			if global.particles == true:
+				debris.emitting = true
+				debris.amount = 1024 - int(float(1024)/float(intensity)/float(4.5))
 		
 		var playerNode = global.get_scene_node().get_node("YSort/Player")
 		var cameraNode = playerNode.get_node("Camera2D")

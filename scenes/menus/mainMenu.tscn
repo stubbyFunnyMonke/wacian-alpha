@@ -628,7 +628,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/CreditsContainer/ScrollContainer"]
 margin_right = 1024.0
-margin_bottom = 2669.0
+margin_bottom = 2650.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -692,7 +692,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 18
+frame = 37
 speed_scale = 10.0
 playing = true
 
@@ -948,6 +948,7 @@ margin_bottom = 1722.0
 rect_pivot_offset = Vector2( -79.5008, -226 )
 
 [node name="Sirraden" type="Sprite" parent="mainMenu/CreditsContainer/ScrollContainer/VBoxContainer/sirraden"]
+visible = false
 position = Vector2( 507.825, -119.962 )
 scale = Vector2( 0.170816, 0.170816 )
 texture = ExtResource( 13 )
@@ -971,8 +972,7 @@ margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "\"Papunta na tayo sa exciting part!\"
--Sir Raden
+text = "Computer Programming Teacher
 "
 align = 1
 valign = 1
@@ -1083,7 +1083,7 @@ rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Beta Tester
-Stairs Meta
+Founder of the Stairs Meta
 
 "
 align = 1
@@ -1228,8 +1228,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 29696.0
-margin_bottom = 17400.0
+margin_right = 33792.0
+margin_bottom = 19800.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1243,10 +1243,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 14702.0
-margin_top = 8548.0
-margin_right = 14993.0
-margin_bottom = 8851.0
+margin_left = 16750.0
+margin_top = 9748.0
+margin_right = 17041.0
+margin_bottom = 10051.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]
@@ -1468,6 +1468,7 @@ position = Vector2( 152.189, 95.5937 )
 
 [node name="debris" parent="." instance=ExtResource( 17 )]
 position = Vector2( 516, -4 )
+script = null
 
 [node name="Middleground3" type="Node2D" parent="."]
 modulate = Color( 0.596078, 0.690196, 1, 1 )

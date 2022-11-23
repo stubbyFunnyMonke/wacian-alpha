@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/menus/Options.gd" type="Script" id=3]
 [ext_resource path="res://scripts/menus/VolumeSettingsMenu.gd" type="Script" id=4]
+[ext_resource path="res://scripts/menus/GraphicsSettingsContainer.gd" type="Script" id=5]
 [ext_resource path="res://scripts/menus/control_settings/InputMenu.gd" type="Script" id=6]
 [ext_resource path="res://scripts/menus/control_settings/ProfilesMenu.gd" type="Script" id=7]
 [ext_resource path="res://scripts/menus/control_settings/ActionList.gd" type="Script" id=8]
@@ -36,29 +37,90 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SideBar/CenterContainer"]
 margin_left = 9.0
-margin_top = 257.0
+margin_top = 242.0
 margin_right = 259.0
-margin_bottom = 343.0
+margin_bottom = 358.0
 
-[node name="VolumeBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+[node name="GraphicsBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
 margin_right = 250.0
 margin_bottom = 26.0
 theme = ExtResource( 1 )
-text = "Volume Settings"
+text = "Video Settings"
 
-[node name="ControlBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+[node name="VolumeBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
 margin_top = 30.0
 margin_right = 250.0
 margin_bottom = 56.0
 theme = ExtResource( 1 )
-text = "Controls"
+text = "Volume Settings"
 
-[node name="BackBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+[node name="ControlBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
 margin_top = 60.0
 margin_right = 250.0
 margin_bottom = 86.0
 theme = ExtResource( 1 )
+text = "Controls"
+
+[node name="BackBtn" type="Button" parent="SideBar/CenterContainer/VBoxContainer"]
+margin_top = 90.0
+margin_right = 250.0
+margin_bottom = 116.0
+theme = ExtResource( 1 )
 text = "Back"
+
+[node name="GraphicsSettingsContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 270.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GraphicsSettingsContainer"]
+margin_right = 754.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="spacing2" type="Control" parent="GraphicsSettingsContainer/VBoxContainer"]
+margin_right = 754.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label" type="Label" parent="GraphicsSettingsContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 754.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
+text = "Video/Graphics Settings"
+align = 1
+
+[node name="spacing5" type="Control" parent="GraphicsSettingsContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 754.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Particles" type="HBoxContainer" parent="GraphicsSettingsContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 754.0
+margin_bottom = 140.0
+
+[node name="spacing4" type="Control" parent="GraphicsSettingsContainer/VBoxContainer/Particles"]
+margin_right = 20.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="ParticlesButton" type="CheckButton" parent="GraphicsSettingsContainer/VBoxContainer/Particles"]
+margin_left = 24.0
+margin_right = 246.0
+margin_bottom = 42.0
+text = "Particles"
+
+[node name="spacing3" type="Control" parent="GraphicsSettingsContainer/VBoxContainer/Particles"]
+margin_left = 250.0
+margin_right = 270.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 20, 0 )
 
 [node name="VolumeSettingsContainer" type="ScrollContainer" parent="."]
 visible = false
@@ -216,6 +278,7 @@ margin_bottom = 16.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="ControlSettingsContainer" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 270.0
@@ -365,9 +428,11 @@ text = "Press a key...
 align = 1
 valign = 1
 
+[connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/GraphicsBtn" to="." method="_on_GraphicsBtn_pressed"]
 [connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/VolumeBtn" to="." method="_on_VolumeBtn_pressed"]
 [connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/ControlBtn" to="." method="_on_ControlBtn_pressed"]
 [connection signal="pressed" from="SideBar/CenterContainer/VBoxContainer/BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="toggled" from="GraphicsSettingsContainer/VBoxContainer/Particles/ParticlesButton" to="GraphicsSettingsContainer" method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/MasterVolume/MasterVSlider" to="VolumeSettingsContainer" method="_on_MasterVSlider_value_changed"]
 [connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/SFXVolume/SFXVSlider" to="VolumeSettingsContainer" method="_on_SFXVSlider_value_changed"]
 [connection signal="value_changed" from="VolumeSettingsContainer/VBoxContainer/MusicVolume/MusicVSlider" to="VolumeSettingsContainer" method="_on_MusicVSlider_value_changed"]
