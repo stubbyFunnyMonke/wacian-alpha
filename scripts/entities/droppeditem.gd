@@ -34,8 +34,17 @@ func get_item():
 		pickup.play()
 
 func _on_ItemDrop_body_entered(_body):
+	pickable = true
 	if timer.is_stopped() && visible == true:
 		get_item()
 
+func _on_Timer_timeout():
+	if pickable == true:
+		get_item()
+
+
 func _on_pickup_sound_finished():
 	queue_free()
+
+func _on_ItemDrop_body_exited(body):
+	pickable = false
