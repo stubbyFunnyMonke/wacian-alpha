@@ -165,6 +165,8 @@ func waveLoop(waveID):
 			return
 		#############GAME CHECKS###############
 		
+		playerstats.score += randomDuration * 100
+		
 		for disaster in disasterHandler.disasterData:
 			disasterHandler.disasterData[disaster].active = false
 		

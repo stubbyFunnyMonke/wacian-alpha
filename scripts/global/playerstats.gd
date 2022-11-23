@@ -45,6 +45,8 @@ var intangibleTimer = 0
 
 var onfire = false
 var onfireTimer = 0
+
+var score = 0
 #debug global
 
 func _ready():
@@ -75,6 +77,8 @@ func reset():
 	
 	onfire = false
 	onfireTimer = 0
+	
+	score = 0
 
 #outsourced funcs
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/themes/menus.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/menus/GameOverMenu.gd" type="Script" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://assets/images/misc/heart_shatter.png" type="Texture" id=7]
 [ext_resource path="res://assets/sounds/menus/heart_shatter.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sounds/menus/bighurt.wav" type="AudioStream" id=9]
+[ext_resource path="res://scripts/ui/scoregameover.gd" type="Script" id=10]
+[ext_resource path="res://assets/fonts/custom_font_medium.tres" type="DynamicFont" id=11]
+[ext_resource path="res://scripts/ui/WavesSurvived.gd" type="Script" id=12]
+[ext_resource path="res://assets/fonts/custom_font.tres" type="DynamicFont" id=13]
 
 [sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
@@ -350,27 +354,56 @@ rect_scale = Vector2( 2, 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/CenterContainer"]
 margin_left = 340.0
-margin_top = 265.0
+margin_top = 217.0
 margin_right = 684.0
-margin_bottom = 335.0
+margin_bottom = 383.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
 margin_right = 344.0
-margin_bottom = 16.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
 text = "Game Over"
 align = 1
 valign = 1
 
 [node name="Control" type="Control" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
-margin_top = 20.0
+margin_top = 28.0
 margin_right = 344.0
-margin_bottom = 40.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Waves" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 344.0
+margin_bottom = 68.0
+custom_fonts/font = ExtResource( 13 )
+text = "Score"
+script = ExtResource( 12 )
+
+[node name="Control3" type="Control" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 344.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Score" type="Label" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 344.0
+margin_bottom = 112.0
+custom_fonts/font = ExtResource( 13 )
+text = "Score"
+script = ExtResource( 10 )
+
+[node name="Control2" type="Control" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 344.0
+margin_bottom = 136.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer/VBoxContainer"]
-margin_top = 44.0
+margin_top = 140.0
 margin_right = 344.0
-margin_bottom = 70.0
+margin_bottom = 166.0
 alignment = 1
 
 [node name="PlayBtn" type="Button" parent="CanvasLayer/Control/CenterContainer/VBoxContainer/HBoxContainer"]
