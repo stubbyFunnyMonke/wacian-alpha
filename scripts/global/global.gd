@@ -59,14 +59,22 @@ func game_over():
 	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
 	
+	Textbox.change_state(Textbox.State.READY)
+	Textbox.hide_textbox()
+	
 	get_tree().change_scene("res://scenes/menus/GameOverScreen.tscn")
 	pass
 
 func quit_game():
 	ingame = false
+	
 	WaveSystem.end()
 	Input.set_custom_mouse_cursor(null)
 	bgmusic.reset()
+	
+	Textbox.change_state(Textbox.State.READY)
+	Textbox.hide_textbox()
+	
 	LoadingScreenNoBar.visible = true
 	LoadingScreenNoBar.get_node("AnimationPlayer").play("loop")
 	

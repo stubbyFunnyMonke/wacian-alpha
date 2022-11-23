@@ -692,7 +692,7 @@ valign = 1
 position = Vector2( 504.829, -28.8774 )
 scale = Vector2( 0.231818, 0.231818 )
 frames = SubResource( 51 )
-frame = 36
+frame = 38
 speed_scale = 10.0
 playing = true
 
@@ -1121,7 +1121,7 @@ margin_bottom = 93.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "He asked to be put here
+text = "He agreed to be put here
 
 "
 align = 1
@@ -1228,8 +1228,8 @@ text = "Back"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 27648.0
-margin_bottom = 16200.0
+margin_right = 28672.0
+margin_bottom = 16800.0
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
@@ -1243,10 +1243,10 @@ margin_bottom = -150.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/Container/CenterContainer"]
-margin_left = 13678.0
-margin_top = 7948.0
-margin_right = 13969.0
-margin_bottom = 8251.0
+margin_left = 14190.0
+margin_top = 8248.0
+margin_right = 14481.0
+margin_bottom = 8551.0
 custom_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="mainMenu/Container/CenterContainer/VBoxContainer"]

@@ -7,7 +7,7 @@ onready var fireSpreadable = get_node("FireSpreadable")
 var tiles = []
 
 func _ready():
-	if changefloor.currentfloor in changefloor.floors:
+	if range(changefloor.floors.size()).has(changefloor.currentfloor):
 		if changefloor.floors[changefloor.currentfloor] in playgroundHandler.fireTiles:
 			for savedTile in playgroundHandler.fireTiles[changefloor.floors[changefloor.currentfloor]]:
 				set_cellv(savedTile, 0)
