@@ -9,6 +9,11 @@ onready var graphicsSettings = get_node("GraphicsSettingsContainer")
 func _ready():
 	visible = false
 
+func _on_BackBtn_pressed():
+	visible = false
+	mainContainer.visible = true
+	mainContainer.uiOpen = false
+
 func _on_VolumeBtn_pressed():
 	volumeSettings.visible = true
 	controlSettings.visible = false
