@@ -2,11 +2,11 @@
 - from the game++ expo by sd11-a group 2
 
 # 🌴 notes 🌴
-- Joseph.
 - use godot version v3.5.1-stable
-- this repo wont be updated (i think)
-- do not yoink our assets (pls) (unless its the ones we yoinked ourselves)
-- don't ask me about the code i have no idea what i wrote either
+- this repo wont be updated *(i think)*
+- do not yoink our assets *(pls) (unless its the ones we yoinked ourselves)*
+- don't ask me about the code *i have no idea what i wrote either* 😂😂😂🤣🤣🤣
+- Joseph.
 
 # 😎 feel free to 😎
 subscribe
